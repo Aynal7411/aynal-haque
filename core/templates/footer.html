@@ -1,0 +1,34 @@
+<!-- Footer -->
+<footer class="bg-dark text-light pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row">
+      <!-- About -->
+      <div class="col-md-4">
+        <h5>About Me</h5>
+        <p>I’m a passionate Python and web developer from Bangladesh. I build full-stack solutions with Django, React, and more.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h5>Emmergency Pages</h5>
+        <ul class="list-unstyled">
+          <li><a href="{#}" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="{#}" class="text-light text-decoration-none">About</a></li>
+          <li><a href="{#}" class="text-light text-decoration-none">Projects</a></li>
+          <li><a href="{% url 'contact' %}" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4">
+        <h5>Contact with Aynal Haque</h5>
+        <p>Email: aynalhaque7411@gmail.com</p>
+        <p>Phone: +8801908214958</p>
+       
+      </div>
+    </div>
+
+    <hr class="bg-secondary mt-4">
+    <p class="text-center mb-0">&copy; {{ now|date:"Y" }} Developed By Aynal Haque</p>
+  </div>
+</footer>
