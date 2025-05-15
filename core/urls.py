@@ -6,6 +6,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('post', views.post_list, name='post_list'),
     path('<int:pk>/', views.post_detail, name='post_detail'),
+    path('register/',views.register_view, name='register'),
+    path('login/',views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
     path('skills/', views.skills_view, name='skills'),
     path("", views.my_page, name="home-page"),
 ]

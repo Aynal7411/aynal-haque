@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Aynal Haque{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold " href="{% url 'home-page' %}">Aynal Haque</a>
+            <a class="navbar-brand fw-bold" href="{% url 'home-page' %}">Aynal Haque</a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -20,37 +20,61 @@
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                   
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'services-page' %}">Services</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'skills' %}">Skills</a>
                     </li>
-                    <li class="nav-item mx-2 ">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
                     <li class="nav-item mx-2">
-                    <a class="nav-link" href="{% url 'post_list' %}">Blog</a>
-                    </li>
- <li class="nav-item mx-2">
-                    <a class="nav-link" href="{% url 'post_list' %}">Login</a>
-                    </li>
- <li class="nav-item mx-2">
-                    <a class="nav-link" href="{% url 'post_list' %}">Register</a>
+                        <a class="nav-link" href="{% url 'post_list' %}">Blog</a>
                     </li>
 
+                    {% if user.is_authenticated %}
+                        <li class="nav-item mx-2">
+                            <span class="navbar-text text-light">Hi, {{ user.username }}</span>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="{% url 'register' %}">Register</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Alert Messages -->
+    <div class="container mt-3">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Page Content -->
     <div class="container mt-4 text">
         {% block content %}{% endblock %}
     </div>
-    <div class="text-light mt-5">
-    {% include "footer.html" %}
+
+    <!-- Footer -->
+    <div class="text-light">
+        {% include "footer.html" %}
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
