@@ -2,14 +2,15 @@ from django.shortcuts import render, get_object_or_404
 from .models import Profile
 from datetime import datetime
 # Create your views here.
-from .models import Post
+from .models import Post,SiteAlert
 
 def my_page(request):
-    
+    alert = SiteAlert.objects.filter(is_active=True).order_by('-created_on').first()
     profile = Profile.objects.first()  # Get first instance instead of 404
     if not profile:
         return render(request, 'no_profile.html')  # Create this template
     return render(request, 'home_page.html', {
+         'alert': alert,
         'profile': profile,
         'year': datetime.now().year
     })

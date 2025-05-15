@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Profile
 from .models import Post
-
+from .models import SiteAlert
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('name', 'title', 'email', 'phone', 'created_at')
@@ -38,3 +38,6 @@ class SkillAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post)
+
+
+admin.site.register(SiteAlert)

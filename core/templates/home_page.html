@@ -4,6 +4,14 @@
 {% block title %}{{ profile.name }} - Workplace{% endblock %}
 
 {% block content %}
+ {% if alert %}
+    <div class="alert" id="site-alert">
+        <div class="alert-content">
+            {{ alert.message }}
+        </div>
+        <button class="close-alert" onclick="dismissAlert()">&times;</button>
+    </div>
+    {% endif %}
 <div class="container mt-5">
 <div class="row">
     <div class="col-md-4 text-center ">

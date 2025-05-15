@@ -49,3 +49,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class SiteAlert(models.Model):
+    message = models.TextField()
+    is_active = models.BooleanField(default=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Alert ({self.created_on})"      
