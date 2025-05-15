@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{% url 'home-page' %}">Aynal Haque</a>
+            <a class="navbar-brand fw-bold " href="{% url 'home-page' %}">Aynal Haque</a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -29,9 +29,16 @@
                     <li class="nav-item mx-2 ">
                         <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
-                    <li class="nav-item mx-4">
+                    <li class="nav-item mx-2">
                     <a class="nav-link" href="{% url 'post_list' %}">Blog</a>
                     </li>
+ <li class="nav-item mx-2">
+                    <a class="nav-link" href="{% url 'post_list' %}">Login</a>
+                    </li>
+ <li class="nav-item mx-2">
+                    <a class="nav-link" href="{% url 'post_list' %}">Register</a>
+                    </li>
+
                 </ul>
             </div>
         </div>
