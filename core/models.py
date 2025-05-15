@@ -22,3 +22,20 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Skill(models.Model):
+    SKILL_TYPES = (
+        ('frontend', 'Frontend'),
+        ('backend', 'Backend'),
+        ('devops', 'DevOps'),
+        ('database', 'Database'),
+        ('other', 'Other'),
+    )
+
+    name = models.CharField(max_length=100)
+    percentage = models.PositiveIntegerField()
+    skill_type = models.CharField(max_length=20, choices=SKILL_TYPES, default='other')
+
+    def __str__(self):
+        return f"{self.name} - {self.get_skill_type_display()} ({self.percentage}%)"

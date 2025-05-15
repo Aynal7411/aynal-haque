@@ -12,7 +12,17 @@ def my_page(request):
         'profile': profile,
         'year': datetime.now().year
     })
+from django.shortcuts import render
+from .models import Skill
 
+def skills_view(request):
+    skill_types = Skill.SKILL_TYPES
+    grouped_skills = {}
+
+    for key, label in skill_types:
+        grouped_skills[label] = Skill.objects.filter(skill_type=key).order_by('-percentage')
+
+    return render(request, 'skills.html', {'grouped_skills': grouped_skills})
 
 
 

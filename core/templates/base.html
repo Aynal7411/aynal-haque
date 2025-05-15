@@ -14,12 +14,13 @@
         <a class="navbar-brand" href="{% url "home-page" %}">Aynal Haque</a>
         <a class="navbar-brand" href="{% url 'services-page' %}">Services</a>
         <a class="navbar-brand" href="{% url 'contact' %}">Contact</a>
+        <a class="navbar-brand" href="{% url 'skills' %}">Skills</a>
     </nav>
 
     <div class="container mt-4">
         {% block content %}{% endblock %}
     </div>
-
+ 
    {% include "footer.html" %}
 </body>
 </html>

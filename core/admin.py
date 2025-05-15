@@ -26,3 +26,11 @@ class ProfileAdmin(admin.ModelAdmin):
         }),
     )
     readonly_fields = ('created_at',)
+
+from .models import Skill
+
+@admin.register(Skill)
+class SkillAdmin(admin.ModelAdmin):
+    list_display = ('name', 'skill_type', 'percentage')
+    list_filter = ('skill_type',)
+    search_fields = ('name',)
