@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Profile
+from .models import Post
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
@@ -34,3 +35,6 @@ class SkillAdmin(admin.ModelAdmin):
     list_display = ('name', 'skill_type', 'percentage')
     list_filter = ('skill_type',)
     search_fields = ('name',)
+
+
+admin.site.register(Post)
