@@ -1,13 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Register</h2>
-<form method="post">
-  {% csrf_token %}
-  <label>Username:</label><br>
-  <input type="text" name="username" required><br>
-  <label>Password:</label><br>
-  <input type="password" name="password" required><br><br>
-  <button type="submit">Register</button>
-</form>
-<p>Already have an account? <a href="{% url "login" %}">Login here</a></p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg rounded-4">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">Register</h2>
+          <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success rounded-pill">Register</button>
+            </div>
+          </form>
+          <p class="text-center mt-3 mb-0">
+            Already have an account? <a href="{% url 'login' %}">Login here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
