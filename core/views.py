@@ -69,3 +69,13 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home-page')  
+
+
+def project_view(request):
+    return render(request, 'project.html')
+
+def about_us(request):
+        return render(request, 'about.html')
+
+def home_view(request):
+    return render(request, 'home.html')

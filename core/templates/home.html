@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="p-5 mb-4 bg-light rounded-4 shadow-sm">
+    <div class="container-fluid py-5">
+      <h1 class="display-4 fw-bold">Welcome to the Home Page</h1>
+      <p class="col-md-8 fs-5 text-muted">
+        This is your starting point. Customize this page to highlight features, projects, or key actions.
+      </p>
+      <a class="btn btn-primary btn-lg rounded-pill mt-3" href="{% url 'projects' %}" role="button">View Projects</a>
+    </div>
+  </div>
+
+  <div class="row text-center mt-5">
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm rounded-4 h-100">
+        <div class="card-body">
+          <h5 class="card-title">Fast Development</h5>
+          <p class="card-text text-muted">Built with Django & Bootstrap for fast and responsive development.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mt-4 mt-md-0">
+      <div class="card border-0 shadow-sm rounded-4 h-100">
+        <div class="card-body">
+          <h5 class="card-title">Clean Design</h5>
+          <p class="card-text text-muted">Minimalist and modern UI for better user experience.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mt-4 mt-md-0">
+      <div class="card border-0 shadow-sm rounded-4 h-100">
+        <div class="card-body">
+          <h5 class="card-title">Customizable</h5>
+          <p class="card-text text-muted">Easily extend and adapt this template to your needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

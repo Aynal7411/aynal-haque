@@ -1,15 +1,16 @@
 /* General Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #a3d85d;
-    color: #212529;
+    background-color: hsl(202, 61%, 61%);
+    color: #282921;
 }
 
 /* Navbar */
 .navbar-brand {
     font-weight: bold;
-    font-size: 1.5rem;
-    color: #ffffff !important;
+    font-size:50%;
+    color: hwb(318 5% 25%) !important;
+    
 }
 
 /* Container */
@@ -28,10 +29,10 @@ body {
 .section-title {
     margin-top: 40px;
     margin-bottom: 20px;
-    font-size: 1.75rem;
+    font-size: 2.75rem;
     font-weight: 600;
-    border-bottom: 2px solid #dee2e6;
-    padding-bottom: 10px;
+    border-bottom: 3px solid #90d81d;
+    padding-bottom: 20px;
 }
 
 /* Footer */
