@@ -4,3 +4,16 @@
 [INFO] 2025-05-19 05:19:07,356 django.server (213): "GET / HTTP/1.1" 200 5049
 [INFO] 2025-05-19 05:19:08,271 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
 [INFO] 2025-05-19 05:19:08,346 django.server (213): "GET /static/js/main.js HTTP/1.1" 304 0
+[INFO] 2025-05-19 05:27:26,633 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:27:40,907 django.server (213): "GET / HTTP/1.1" 200 5049
+[INFO] 2025-05-19 05:27:41,438 django.server (213): "GET /static/css/styles.css HTTP/1.1" 200 981
+[INFO] 2025-05-19 05:27:41,456 django.server (213): "GET /static/js/main.js HTTP/1.1" 304 0
+[INFO] 2025-05-19 05:29:27,609 django.utils.autoreload (265): /workspaces/aynal-haque/aynal_portfolio/settings.py changed, reloading.
+[INFO] 2025-05-19 05:30:11,836 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:30:17,642 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-05-19 05:30:32,154 django.utils.autoreload (265): /workspaces/aynal-haque/aynal_portfolio/settings.py changed, reloading.
+[INFO] 2025-05-19 05:30:32,471 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:31:01,856 django.utils.autoreload (265): /workspaces/aynal-haque/aynal_portfolio/settings.py changed, reloading.
+[INFO] 2025-05-19 05:31:49,364 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:33:26,926 django.server (213): "GET / HTTP/1.1" 200 5049
+[INFO] 2025-05-19 05:33:27,828 django.server (213): "GET /static/css/styles.css HTTP/1.1" 200 981
