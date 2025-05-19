@@ -1,0 +1,13 @@
+[ERROR] 2025-05-19 05:53:59,931 django.request (248): Internal Server Error: /project/
+Traceback (most recent call last):
+  File "/home/codespace/.local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/aynal-haque/core/views.py", line 75, in project_view
+    projects = Project.objects.all().order_by('-created_at')
+               ^^^^^^^
+NameError: name 'Project' is not defined
+[ERROR] 2025-05-19 05:53:59,934 django.server (213): "GET /project/ HTTP/1.1" 500 76192

@@ -1,47 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-  <div class="text-center mb-4">
-    <h1 class="display-5 fw-bold">My Projects</h1>
-    <p class="lead text-muted">Explore some of the work I’ve done</p>
-  </div>
-
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    <!-- Project Card 1 -->
-    <div class="col">
-      <div class="card shadow-sm h-100 border-0 rounded-4">
-        <div class="card-body">
-          <h5 class="card-title">Project Title 1</h5>
-          <p class="card-text text-muted">A brief description of the project. It can include tech stack, goal, and key features.</p>
-          <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">View Project</a>
+<h2>My Projects</h2>
+<div class="project-grid">
+    {% for project in projects %}
+        <div class="project-card">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description|truncatewords:20 }}</p>
+            {% if project.url %}
+                <a href="{{ project.url }}" target="_blank">View Project</a>
+            {% endif %}
         </div>
-      </div>
-    </div>
-
-    <!-- Project Card 2 -->
-    <div class="col">
-      <div class="card shadow-sm h-100 border-0 rounded-4">
-        <div class="card-body">
-          <h5 class="card-title">Project Title 2</h5>
-          <p class="card-text text-muted">Another cool project. This might be a web app, mobile app, or an AI-powered tool.</p>
-          <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">View Project</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project Card 3 -->
-    <div class="col">
-      <div class="card shadow-sm h-100 border-0 rounded-4">
-        <div class="card-body">
-          <h5 class="card-title">Project Title 3</h5>
-          <p class="card-text text-muted">Describe the problem it solves, technologies used, or what makes it unique.</p>
-          <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">View Project</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Add more cards as needed -->
-  </div>
+    {% empty %}
+        <p>No projects added yet.</p>
+    {% endfor %}
 </div>
 {% endblock %}

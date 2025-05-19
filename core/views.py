@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from .models import Profile
 from datetime import datetime
+
 from django.contrib.auth.models import User
 # Create your views here.
-from .models import Post,SiteAlert
+from .models import Post,SiteAlert,Project
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
@@ -72,7 +73,8 @@ def logout_view(request):
 
 
 def project_view(request):
-    return render(request, 'project.html')
+    projects = Project.objects.all().order_by('-created_at')
+    return render(request, 'project.html', {'projects': projects})
 
 def about_us(request):
         return render(request, 'about.html')

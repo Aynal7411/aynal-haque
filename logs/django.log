@@ -17,3 +17,48 @@
 [INFO] 2025-05-19 05:31:49,364 django.utils.autoreload (667): Watching for file changes with StatReloader
 [INFO] 2025-05-19 05:33:26,926 django.server (213): "GET / HTTP/1.1" 200 5049
 [INFO] 2025-05-19 05:33:27,828 django.server (213): "GET /static/css/styles.css HTTP/1.1" 200 981
+[INFO] 2025-05-19 05:36:17,850 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:36:53,481 django.server (213): "GET / HTTP/1.1" 200 5049
+[INFO] 2025-05-19 05:36:54,063 django.server (213): "GET /static/js/main.js HTTP/1.1" 304 0
+[INFO] 2025-05-19 05:37:14,944 django.server (213): "GET / HTTP/1.1" 200 5049
+[INFO] 2025-05-19 05:37:15,419 django.server (213): "GET /static/css/styles.css HTTP/1.1" 200 981
+[INFO] 2025-05-19 05:37:15,560 django.server (213): "GET /static/js/main.js HTTP/1.1" 200 474
+[INFO] 2025-05-19 05:45:30,971 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-05-19 05:50:40,341 django.utils.autoreload (265): /workspaces/aynal-haque/core/models.py changed, reloading.
+[INFO] 2025-05-19 05:50:40,668 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:50:42,881 django.utils.autoreload (265): /workspaces/aynal-haque/core/models.py changed, reloading.
+[INFO] 2025-05-19 05:50:43,295 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:50:46,458 django.utils.autoreload (265): /workspaces/aynal-haque/core/models.py changed, reloading.
+[INFO] 2025-05-19 05:50:46,744 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:50:53,973 django.utils.autoreload (265): /workspaces/aynal-haque/core/models.py changed, reloading.
+[INFO] 2025-05-19 05:50:54,275 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:51:21,630 django.utils.autoreload (265): /workspaces/aynal-haque/core/views.py changed, reloading.
+[INFO] 2025-05-19 05:51:21,946 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:51:24,177 django.utils.autoreload (265): /workspaces/aynal-haque/core/views.py changed, reloading.
+[INFO] 2025-05-19 05:51:24,507 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:51:28,698 django.utils.autoreload (265): /workspaces/aynal-haque/core/views.py changed, reloading.
+[INFO] 2025-05-19 05:51:29,005 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:51:48,307 django.utils.autoreload (265): /workspaces/aynal-haque/core/views.py changed, reloading.
+[INFO] 2025-05-19 05:51:48,620 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:51:51,834 django.utils.autoreload (265): /workspaces/aynal-haque/core/views.py changed, reloading.
+[INFO] 2025-05-19 05:51:52,131 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:53:13,831 django.utils.autoreload (265): /workspaces/aynal-haque/core/admin.py changed, reloading.
+[INFO] 2025-05-19 05:53:14,171 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:53:15,424 django.utils.autoreload (265): /workspaces/aynal-haque/core/admin.py changed, reloading.
+[INFO] 2025-05-19 05:53:15,746 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:53:46,949 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:53:51,131 django.server (213): "GET / HTTP/1.1" 200 5049
+[INFO] 2025-05-19 05:53:51,885 django.server (213): "GET /static/css/styles.css HTTP/1.1" 200 981
+[INFO] 2025-05-19 05:53:52,229 django.server (213): "GET /static/js/main.js HTTP/1.1" 304 0
+[ERROR] 2025-05-19 05:53:59,934 django.server (213): "GET /project/ HTTP/1.1" 500 76192
+[INFO] 2025-05-19 05:54:34,539 django.utils.autoreload (265): /workspaces/aynal-haque/core/views.py changed, reloading.
+[INFO] 2025-05-19 05:54:34,934 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:54:39,092 django.utils.autoreload (265): /workspaces/aynal-haque/core/views.py changed, reloading.
+[INFO] 2025-05-19 05:54:39,404 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:54:41,553 django.utils.autoreload (265): /workspaces/aynal-haque/core/views.py changed, reloading.
+[INFO] 2025-05-19 05:54:41,848 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:54:55,054 django.utils.autoreload (265): /workspaces/aynal-haque/core/views.py changed, reloading.
+[INFO] 2025-05-19 05:54:55,376 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:54:59,805 django.server (213): "GET /project/ HTTP/1.1" 200 3660
+[INFO] 2025-05-19 05:55:04,680 django.server (213): "GET / HTTP/1.1" 200 5049
+[INFO] 2025-05-19 05:55:08,950 django.server (213): "GET /project/ HTTP/1.1" 200 3660

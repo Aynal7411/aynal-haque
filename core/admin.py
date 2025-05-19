@@ -41,3 +41,8 @@ admin.site.register(Post)
 
 
 admin.site.register(SiteAlert)
+
+from django.contrib import admin
+from .models import Project
+
+admin.site.register(Project)
