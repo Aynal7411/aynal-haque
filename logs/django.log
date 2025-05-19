@@ -96,3 +96,26 @@
 [INFO] 2025-05-19 06:24:15,435 django.utils.autoreload (667): Watching for file changes with StatReloader
 [INFO] 2025-05-19 06:24:20,192 django.server (213): "GET / HTTP/1.1" 200 6795
 [WARNING] 2025-05-19 06:24:22,311 django.server (213): "GET /favicon.ico HTTP/1.1" 404 5198
+[INFO] 2025-05-19 06:55:03,684 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 06:55:21,829 django.server (213): "GET / HTTP/1.1" 200 6786
+[INFO] 2025-05-19 06:55:29,680 django.server (213): "GET / HTTP/1.1" 200 6786
+[WARNING] 2025-05-19 06:55:36,528 django.server (213): "GET /ask/ HTTP/1.1" 404 5328
+[WARNING] 2025-05-19 06:55:48,133 django.server (213): "GET /ask/chat/ HTTP/1.1" 404 5343
+[INFO] 2025-05-19 06:56:10,818 django.server (213): "GET / HTTP/1.1" 200 6786
+[WARNING] 2025-05-19 06:56:18,072 django.server (213): "GET /chat/ HTTP/1.1" 404 5331
+[INFO] 2025-05-19 06:57:25,040 django.utils.autoreload (265): /workspaces/aynal-haque/chatbot/urls.py changed, reloading.
+[INFO] 2025-05-19 06:57:25,418 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 06:57:32,302 django.server (213): "GET / HTTP/1.1" 200 6786
+[ERROR] 2025-05-19 06:57:41,849 django.server (213): "GET /chatbot/ HTTP/1.1" 500 91252
+[INFO] 2025-05-19 06:57:51,553 django.utils.autoreload (265): /workspaces/aynal-haque/chatbot/urls.py changed, reloading.
+[INFO] 2025-05-19 06:57:51,952 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 06:57:59,953 django.server (213): "GET / HTTP/1.1" 200 6786
+[INFO] 2025-05-19 06:58:10,831 django.server (213): "GET /chatbot/ HTTP/1.1" 200 6545
+[ERROR] 2025-05-19 06:58:22,268 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488
+[ERROR] 2025-05-19 06:58:30,696 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488
+[INFO] 2025-05-19 07:02:39,853 django.server (213): "GET / HTTP/1.1" 200 6786
+[ERROR] 2025-05-19 07:03:44,177 django.server (213): "GET /chatbot/ HTTP/1.1" 500 143867
+[INFO] 2025-05-19 07:04:03,345 django.server (213): "GET / HTTP/1.1" 200 8183
+[ERROR] 2025-05-19 07:04:14,242 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488
+[INFO] 2025-05-19 07:06:03,743 django.server (213): "GET / HTTP/1.1" 200 8184
+[ERROR] 2025-05-19 07:06:12,336 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488
