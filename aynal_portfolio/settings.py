@@ -104,7 +104,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core",
     "service_my",
-     "chatbot",
+    
 ]
 
 MIDDLEWARE = [
@@ -117,7 +117,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 
 
 
