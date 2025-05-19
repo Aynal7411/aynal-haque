@@ -140,3 +140,6 @@
 [INFO] 2025-05-19 08:52:28,501 django.server (213): "GET / HTTP/1.1" 200 6800
 [INFO] 2025-05-19 08:52:32,425 django.server (213): "GET /homepage/ HTTP/1.1" 200 7671
 [INFO] 2025-05-19 08:52:48,572 django.server (213): "GET / HTTP/1.1" 200 6800
+[INFO] 2025-05-19 09:05:55,985 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 09:05:59,941 django.server (213): "GET / HTTP/1.1" 200 6800
+[INFO] 2025-05-19 09:06:05,002 django.server (213): "GET /homepage/ HTTP/1.1" 200 7671

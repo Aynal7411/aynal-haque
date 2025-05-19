@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 log_dir = os.path.join(BASE_DIR, 'logs')
 os.makedirs(log_dir, exist_ok=True)
 
@@ -68,6 +69,7 @@ LOGGING = {
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
+
 SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-u@cboryr_vj-^w^o*yez@)8z-&x(y)ll$6pi=n+p0qo5o2w-hc')
 # SECURITY WARNING: keep the secret key used in production secret!
 
