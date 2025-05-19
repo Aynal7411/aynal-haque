@@ -117,8 +117,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-OPENAI_API_KEY = "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"
 
 
 ROOT_URLCONF = "aynal_portfolio.urls"
