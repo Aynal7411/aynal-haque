@@ -119,3 +119,6 @@
 [ERROR] 2025-05-19 07:04:14,242 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488
 [INFO] 2025-05-19 07:06:03,743 django.server (213): "GET / HTTP/1.1" 200 8184
 [ERROR] 2025-05-19 07:06:12,336 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488
+[INFO] 2025-05-19 07:19:49,823 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 07:19:55,335 django.server (213): "GET / HTTP/1.1" 200 8184
+[ERROR] 2025-05-19 07:20:00,839 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488

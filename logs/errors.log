@@ -97,3 +97,5 @@ django.template.exceptions.TemplateDoesNotExist: chatbot/sidebar.html
 [ERROR] 2025-05-19 07:04:14,242 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488
 [ERROR] 2025-05-19 07:06:12,336 django.request (248): Internal Server Error: /chatbot/ask/
 [ERROR] 2025-05-19 07:06:12,336 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488
+[ERROR] 2025-05-19 07:20:00,839 django.request (248): Internal Server Error: /chatbot/ask/
+[ERROR] 2025-05-19 07:20:00,839 django.server (213): "POST /chatbot/ask/ HTTP/1.1" 500 488
