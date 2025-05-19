@@ -2,13 +2,13 @@
 {% block title %}Services - Aynal Haque{% endblock %}
 
 {% block content %}
-<h2 class="mb-4 text-center">My Services</h2>
+<h2 class="mb-4 text-center color text-danger">My Services</h2>
 <div class="row">
     {% for service in services %}
-    <div class="col-md-4 mb-4">
+    <div class="col-md-5 mb-4 ">
         <div class="card h-100 shadow-sm text-center">
             <div class="card-body">
-                <div class="mb-3">
+                <div class="mb-4">
                     <i class="bi {{ service.icon }} display-4 text-primary"></i>
                 </div>
                 <h5 class="card-title">{{ service.title }}</h5>
