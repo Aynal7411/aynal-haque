@@ -87,3 +87,12 @@
 [INFO] 2025-05-19 06:11:39,953 django.server (213): "GET / HTTP/1.1" 200 6795
 [INFO] 2025-05-19 06:12:15,044 django.utils.autoreload (667): Watching for file changes with StatReloader
 [INFO] 2025-05-19 06:12:18,593 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:13:20,148 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 06:13:29,736 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:13:46,739 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:23:41,228 django.utils.autoreload (265): /workspaces/aynal-haque/aynal_portfolio/settings.py changed, reloading.
+[INFO] 2025-05-19 06:23:41,553 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 06:23:43,790 django.utils.autoreload (265): /workspaces/aynal-haque/aynal_portfolio/settings.py changed, reloading.
+[INFO] 2025-05-19 06:24:15,435 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 06:24:20,192 django.server (213): "GET / HTTP/1.1" 200 6795
+[WARNING] 2025-05-19 06:24:22,311 django.server (213): "GET /favicon.ico HTTP/1.1" 404 5198
