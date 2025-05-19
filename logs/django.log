@@ -62,3 +62,28 @@
 [INFO] 2025-05-19 05:54:59,805 django.server (213): "GET /project/ HTTP/1.1" 200 3660
 [INFO] 2025-05-19 05:55:04,680 django.server (213): "GET / HTTP/1.1" 200 5049
 [INFO] 2025-05-19 05:55:08,950 django.server (213): "GET /project/ HTTP/1.1" 200 3660
+[INFO] 2025-05-19 05:59:22,336 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 05:59:30,747 django.server (213): "GET /project/ HTTP/1.1" 200 3660
+[INFO] 2025-05-19 05:59:34,842 django.server (213): "GET /project/ HTTP/1.1" 200 3660
+[INFO] 2025-05-19 05:59:37,797 django.server (213): "GET / HTTP/1.1" 200 5049
+[INFO] 2025-05-19 06:00:29,041 django.server (213): "GET /project/ HTTP/1.1" 200 3660
+[INFO] 2025-05-19 06:00:29,521 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-05-19 06:00:39,691 django.server (213): "GET /login/ HTTP/1.1" 200 4729
+[INFO] 2025-05-19 06:00:44,131 django.server (213): "POST /login/ HTTP/1.1" 302 0
+[INFO] 2025-05-19 06:00:44,400 django.server (213): "GET / HTTP/1.1" 200 5058
+[INFO] 2025-05-19 06:03:20,784 django.server (213): "GET /about/ HTTP/1.1" 200 4493
+[INFO] 2025-05-19 06:03:25,828 django.server (213): "GET / HTTP/1.1" 200 5058
+[INFO] 2025-05-19 06:03:42,049 django.server (213): "GET /about/ HTTP/1.1" 200 4493
+[INFO] 2025-05-19 06:05:22,289 django.server (213): "GET /about/ HTTP/1.1" 200 4493
+[INFO] 2025-05-19 06:05:22,729 django.server (213): "GET /static/js/main.js HTTP/1.1" 304 0
+[INFO] 2025-05-19 06:05:26,715 django.server (213): "GET / HTTP/1.1" 200 5058
+[INFO] 2025-05-19 06:06:33,579 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:07:31,399 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:07:50,816 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:07:55,522 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:08:56,945 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 06:11:07,715 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:11:12,696 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:11:39,953 django.server (213): "GET / HTTP/1.1" 200 6795
+[INFO] 2025-05-19 06:12:15,044 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-19 06:12:18,593 django.server (213): "GET / HTTP/1.1" 200 6795
