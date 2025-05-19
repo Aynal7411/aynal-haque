@@ -79,3 +79,13 @@ def about_us(request):
 
 def home_view(request):
     return render(request, 'home.html')
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+def my_view(request):
+    logger.info("This is an info message.")
+    logger.warning("This is a warning!")
+    logger.error("Something went wrong.")
+ 

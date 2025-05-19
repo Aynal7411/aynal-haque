@@ -14,7 +14,57 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+log_dir = os.path.join(BASE_DIR, 'logs')
+os.makedirs(log_dir, exist_ok=True)
 
+open(os.path.join(log_dir, 'django.log'), 'a').close()
+open(os.path.join(log_dir, 'errors.log'), 'a').close()
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    
+    'formatters': {
+        'verbose': {
+            'format': '[{levelname}] {asctime} {name} ({lineno}): {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '[{levelname}] {message}',
+            'style': '{',
+        },
+    },
+
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/django.log'),
+            'formatter': 'verbose',
+        },
+        'error_file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/errors.log'),
+            'formatter': 'verbose',
+            'level': 'ERROR',
+        },
+    },
+
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file', 'error_file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['error_file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    }
+}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
