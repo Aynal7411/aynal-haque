@@ -1,38 +1,71 @@
-<!-- Footer -->
-<footer class="bg-dark text-light pt-4 pb-3 mt-5 mb-2">
+<!-- Footer --><style>
+.footer-custom {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: lab(3.32% 0 0);
+  color: #ddd;
+}
+
+.footer-custom h5 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.footer-custom .footer-links a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-custom .footer-links a:hover {
+  color: #0dcaf0;
+  padding-left: 8px;
+  text-decoration: none;
+}
+
+.footer-custom i {
+  margin-right: 8px;
+  color: #0dcaf0;
+}
+</style>
+
+<footer class="bg-dark text-light pt-5 pb-4 mt-5 footer-custom">
   <div class="container">
     <div class="row">
       <!-- About -->
-      <div class="col-md-4">
-        <h5>About Me</h5>
-        <p>Django Developer</p>
-        <p>Full Stack Developer (Django + React)</p>
-        <p>Django REST API Developer</p>
-        <p>Python Developer (Django)</p>
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase mb-3 border-bottom pb-2">About Me</h5>
+        <ul class="list-unstyled">
+          <li>Django Developer</li>
+          <li>Full Stack Developer (Django + React)</li>
+          <li>Django REST API Developer</li>
+          <li>Python Developer (Django)</li>
+        </ul>
       </div>
 
       <!-- Quick Links -->
-      <div class="col-md-4">
-        <h5>Emmergency Pages</h5>
-        <ul class="list-unstyled">
-          <li><a href="{% url 'home_page' %}" class="text-light text-decoration-none">Privacy and policy</a></li>
-          <li><a href="{% url 'about' %}" class="text-light text-decoration-none">About</a></li>
-         
-          <li><a href="{% url 'project_list' %}" class="text-light text-decoration-none">Projects</a></li>
-          <li><a href="{% url 'contact' %}" class="text-light text-decoration-none">Contact</a></li>
+      <div class="col-md-2 mb-4">
+        <h5 class="text-uppercase mb-3 border-bottom pb-2">Important Pages</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="{% url 'home_page' %}">Privacy and Policy</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'project_list' %}">Projects</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
       </div>
 
       <!-- Contact Info -->
-      <div class="col-md-4">
-        <h5>Contact with Aynal Haque</h5>
-        <p>Email: aynalhaque7411@gmail.com</p>
-        <p>Phone: +8801908214958</p>
-       
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase mb-3 border-bottom pb-2">Contact Aynal Haque</h5>
+        <ul class="list-unstyled">
+          <li><i class="bi bi-envelope-fill"></i> aynalhaque7411@gmail.com</li>
+          <li><i class="bi bi-telephone-fill"></i> +8801908214958</li>
+        </ul>
       </div>
     </div>
 
-    <hr class="bg-secondary mt-4">
+    <hr class="bg-secondary">
     <p class="text-center mb-0">&copy; {{ now|date:"Y" }} Developed By Aynal Haque</p>
   </div>
 </footer>
