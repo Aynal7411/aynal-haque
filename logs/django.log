@@ -372,3 +372,19 @@
 [WARNING] 2025-05-31 23:24:02,474 django.server (213): "GET /static/css/main HTTP/1.1" 404 1838
 [INFO] 2025-05-31 23:24:12,416 django.server (213): "GET / HTTP/1.1" 200 7130
 [WARNING] 2025-05-31 23:24:12,456 django.server (213): "GET /static/css/main HTTP/1.1" 404 1838
+[INFO] 2025-05-31 23:31:32,604 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-31 23:31:36,961 django.server (213): "GET / HTTP/1.1" 200 7130
+[WARNING] 2025-05-31 23:31:37,155 django.server (213): "GET /static/css/main HTTP/1.1" 404 1838
+[INFO] 2025-05-31 23:31:37,811 django.server (213): "GET /static/images/background4.jpg HTTP/1.1" 304 0
+[INFO] 2025-05-31 23:33:21,804 django.server (213): "GET / HTTP/1.1" 200 7139
+[WARNING] 2025-05-31 23:33:21,845 django.server (213): "GET /static/css/main.css HTTP/1.1" 404 1850
+[INFO] 2025-05-31 23:33:57,319 django.server (213): "GET / HTTP/1.1" 200 7192
+[WARNING] 2025-05-31 23:33:57,503 django.server (213): "GET /static/css/main.css HTTP/1.1" 404 1850
+[INFO] 2025-05-31 23:33:57,598 django.server (213): "GET /static/css/styles.css HTTP/1.1" 200 515
+[INFO] 2025-05-31 23:34:01,006 django.server (213): "GET / HTTP/1.1" 200 7192
+[WARNING] 2025-05-31 23:34:01,066 django.server (213): "GET /static/css/main.css HTTP/1.1" 404 1850
+[INFO] 2025-05-31 23:36:18,796 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-31 23:36:23,716 django.server (213): "GET / HTTP/1.1" 200 7192
+[INFO] 2025-05-31 23:36:23,884 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-05-31 23:36:23,966 django.server (213): "GET /static/css/main.css HTTP/1.1" 200 0
+[INFO] 2025-05-31 23:36:24,653 django.server (213): "GET /static/images/background4.jpg HTTP/1.1" 304 0

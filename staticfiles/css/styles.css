@@ -1,0 +1,35 @@
+
+.footer-custom {
+  background-color: #1e1e1e;
+  font-size: 15px;
+}
+
+.footer-links a {
+  color: #aaaaaa;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: rgb(224, 28, 165);
+  padding-left: 5px;
+  text-decoration: underline;
+}
+
+.footer-custom h5 {
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer-custom ul li {
+  margin-bottom: 8px;
+}
+
+.footer-custom i {
+  color: #0f0;
+  margin-right: 8px;
+}
+
+
