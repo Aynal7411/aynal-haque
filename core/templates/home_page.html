@@ -4,6 +4,19 @@
 {% block title %}{{ profile.name }} - Workplace{% endblock %}
 
 {% block content %}
+<div id="clock"></div>
+<script>
+    function updateClock() {
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        document.getElementById('clock').textContent = time;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+
  {% if alert %}
     <div class="alert" id="site-alert">
         <div class="alert-content">
