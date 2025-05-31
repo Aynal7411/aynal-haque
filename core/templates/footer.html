@@ -1,41 +1,10 @@
-<!-- Footer --><style>
-.footer-custom {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: lab(3.32% 0 0);
-  color: #ddd;
-}
-
-.footer-custom h5 {
-  color: #fff;
-  font-weight: 600;
-}
-
-.footer-custom .footer-links a {
-  display: block;
-  color: #ccc;
-  text-decoration: none;
-  padding: 4px 0;
-  transition: color 0.3s ease, padding-left 0.3s ease;
-}
-
-.footer-custom .footer-links a:hover {
-  color: #0dcaf0;
-  padding-left: 8px;
-  text-decoration: none;
-}
-
-.footer-custom i {
-  margin-right: 8px;
-  color: #0dcaf0;
-}
-</style>
-
-<footer class="bg-dark text-light pt-5 pb-4 mt-5 footer-custom">
+<!-- Footer -->
+<footer class="bg-dark text-light pt-4 pb-4 mt-5 footer-custom">
   <div class="container">
     <div class="row">
       <!-- About -->
       <div class="col-md-4 mb-4">
-        <h5 class="text-uppercase mb-3 border-bottom pb-2">About Me</h5>
+        <h5 class="text-uppercase mb-3 border-bottom border-success pb-2">About Me</h5>
         <ul class="list-unstyled">
           <li>Django Developer</li>
           <li>Full Stack Developer (Django + React)</li>
@@ -46,7 +15,7 @@
 
       <!-- Quick Links -->
       <div class="col-md-2 mb-4">
-        <h5 class="text-uppercase mb-3 border-bottom pb-2">Important Pages</h5>
+        <h5 class="text-uppercase mb-3 border-bottom border-success pb-2">Important Pages</h5>
         <ul class="list-unstyled footer-links">
           <li><a href="{% url 'home_page' %}">Privacy and Policy</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
@@ -57,10 +26,10 @@
 
       <!-- Contact Info -->
       <div class="col-md-4 mb-4">
-        <h5 class="text-uppercase mb-3 border-bottom pb-2">Contact Aynal Haque</h5>
+        <h5 class="text-uppercase mb-3 border-bottom border-success pb-2">Contact Aynal Haque</h5>
         <ul class="list-unstyled">
-          <li><i class="bi bi-envelope-fill"></i> aynalhaque7411@gmail.com</li>
-          <li><i class="bi bi-telephone-fill"></i> +8801908214958</li>
+          <li><i class="bi bi-envelope-fill me-2"></i> aynalhaque7411@gmail.com</li>
+          <li><i class="bi bi-telephone-fill me-2"></i> +8801908214958</li>
         </ul>
       </div>
     </div>
@@ -69,3 +38,4 @@
     <p class="text-center mb-0">&copy; {{ now|date:"Y" }} Developed By Aynal Haque</p>
   </div>
 </footer>
+
