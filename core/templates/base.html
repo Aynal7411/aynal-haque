@@ -18,89 +18,95 @@
 
 
 
- body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: hwb(357 32% 1%);
-            color: #2c3e50;
+body {
+        font-family: 'Arial', sans-serif;
+        background-color: hwb(277 67% 11%);
+        color: #0d0d0e;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        transition: background-color 0.4s ease;
+        background-image: url("{% static 'images/background4.jpg' %}");
+        background-size: cover;
+        background-position: right center;
+        
         }
 
-        .navbar {
+.navbar {
             transition: background-color 0.4 ease;
             background-color: hsl(268, 75%, 49%) !important;
         }
 
-        .navbar a.nav-link {
+.navbar a.nav-link {
             color: hsl(39, 89%, 48%) !important;
             transition: color 0.3s ease, background-color 0.3s ease;
             border-radius: 5px;
             padding: 8px 12px;
         }
 
-        .navbar a.nav-link:hover {
+ .navbar a.nav-link:hover {
             background-color: #17a2b8;
             color: #fff !important;
             transform: scale(1.05);
         }
 
-        .navbar-brand:hover {
+ .navbar-brand:hover {
             color: #17a2b8 !important;
             text-shadow: 1px 1px 2px #000;
         }
 
-        .navbar-nav .nav-link.active {
+ .navbar-nav .nav-link.active {
             background-color: #0d6efd;
             color: white !important;
         }
 
-        .alert {
+ .alert {
             animation: fadeIn 0.5s ease-in-out;
         }
 
-        @keyframes fadeIn {
+ @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        footer {
+ footer {
             background-color: #97a752;
             color: #ccc;
             padding: 20px 0;
             text-align: center;
         }
 
-        footer a {
+footer a {
             color: #e63f3f;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        footer a:hover {
+footer a:hover {
             color: #10bcd6;
         }
 
-        .btn:hover {
+ .btn:hover {
             transform: scale(1.03);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        a {
+ a {
             text-decoration: none;
             transition: all 0.2s ease-in-out;
         }
 
-        a:hover {
+ a:hover {
             text-decoration: underline;
             color: #0d6efd;
         }
 
-        @media (max-width: 768px) {
+       @media (max-width: 768px) {
             .navbar-nav {
                 text-align: center;
             }
         }
     
-
-
 
 
     </style>
