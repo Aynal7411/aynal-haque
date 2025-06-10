@@ -425,3 +425,78 @@
 [INFO] 2025-06-10 12:11:48,465 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
 [INFO] 2025-06-10 12:11:49,120 django.server (213): "GET /static/images/background4.jpg HTTP/1.1" 304 0
 [WARNING] 2025-06-10 12:11:50,101 django.server (213): "GET /favicon.ico HTTP/1.1" 404 5198
+[INFO] 2025-06-10 12:16:02,266 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 12:16:07,403 django.server (213): "GET / HTTP/1.1" 200 7140
+[INFO] 2025-06-10 12:27:28,872 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 12:27:32,439 django.server (213): "GET / HTTP/1.1" 200 7190
+[INFO] 2025-06-10 12:28:30,498 django.server (213): "GET / HTTP/1.1" 200 7226
+[INFO] 2025-06-10 12:28:41,091 django.server (213): "GET / HTTP/1.1" 200 7227
+[INFO] 2025-06-10 12:29:01,501 django.server (213): "GET / HTTP/1.1" 200 7227
+[INFO] 2025-06-10 13:21:05,016 django.server (213): "GET / HTTP/1.1" 200 7223
+[INFO] 2025-06-10 13:21:07,058 django.server (213): "GET /client/register/ HTTP/1.1" 200 6635
+[INFO] 2025-06-10 13:21:11,337 django.server (213): "GET /client/register/ HTTP/1.1" 200 6635
+[INFO] 2025-06-10 13:21:14,334 django.server (213): "GET /register/ HTTP/1.1" 200 6635
+[INFO] 2025-06-10 13:22:07,778 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:22:08,733 django.utils.autoreload (667): Watching for file changes with StatReloader
+[ERROR] 2025-06-10 13:22:16,819 django.server (213): "GET /client/register/ HTTP/1.1" 500 84787
+[INFO] 2025-06-10 13:23:39,489 django.server (213): "GET / HTTP/1.1" 200 7223
+[ERROR] 2025-06-10 13:23:42,143 django.server (213): "GET /client/register/ HTTP/1.1" 500 84778
+[ERROR] 2025-06-10 13:26:24,785 django.server (213): "GET /client/register/ HTTP/1.1" 500 84915
+[ERROR] 2025-06-10 13:26:25,631 django.server (213): "GET /client/register/ HTTP/1.1" 500 84915
+[ERROR] 2025-06-10 13:26:29,906 django.server (213): "GET /client/register/ HTTP/1.1" 500 84915
+[ERROR] 2025-06-10 13:26:30,847 django.server (213): "GET /client/register/ HTTP/1.1" 500 84915
+[ERROR] 2025-06-10 13:26:41,679 django.server (213): "GET /client/register/ HTTP/1.1" 500 84778
+[INFO] 2025-06-10 13:28:18,896 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:28:21,737 django.server (213): "GET / HTTP/1.1" 200 7223
+[INFO] 2025-06-10 13:28:25,543 django.server (213): "GET /client/register/ HTTP/1.1" 200 7245
+[INFO] 2025-06-10 13:29:24,569 django.server (213): "POST /client/register/ HTTP/1.1" 302 0
+[ERROR] 2025-06-10 13:29:24,661 django.server (213): "GET /client/success/ HTTP/1.1" 500 161046
+[INFO] 2025-06-10 13:29:51,740 django.server (213): "GET /client/success/ HTTP/1.1" 200 5616
+[INFO] 2025-06-10 13:30:08,384 django.server (213): "GET /client/register/ HTTP/1.1" 200 7245
+[INFO] 2025-06-10 13:30:11,641 django.server (213): "GET / HTTP/1.1" 200 7223
+[INFO] 2025-06-10 13:31:46,095 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:31:47,240 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:31:49,235 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:31:50,227 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:32:02,524 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:32:03,741 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:32:07,658 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:32:08,842 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:32:12,806 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:32:13,948 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:32:19,891 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:32:20,951 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:32:24,715 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:32:25,785 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:32:41,610 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:32:42,685 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:32:49,982 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:32:51,024 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:33:39,142 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:33:40,879 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:33:42,518 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:33:43,485 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:33:46,237 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:33:47,225 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:33:55,285 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:33:56,238 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:34:12,977 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:34:13,971 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:34:15,926 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:34:17,018 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:34:32,456 django.utils.autoreload (265): E:\my place\aynal-haque\client\urls.py changed, reloading.
+[INFO] 2025-06-10 13:34:33,620 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:35:04,572 django.server (213): "GET / HTTP/1.1" 200 7223
+[INFO] 2025-06-10 13:35:07,507 django.server (213): "GET /client/register/ HTTP/1.1" 200 7245
+[ERROR] 2025-06-10 13:35:47,900 django.server (213): "POST /client/register/ HTTP/1.1" 500 91134
+[WARNING] 2025-06-10 13:56:24,957 django.security.csrf (253): Forbidden (CSRF token from POST incorrect.): /client/register/
+[WARNING] 2025-06-10 13:56:24,958 django.server (213): "POST /client/register/ HTTP/1.1" 403 2503
+[INFO] 2025-06-10 13:56:28,008 django.server (213): "GET /client/register/ HTTP/1.1" 200 7245
+[INFO] 2025-06-10 13:56:47,125 django.server (213): "POST /client/register/ HTTP/1.1" 200 7538
+[INFO] 2025-06-10 13:56:52,503 django.server (213): "GET / HTTP/1.1" 200 7223
+[INFO] 2025-06-10 13:56:56,568 django.server (213): "GET /client/register/ HTTP/1.1" 200 7245
+[INFO] 2025-06-10 13:57:28,495 django.utils.autoreload (265): E:\my place\aynal-haque\client\views.py changed, reloading.
+[INFO] 2025-06-10 13:57:30,102 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:57:34,931 django.utils.autoreload (265): E:\my place\aynal-haque\client\urls.py changed, reloading.
+[INFO] 2025-06-10 13:57:36,065 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 13:57:38,993 django.server (213): "GET / HTTP/1.1" 200 7223

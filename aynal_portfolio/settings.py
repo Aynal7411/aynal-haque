@@ -106,6 +106,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core",
     "service_my",
+    "client",
     
 ]
 
