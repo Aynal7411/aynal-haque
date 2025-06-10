@@ -401,3 +401,27 @@
 [INFO] 2025-05-31 23:42:00,093 django.server (213): "GET / HTTP/1.1" 200 7192
 [INFO] 2025-05-31 23:42:00,155 django.server (213): "GET /static/css/main.css HTTP/1.1" 304 0
 [INFO] 2025-05-31 23:42:00,157 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-05-31 23:47:48,262 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-05-31 23:47:51,438 django.server (213): "GET / HTTP/1.1" 200 7140
+[INFO] 2025-05-31 23:47:51,625 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-05-31 23:47:52,282 django.server (213): "GET /static/images/background4.jpg HTTP/1.1" 304 0
+[INFO] 2025-05-31 23:49:45,749 django.server (213): "GET / HTTP/1.1" 200 7140
+[INFO] 2025-06-01 00:18:00,660 django.server (213): "GET / HTTP/1.1" 200 7140
+[INFO] 2025-06-01 00:18:00,704 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-06-01 00:18:00,815 django.server (213): "GET /static/images/background4.jpg HTTP/1.1" 304 0
+[INFO] 2025-06-01 00:20:35,409 django.server (213): "GET / HTTP/1.1" 200 7140
+[INFO] 2025-06-01 00:52:01,332 django.server (213): "GET / HTTP/1.1" 200 7140
+[INFO] 2025-06-01 00:52:01,395 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-06-01 00:52:01,530 django.server (213): "GET /static/images/background4.jpg HTTP/1.1" 304 0
+[INFO] 2025-06-01 14:16:45,187 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-01 14:16:51,356 django.server (213): "GET / HTTP/1.1" 200 7140
+[INFO] 2025-06-01 14:16:51,550 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-06-01 14:16:52,554 django.server (213): "GET /static/images/background4.jpg HTTP/1.1" 304 0
+[WARNING] 2025-06-01 14:16:53,872 django.server (213): "GET /favicon.ico HTTP/1.1" 404 5198
+[INFO] 2025-06-10 12:09:17,104 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 12:09:58,227 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 12:11:42,723 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-06-10 12:11:48,349 django.server (213): "GET / HTTP/1.1" 200 7140
+[INFO] 2025-06-10 12:11:48,465 django.server (213): "GET /static/css/styles.css HTTP/1.1" 304 0
+[INFO] 2025-06-10 12:11:49,120 django.server (213): "GET /static/images/background4.jpg HTTP/1.1" 304 0
+[WARNING] 2025-06-10 12:11:50,101 django.server (213): "GET /favicon.ico HTTP/1.1" 404 5198
