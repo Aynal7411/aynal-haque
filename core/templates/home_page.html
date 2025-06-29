@@ -15,7 +15,23 @@
     setInterval(updateClock, 1000);
     updateClock();
 </script>
-
+ <button onclick="checkLoginState()">Facebook Login</button>
+<script>
+  function checkLoginState() {
+    FB.login(function(response) {
+      if (response.authResponse) {
+        // ইউজার লগইন করেছে
+        FB.api('/me', {fields: 'name,email'}, function(userInfo) {
+          console.log('Welcome, ' + userInfo.name);
+          console.log('Email: ' + userInfo.email);
+          // এখানে আপনি ইউজার ইনফো সার্ভারে পাঠাতে পারেন
+        });
+      } else {
+        console.log('User cancelled login or did not fully authorize.');
+      }
+    }, {scope: 'email'});
+  }
+</script>
 
  {% if alert %}
     <div class="alert" id="site-alert">

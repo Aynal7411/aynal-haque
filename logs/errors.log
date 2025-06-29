@@ -277,3 +277,49 @@ Traceback (most recent call last):
     raise ValueError(
 ValueError: The following fields do not exist in this model, are m2m fields, primary keys, or are non-concrete fields: last_login
 [ERROR] 2025-06-10 13:35:47,900 django.server (213): "POST /client/register/ HTTP/1.1" 500 91134
+[ERROR] 2025-06-20 12:27:23,915 django.request (253): Internal Server Error: /login/
+Traceback (most recent call last):
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\axes\middleware.py", line 51, in __call__
+    response = get_lockout_response(request, credentials)  # type: ignore
+  File "E:\my place\aynal-haque\evan\lib\site-packages\axes\helpers.py", line 490, in get_lockout_response
+    return render(request, settings.AXES_LOCKOUT_TEMPLATE, context, status=status)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\base.py", line 523, in parse
+    self.unclosed_block_tag(parse_until)
+  File "E:\my place\aynal-haque\evan\lib\site-packages\django\template\base.py", line 590, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 11: 'block'. Looking for one of: endblock.
+[ERROR] 2025-06-20 12:27:23,924 django.server (213): "POST /login/ HTTP/1.1" 500 164325

@@ -107,12 +107,14 @@ INSTALLED_APPS = [
     "core",
     "service_my",
     "client",
+     'axes',
     
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'axes.middleware.AxesMiddleware',
      'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -122,7 +124,15 @@ MIDDLEWARE = [
 ]
 
 
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 
+# (ঐচ্ছিক) Axes কনফিগারেশন, যেমন লগইন ট্রাই সীমা, ব্লক সময় ইত্যাদি
+AXES_FAILURE_LIMIT = 5  # ভুল পাসওয়ার্ড ৫বার চেষ্টা করলে ব্লক করবে
+AXES_COOLOFF_TIME = 1  # ব্লক সময় (ঘণ্টায়), এখানে ১ ঘণ্টা
+AXES_LOCKOUT_TEMPLATE = 'lockout.html'  
 
 ROOT_URLCONF = "aynal_portfolio.urls"
 
