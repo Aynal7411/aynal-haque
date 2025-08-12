@@ -1,11 +1,18 @@
 {% load static %}
+{% load pwa %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+  
+    
+   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'core/icons/apple-touch-icon.png' %}">
+    <link rel="manifest" href="{% static 'core/manifest.json' %}">
+     <meta name="theme-color" content="#0d47a1">
     <title>{% block title %}Aynal Haque{% endblock %}</title>
    
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -75,49 +82,12 @@ body {
     
     </style>
 </head>
+
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="{% url 'home-page' %}">Aynal Haque</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">{% spaceless %}
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'services-page' %}">Services</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'skills' %}">Skills</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'post_list' %}">Blog</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'join_team' %}">Join Our Team</a>
-                    {% if user.is_authenticated %}
-                        <li class="nav-item mx-2">
-                            <span class="navbar-text text-light">Hi, {{ user.username }}</span>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="{% url 'login' %}">Login</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="{% url 'register' %}">Register</a>
-                        </li>
-                    {% endif %}
-                {% endspaceless %}</ul>
-            </div>
-        </div>
-    </nav>
+    <header>
+        {% include "navbar.html" %}
+    </header>
 
     <div class="container mt-3">
         {% if messages %}
@@ -137,6 +107,15 @@ body {
     <div class="text-light">
         {% include "footer.html" %}
     </div>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register("{% static 'core/service-worker.js' %}")
+        .then(reg => console.log('Service Worker registered:', reg))
+        .catch(err => console.log('Service Worker registration failed:', err));
+    });
+  }
+</script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

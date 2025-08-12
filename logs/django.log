@@ -621,3 +621,192 @@
 [INFO] 2025-08-12 11:40:02,866 django.server (213): "GET /join/ HTTP/1.1" 200 3020
 [INFO] 2025-08-12 11:40:54,137 django.server (213): "GET /homepage/ HTTP/1.1" 200 7270
 [INFO] 2025-08-12 11:40:56,434 django.server (213): "GET / HTTP/1.1" 200 8110
+[INFO] 2025-08-12 11:43:34,143 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-12 11:43:37,591 django.server (213): "GET / HTTP/1.1" 200 8110
+[INFO] 2025-08-12 11:43:46,009 django.server (213): "GET /join/ HTTP/1.1" 200 3038
+[INFO] 2025-08-12 11:44:40,170 django.server (213): "GET /join/ HTTP/1.1" 200 3061
+[INFO] 2025-08-12 11:44:41,164 django.server (213): "GET /join/ HTTP/1.1" 200 3061
+[INFO] 2025-08-12 11:44:41,434 django.server (213): "GET /join/ HTTP/1.1" 200 3061
+[INFO] 2025-08-12 11:45:15,051 django.server (213): "GET /join/ HTTP/1.1" 200 3061
+[INFO] 2025-08-12 11:46:53,610 django.server (213): "GET /join/ HTTP/1.1" 200 3858
+[INFO] 2025-08-12 11:46:58,085 django.server (213): "GET /homepage/ HTTP/1.1" 200 7270
+[INFO] 2025-08-12 11:47:28,058 django.server (213): "GET /homepage/ HTTP/1.1" 200 7270
+[INFO] 2025-08-12 11:47:31,367 django.server (213): "GET / HTTP/1.1" 200 8110
+[INFO] 2025-08-12 11:48:31,833 django.server (213): "GET / HTTP/1.1" 200 8110
+[INFO] 2025-08-12 11:49:20,197 django.server (213): "GET / HTTP/1.1" 200 8363
+[INFO] 2025-08-12 11:49:22,107 django.server (213): "GET /service/ HTTP/1.1" 200 6077
+[INFO] 2025-08-12 11:49:23,207 django.server (213): "GET /skills/ HTTP/1.1" 200 9621
+[INFO] 2025-08-12 11:49:24,570 django.server (213): "GET /service/contact/ HTTP/1.1" 200 6207
+[INFO] 2025-08-12 11:49:26,396 django.server (213): "GET /post HTTP/1.1" 200 6156
+[INFO] 2025-08-12 11:49:28,582 django.server (213): "GET /join/ HTTP/1.1" 200 3858
+[INFO] 2025-08-12 11:49:32,369 django.server (213): "GET /register/ HTTP/1.1" 200 6544
+[INFO] 2025-08-12 11:49:36,636 django.server (213): "GET / HTTP/1.1" 200 8363
+[INFO] 2025-08-12 11:51:11,028 django.server (213): "GET / HTTP/1.1" 200 8394
+[INFO] 2025-08-12 11:53:48,681 django.server (213): "GET / HTTP/1.1" 200 8440
+[INFO] 2025-08-12 11:58:58,093 django.server (213): "GET / HTTP/1.1" 200 8395
+[INFO] 2025-08-12 12:02:06,982 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-12 12:02:14,136 django.server (213): "GET / HTTP/1.1" 200 8395
+[INFO] 2025-08-12 12:50:09,094 django.utils.autoreload (667): Watching for file changes with StatReloader
+[ERROR] 2025-08-12 12:50:12,835 django.server (213): "GET / HTTP/1.1" 500 190898
+[INFO] 2025-08-12 12:51:33,222 django.utils.autoreload (265): E:\my place\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2025-08-12 12:51:47,769 django.utils.autoreload (667): Watching for file changes with StatReloader
+[ERROR] 2025-08-12 12:51:51,001 django.server (213): "GET / HTTP/1.1" 500 191068
+[INFO] 2025-08-12 12:53:29,745 django.utils.autoreload (667): Watching for file changes with StatReloader
+[ERROR] 2025-08-12 12:53:37,021 django.server (213): "GET / HTTP/1.1" 500 191205
+[ERROR] 2025-08-12 12:53:42,155 django.server (213): "GET / HTTP/1.1" 500 191205
+[INFO] 2025-08-12 12:55:20,444 django.utils.autoreload (667): Watching for file changes with StatReloader
+[ERROR] 2025-08-12 12:55:25,603 django.server (213): "GET / HTTP/1.1" 500 190970
+[ERROR] 2025-08-12 12:58:54,230 django.server (213): "GET / HTTP/1.1" 500 191107
+[INFO] 2025-08-12 13:04:34,608 django.utils.autoreload (265): E:\my place\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2025-08-12 13:04:36,444 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-12 13:05:11,927 django.utils.autoreload (265): E:\my place\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2025-08-12 13:05:13,656 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-12 13:05:52,476 django.utils.autoreload (667): Watching for file changes with StatReloader
+[ERROR] 2025-08-12 13:05:55,640 django.server (213): "GET / HTTP/1.1" 500 190928
+[ERROR] 2025-08-12 13:07:36,327 django.server (213): "GET / HTTP/1.1" 500 184450
+[INFO] 2025-08-12 13:08:15,441 django.server (213): "GET / HTTP/1.1" 200 8771
+[INFO] 2025-08-12 13:08:16,046 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 200 1158
+[WARNING] 2025-08-12 13:08:16,120 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[WARNING] 2025-08-12 13:08:16,139 django.server (213): "GET /static/core/js/main.js HTTP/1.1" 404 1859
+[INFO] 2025-08-12 13:08:16,217 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 200 483
+[INFO] 2025-08-12 13:08:16,225 django.server (81): - Broken pipe from ('127.0.0.1', 56372)
+[WARNING] 2025-08-12 13:08:16,366 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:19,755 django.server (213): "GET /service/ HTTP/1.1" 200 6485
+[INFO] 2025-08-12 13:08:20,143 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:20,227 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:20,232 django.server (81): - Broken pipe from ('127.0.0.1', 56375)
+[WARNING] 2025-08-12 13:08:20,293 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:21,786 django.server (213): "GET /skills/ HTTP/1.1" 200 10029
+[INFO] 2025-08-12 13:08:22,196 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:22,253 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:22,259 django.server (81): - Broken pipe from ('127.0.0.1', 56379)
+[WARNING] 2025-08-12 13:08:22,387 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:22,841 django.server (213): "GET /service/contact/ HTTP/1.1" 200 6615
+[INFO] 2025-08-12 13:08:23,193 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:23,269 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:23,269 django.server (81): - Broken pipe from ('127.0.0.1', 56383)
+[WARNING] 2025-08-12 13:08:23,359 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:23,861 django.server (213): "GET /post HTTP/1.1" 200 6564
+[INFO] 2025-08-12 13:08:24,276 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:24,315 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:24,323 django.server (81): - Broken pipe from ('127.0.0.1', 56388)
+[WARNING] 2025-08-12 13:08:24,393 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:24,634 django.server (213): "GET /join/ HTTP/1.1" 200 3858
+[INFO] 2025-08-12 13:08:26,709 django.server (213): "GET /homepage/ HTTP/1.1" 200 7931
+[INFO] 2025-08-12 13:08:27,256 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:27,305 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:27,314 django.server (81): - Broken pipe from ('127.0.0.1', 56394)
+[WARNING] 2025-08-12 13:08:27,364 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:28,245 django.server (213): "GET /register/ HTTP/1.1" 200 6952
+[INFO] 2025-08-12 13:08:28,611 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:28,672 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:28,691 django.server (81): - Broken pipe from ('127.0.0.1', 56399)
+[WARNING] 2025-08-12 13:08:28,764 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:29,721 django.server (213): "GET / HTTP/1.1" 200 8771
+[INFO] 2025-08-12 13:08:30,764 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:30,819 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[WARNING] 2025-08-12 13:08:30,845 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:30,891 django.server (81): - Broken pipe from ('127.0.0.1', 56406)
+[INFO] 2025-08-12 13:08:33,671 django.server (213): "GET /service/contact/ HTTP/1.1" 200 6615
+[INFO] 2025-08-12 13:08:34,082 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:34,122 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:34,143 django.server (81): - Broken pipe from ('127.0.0.1', 56407)
+[WARNING] 2025-08-12 13:08:34,195 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:36,452 django.server (213): "GET /project/ HTTP/1.1" 200 5876
+[INFO] 2025-08-12 13:08:36,854 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:36,896 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:36,901 django.server (213): "GET / HTTP/1.1" 200 8771
+[WARNING] 2025-08-12 13:08:36,956 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:39,203 django.server (213): "GET /about/ HTTP/1.1" 200 6700
+[INFO] 2025-08-12 13:08:39,598 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:39,653 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:39,661 django.server (81): - Broken pipe from ('127.0.0.1', 56416)
+[WARNING] 2025-08-12 13:08:39,745 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:42,371 django.server (213): "GET /homepage/ HTTP/1.1" 200 7931
+[INFO] 2025-08-12 13:08:42,742 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:42,822 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:42,824 django.server (81): - Broken pipe from ('127.0.0.1', 56422)
+[WARNING] 2025-08-12 13:08:42,921 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:08:46,590 django.server (213): "GET / HTTP/1.1" 200 8771
+[INFO] 2025-08-12 13:08:47,308 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:08:47,383 django.server (213): "GET /static/core/js/main.js HTTP/1.1" 404 1859
+[WARNING] 2025-08-12 13:08:47,383 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:08:47,394 django.server (213): "GET / HTTP/1.1" 200 8771
+[WARNING] 2025-08-12 13:08:47,553 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:11:39,196 django.server (213): "GET / HTTP/1.1" 200 8771
+[INFO] 2025-08-12 13:11:42,376 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:11:42,451 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:11:42,501 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:11:42,501 django.server (213): "GET / HTTP/1.1" 200 8771
+[INFO] 2025-08-12 13:11:42,557 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 200 6980
+[INFO] 2025-08-12 13:11:42,981 django.server (213): "GET /service/ HTTP/1.1" 200 6485
+[INFO] 2025-08-12 13:11:43,412 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:11:43,469 django.server (213): "GET /static/core/js/main.js HTTP/1.1" 404 1859
+[INFO] 2025-08-12 13:11:43,486 django.server (81): - Broken pipe from ('127.0.0.1', 56476)
+[INFO] 2025-08-12 13:11:49,559 django.server (213): "GET / HTTP/1.1" 200 8771
+[INFO] 2025-08-12 13:11:50,654 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:11:50,738 django.server (213): "GET /static/core/js/main.js HTTP/1.1" 404 1859
+[WARNING] 2025-08-12 13:11:50,739 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:11:50,760 django.server (81): - Broken pipe from ('127.0.0.1', 56483)
+[INFO] 2025-08-12 13:11:50,805 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:15:28,743 django.server (213): "GET / HTTP/1.1" 200 8771
+[INFO] 2025-08-12 13:15:31,083 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:15:31,126 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:15:31,129 django.server (81): - Broken pipe from ('127.0.0.1', 56492)
+[INFO] 2025-08-12 13:15:31,150 django.server (81): - Broken pipe from ('127.0.0.1', 56495)
+[INFO] 2025-08-12 13:15:31,246 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:15:31,296 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:17:20,198 django.server (213): "GET / HTTP/1.1" 200 8673
+[INFO] 2025-08-12 13:17:20,654 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:17:20,710 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:17:20,710 django.server (213): "GET /static/core/js/main.js HTTP/1.1" 200 488
+[INFO] 2025-08-12 13:17:20,734 django.server (81): - Broken pipe from ('127.0.0.1', 56517)
+[INFO] 2025-08-12 13:17:20,766 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:17:22,330 django.server (213): "GET / HTTP/1.1" 200 8673
+[INFO] 2025-08-12 13:17:22,771 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:17:22,902 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:17:22,908 django.server (213): "GET / HTTP/1.1" 200 8673
+[INFO] 2025-08-12 13:17:24,339 django.server (213): "GET /service/ HTTP/1.1" 200 6387
+[INFO] 2025-08-12 13:17:24,684 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:17:24,746 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:17:24,794 django.server (81): - Broken pipe from ('127.0.0.1', 56518)
+[INFO] 2025-08-12 13:17:26,776 django.server (213): "GET /skills/ HTTP/1.1" 200 9931
+[INFO] 2025-08-12 13:17:27,277 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:17:27,330 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:17:27,339 django.server (81): - Broken pipe from ('127.0.0.1', 56521)
+[INFO] 2025-08-12 13:17:28,085 django.server (213): "GET /service/contact/ HTTP/1.1" 200 6517
+[INFO] 2025-08-12 13:17:28,726 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:17:28,774 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:17:28,781 django.server (81): - Broken pipe from ('127.0.0.1', 56524)
+[INFO] 2025-08-12 13:17:29,263 django.server (213): "GET /post HTTP/1.1" 200 6466
+[INFO] 2025-08-12 13:17:29,696 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:17:29,790 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:17:29,800 django.server (81): - Broken pipe from ('127.0.0.1', 56528)
+[INFO] 2025-08-12 13:17:34,159 django.server (213): "GET / HTTP/1.1" 200 8673
+[INFO] 2025-08-12 13:17:35,397 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:17:35,468 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2025-08-12 13:17:35,471 django.server (81): - Broken pipe from ('127.0.0.1', 56532)
+[INFO] 2025-08-12 13:18:21,103 django.server (213): "GET / HTTP/1.1" 200 8673
+[INFO] 2025-08-12 13:18:21,613 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:18:21,743 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 200 515
+[INFO] 2025-08-12 13:18:21,755 django.server (213): "GET / HTTP/1.1" 200 8673
+[WARNING] 2025-08-12 13:18:21,824 django.server (213): "GET /static/core/icons/icon-512x512.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:18:21,973 django.server (81): - Broken pipe from ('127.0.0.1', 56545)
+[INFO] 2025-08-12 13:18:22,089 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 200 6980
+[INFO] 2025-08-12 13:20:30,373 django.server (213): "GET / HTTP/1.1" 200 8673
+[INFO] 2025-08-12 13:20:30,922 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:20:31,008 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 200 483
+[INFO] 2025-08-12 13:20:31,026 django.server (213): "GET / HTTP/1.1" 200 8673
+[INFO] 2025-08-12 13:20:31,028 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:20:31,046 django.server (213): "GET /static/core/icons/icon-512x512.png HTTP/1.1" 404 1895
+[INFO] 2025-08-12 13:23:54,722 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-12 13:23:58,614 django.server (213): "GET / HTTP/1.1" 200 8673
+[INFO] 2025-08-12 13:24:01,778 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:24:01,829 django.server (213): "GET / HTTP/1.1" 200 8673
+[INFO] 2025-08-12 13:24:01,838 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:24:01,922 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 304 0
+[WARNING] 2025-08-12 13:24:01,984 django.server (213): "GET /favicon.ico HTTP/1.1" 404 6512
+[INFO] 2025-08-12 13:24:01,990 django.server (213): "GET /static/core/icons/icon-512x512.png HTTP/1.1" 200 59542
+[INFO] 2025-08-12 13:31:28,815 django.server (213): "GET / HTTP/1.1" 200 8736
+[INFO] 2025-08-12 13:31:31,147 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:31:31,217 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0

@@ -106,10 +106,25 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "core",
     "service_my",
-    "client",
     "axes",
-    
+    "pwa",
 ]
+
+PWA_APP_NAME = 'Your App Name'
+PWA_APP_DESCRIPTION = "Your app description"
+PWA_APP_THEME_COLOR = '#0d47a1'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/core/icons/icon-192x192.png',
+        'sizes': '192x192'
+    },
+    {
+        'src': '/static/core/icons/icon-512x512.png',
+        'sizes': '512x512'
+    }
+]
+PWA_APP_START_URL = '/'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

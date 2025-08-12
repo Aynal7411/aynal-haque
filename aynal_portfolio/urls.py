@@ -22,5 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("core.urls")),
     path("service/", include("service_my.urls")),
-    path("client/", include("client.urls")),
+    path('', include('pwa.urls')),
 ]
