@@ -91,3 +91,20 @@ def my_view(request):
     logger.warning("This is a warning!")
     logger.error("Something went wrong.")
  
+
+
+from .forms import TeamMemberForm
+
+def join_team(request):
+    if request.method == 'POST':
+        form = TeamMemberForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('thank_you')  # redirect after successful join
+    else:
+        form = TeamMemberForm()
+    return render(request, 'join_team.html', {'form': form})
+from django.http import HttpResponse
+
+def thank_you(request):
+    return HttpResponse("<h2>Thank you for joining our team!</h2>")

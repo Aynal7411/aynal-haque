@@ -107,7 +107,7 @@ INSTALLED_APPS = [
     "core",
     "service_my",
     "client",
-     'axes',
+    "axes",
     
 ]
 
