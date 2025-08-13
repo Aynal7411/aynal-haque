@@ -110,9 +110,9 @@ INSTALLED_APPS = [
     "pwa",
 ]
 
-PWA_APP_NAME = 'Your App Name'
-PWA_APP_DESCRIPTION = "Your app description"
-PWA_APP_THEME_COLOR = '#0d47a1'
+PWA_APP_NAME = 'aynal_portfolio'
+PWA_APP_DESCRIPTION = "Aynal's Portfolio"
+PWA_APP_THEME_COLOR = "#4bcf0d"
 PWA_APP_BACKGROUND_COLOR = '#ffffff'
 PWA_APP_ICONS = [
     {
@@ -138,7 +138,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 AUTHENTICATION_BACKENDS = [
     'axes.backends.AxesBackend',
     'django.contrib.auth.backends.ModelBackend',

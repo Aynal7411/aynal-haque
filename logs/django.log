@@ -834,3 +834,25 @@
 [INFO] 2025-08-13 14:57:35,932 django.utils.autoreload (667): Watching for file changes with StatReloader
 [INFO] 2025-08-13 14:57:39,902 django.server (213): "GET / HTTP/1.1" 200 8665
 [INFO] 2025-08-13 14:57:58,551 django.server (213): "GET / HTTP/1.1" 200 8665
+[INFO] 2025-08-13 15:50:40,751 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-13 15:50:45,770 django.server (213): "GET / HTTP/1.1" 200 8665
+[INFO] 2025-08-13 15:52:07,238 django.utils.autoreload (265): E:\my place\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2025-08-13 15:52:08,926 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-13 15:52:14,197 django.utils.autoreload (265): E:\my place\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2025-08-13 15:52:15,624 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-13 15:52:29,937 django.utils.autoreload (265): E:\my place\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2025-08-13 15:52:31,262 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-13 15:52:33,385 django.utils.autoreload (265): E:\my place\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2025-08-13 15:52:34,771 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-13 15:52:38,971 django.utils.autoreload (265): E:\my place\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2025-08-13 15:52:40,585 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-13 15:52:42,654 django.utils.autoreload (265): E:\my place\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2025-08-13 15:52:44,227 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-13 15:53:17,038 django.server (213): "GET / HTTP/1.1" 200 8665
+[INFO] 2025-08-13 15:56:04,341 django.server (213): "GET / HTTP/1.1" 200 8665
+[INFO] 2025-08-13 20:22:39,120 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-13 20:22:42,490 django.server (213): "GET / HTTP/1.1" 200 8608
+[INFO] 2025-08-13 20:22:45,006 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 304 0
+[INFO] 2025-08-13 20:22:45,074 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0
+[INFO] 2025-08-13 20:23:00,541 django.server (213): "GET / HTTP/1.1" 200 8613
+[INFO] 2025-08-13 20:23:00,870 django.server (213): "GET /static/favicon-16x16.png HTTP/1.1" 304 0
