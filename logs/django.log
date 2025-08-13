@@ -810,3 +810,22 @@
 [INFO] 2025-08-12 13:31:28,815 django.server (213): "GET / HTTP/1.1" 200 8736
 [INFO] 2025-08-12 13:31:31,147 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 304 0
 [INFO] 2025-08-12 13:31:31,217 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:35:43,607 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-12 13:35:48,596 django.server (213): "GET / HTTP/1.1" 200 8736
+[INFO] 2025-08-12 13:35:50,650 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 304 0
+[INFO] 2025-08-12 13:35:50,659 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0
+[INFO] 2025-08-13 14:35:11,434 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2025-08-13 14:35:16,980 django.server (213): "GET / HTTP/1.1" 200 8736
+[WARNING] 2025-08-13 14:35:17,087 django.server (213): "GET /static/css/styles.css HTTP/1.1" 404 1856
+[INFO] 2025-08-13 14:35:19,380 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 304 0
+[WARNING] 2025-08-13 14:35:19,402 django.server (213): "GET /favicon.ico HTTP/1.1" 404 6512
+[INFO] 2025-08-13 14:35:19,441 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 304 0
+[INFO] 2025-08-13 14:37:33,148 django.server (213): "GET /service/ HTTP/1.1" 200 6450
+[INFO] 2025-08-13 14:37:33,386 django.server (213): "GET /static/css/styles.css HTTP/1.1" 200 515
+[INFO] 2025-08-13 14:37:34,559 django.server (213): "GET / HTTP/1.1" 200 8736
+[INFO] 2025-08-13 14:40:38,782 django.server (213): "GET / HTTP/1.1" 200 8736
+[INFO] 2025-08-13 14:40:43,655 django.server (213): "GET / HTTP/1.1" 200 8736
+[INFO] 2025-08-13 14:41:14,131 django.server (213): "GET / HTTP/1.1" 200 8643
+[INFO] 2025-08-13 14:42:42,970 django.server (213): "GET / HTTP/1.1" 200 8665
+[INFO] 2025-08-13 14:42:43,283 django.server (213): "GET /static/favicon-16x16.png HTTP/1.1" 200 112
+[INFO] 2025-08-13 14:42:46,805 django.server (213): "GET / HTTP/1.1" 200 8665
