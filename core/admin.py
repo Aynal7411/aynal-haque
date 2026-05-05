@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Profile
-from .models import Post
-from .models import SiteAlert
+from .models import Profile, Post, SiteAlert, Skill, UserProfile, Project
+
+
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('name', 'title', 'email', 'phone', 'created_at')
@@ -28,7 +28,34 @@ class ProfileAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('created_at',)
 
-from .models import Skill
+
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'phone', 'location', 'updated_at')
+    list_filter = ('updated_at', 'created_at')
+    search_fields = ('user__username', 'user__email', 'location', 'phone')
+    readonly_fields = ('created_at', 'updated_at')
+
+    fieldsets = (
+        ("User Link", {
+            'fields': ('user',)
+        }),
+        ("Personal Information", {
+            'fields': ('bio', 'profile_picture', 'phone', 'location')
+        }),
+        ("Social & Web Links", {
+            'fields': ('linkedin', 'github', 'twitter', 'portfolio')
+        }),
+        ("Timestamps", {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',),
+        }),
+    )
+
+    def has_add_permission(self, request):
+        # Prevent manual creation, only auto-create on user registration
+        return False
+
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
@@ -37,12 +64,26 @@ class SkillAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
-admin.site.register(Post)
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'created_at', 'updated_at')
+    list_filter = ('created_at', 'author')
+    search_fields = ('title', 'content', 'author__username')
+    readonly_fields = ('created_at', 'updated_at')
 
 
-admin.site.register(SiteAlert)
+@admin.register(SiteAlert)
+class SiteAlertAdmin(admin.ModelAdmin):
+    list_display = ('message', 'is_active', 'created_on')
+    list_filter = ('is_active', 'created_on')
+    search_fields = ('message',)
+    readonly_fields = ('created_on',)
 
-from django.contrib import admin
-from .models import Project
 
-admin.site.register(Project)
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_at', 'url')
+    list_filter = ('created_at',)
+    search_fields = ('title', 'description')
+    readonly_fields = ('created_at',)
+

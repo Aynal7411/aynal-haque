@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg border-danger rounded-4">
+        <div class="card-header bg-danger text-white rounded-top-4">
+          <h5 class="mb-0"><i class="fas fa-exclamation-triangle"></i> Delete Your Account</h5>
+        </div>
+        <div class="card-body p-4">
+          
+          <div class="alert alert-danger">
+            <strong><i class="fas fa-exclamation-circle"></i> Warning!</strong>
+            <p class="mb-0">This action cannot be undone. Please read the information below carefully.</p>
+          </div>
+
+          <div class="bg-light p-3 rounded mb-4">
+            <h6 class="mb-3"><i class="fas fa-info-circle text-warning"></i> What will happen:</h6>
+            <ul class="mb-0">
+              <li>Your account will be permanently deleted</li>
+              <li>All your profile information will be removed</li>
+              <li>You will be immediately logged out</li>
+              <li>This cannot be reversed</li>
+            </ul>
+          </div>
+
+          <p class="text-muted mb-4">
+            If you're just looking to take a break, consider logging out instead. You can always log back in later with your username and password.
+          </p>
+
+          <form method="post">
+            {% csrf_token %}
+            
+            <div class="d-flex gap-2">
+              <a href="{% url 'profile' %}" class="btn btn-secondary rounded-pill flex-grow-1">
+                <i class="fas fa-times"></i> Keep My Account
+              </a>
+              <button type="submit" class="btn btn-danger rounded-pill flex-grow-1">
+                <i class="fas fa-trash"></i> Delete Permanently
+              </button>
+            </div>
+          </form>
+
+          <hr class="my-3">
+
+          <p class="text-center text-muted small mb-0">
+            <strong>Contact us:</strong> If you have any concerns, please reach out to support first.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-5">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-lg rounded-4">
+        <div class="card-body text-center p-4">
+          {% if user_profile.profile_picture %}
+            <img src="{{ user_profile.profile_picture.url }}" alt="Profile" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+          {% else %}
+            <div class="rounded-circle bg-secondary d-inline-flex align-items-center justify-content-center mb-3" style="width: 120px; height: 120px;">
+              <i class="fas fa-user fa-3x text-white"></i>
+            </div>
+          {% endif %}
+          
+          <h4 class="card-title">{{ user.first_name }} {{ user.last_name }}</h4>
+          <p class="text-muted">@{{ user.username }}</p>
+          <p class="text-muted small">{{ user.email }}</p>
+
+          <hr>
+
+          <div class="d-grid gap-2">
+            <a href="{% url 'profile_edit' %}" class="btn btn-primary rounded-pill">
+              <i class="fas fa-edit"></i> Edit Profile
+            </a>
+            <a href="{% url 'password_change' %}" class="btn btn-warning rounded-pill">
+              <i class="fas fa-key"></i> Change Password
+            </a>
+            <a href="{% url 'profile_delete' %}" class="btn btn-danger rounded-pill">
+              <i class="fas fa-trash"></i> Delete Account
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Details -->
+    <div class="col-md-9">
+      <div class="card shadow-lg rounded-4">
+        <div class="card-header bg-primary text-white rounded-top-4">
+          <h5 class="mb-0"><i class="fas fa-user-circle"></i> Profile Information</h5>
+        </div>
+        <div class="card-body p-4">
+          <!-- Account Info -->
+          <div class="mb-4">
+            <h6 class="text-uppercase text-muted fw-bold">Account Details</h6>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="text-muted small">Email</label>
+                <p class="fw-bold">{{ user.email }}</p>
+              </div>
+              <div class="col-md-6">
+                <label class="text-muted small">Username</label>
+                <p class="fw-bold">{{ user.username }}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label class="text-muted small">Member Since</label>
+                <p class="fw-bold">{{ user.date_joined|date:"F d, Y" }}</p>
+              </div>
+              <div class="col-md-6">
+                <label class="text-muted small">Last Updated</label>
+                <p class="fw-bold">{{ user_profile.updated_at|date:"F d, Y" }}</p>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- Personal Info -->
+          <div class="mb-4">
+            <h6 class="text-uppercase text-muted fw-bold">Personal Information</h6>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="text-muted small">Phone</label>
+                <p class="fw-bold">{{ user_profile.phone|default:"Not provided" }}</p>
+              </div>
+              <div class="col-md-6">
+                <label class="text-muted small">Location</label>
+                <p class="fw-bold">{{ user_profile.location|default:"Not provided" }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          {% if user_profile.bio %}
+            <div class="mb-4">
+              <h6 class="text-uppercase text-muted fw-bold">About You</h6>
+              <p>{{ user_profile.bio }}</p>
+            </div>
+          {% endif %}
+
+          <!-- Social Links -->
+          {% if user_profile.linkedin or user_profile.github or user_profile.twitter or user_profile.portfolio %}
+            <hr>
+            <div class="mb-4">
+              <h6 class="text-uppercase text-muted fw-bold">Social & Web</h6>
+              <div class="row">
+                {% if user_profile.linkedin %}
+                  <div class="col-md-6 mb-2">
+                    <a href="{{ user_profile.linkedin }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary rounded-pill w-100">
+                      <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                  </div>
+                {% endif %}
+                {% if user_profile.github %}
+                  <div class="col-md-6 mb-2">
+                    <a href="{{ user_profile.github }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark rounded-pill w-100">
+                      <i class="fab fa-github"></i> GitHub
+                    </a>
+                  </div>
+                {% endif %}
+                {% if user_profile.twitter %}
+                  <div class="col-md-6 mb-2">
+                    <a href="{{ user_profile.twitter }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info rounded-pill w-100">
+                      <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                  </div>
+                {% endif %}
+                {% if user_profile.portfolio %}
+                  <div class="col-md-6 mb-2">
+                    <a href="{{ user_profile.portfolio }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success rounded-pill w-100">
+                      <i class="fas fa-globe"></i> Portfolio
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

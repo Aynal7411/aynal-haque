@@ -1,5 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+
 class Profile(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
@@ -22,6 +26,43 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class UserProfile(models.Model):
+    """Extended user profile for authenticated users"""
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    bio = models.TextField(blank=True, null=True, help_text="Tell us about yourself")
+    profile_picture = models.ImageField(upload_to='user_profiles/', blank=True, null=True)
+    phone = models.CharField(max_length=20, blank=True, null=True)
+    location = models.CharField(max_length=100, blank=True, null=True)
+    linkedin = models.URLField(blank=True, null=True)
+    github = models.URLField(blank=True, null=True)
+    twitter = models.URLField(blank=True, null=True)
+    portfolio = models.URLField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.user.username}'s Profile"
+
+    class Meta:
+        verbose_name_plural = "User Profiles"
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    """Automatically create UserProfile when a User is created"""
+    if created:
+        UserProfile.objects.get_or_create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    """Automatically save UserProfile when User is saved"""
+    try:
+        instance.profile.save()
+    except UserProfile.DoesNotExist:
+        UserProfile.objects.create(user=instance)
 
 
 class Skill(models.Model):
