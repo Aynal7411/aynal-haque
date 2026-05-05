@@ -4,97 +4,63 @@
 {% block title %}{{ profile.name }} - Workplace{% endblock %}
 
 {% block content %}
-<div id="clock"></div>
-<script>
-    function updateClock() {
-        const now = new Date();
-        const time = now.toLocaleTimeString();
-        document.getElementById('clock').textContent = time;
-    }
+<div class="hero py-5">
+    <div class="row align-items-center gy-4">
+        <div class="col-lg-5 text-center text-lg-start">
+            <h1 class="display-4 fw-bold">Hi, I'm {{ profile.name }}</h1>
+            <p class="lead text-secondary">{{ profile.title }} — {{ profile.tagline }}</p>
 
-    setInterval(updateClock, 1000);
-    updateClock();
-</script>
- <button onclick="checkLoginState()">Facebook Login</button>
+            <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
+                {% if profile.resume %}
+                    <a class="btn btn-primary btn-lg" href="{{ profile.resume.url }}" target="_blank">Download Resume</a>
+                {% endif %}
+                <a class="btn btn-outline-secondary btn-lg" href="{% url 'contact' %}">Contact Me</a>
+            </div>
 
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{625671719904177}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{v23.0}'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
- 
-
-<script>
-  function checkLoginState() {
-    FB.login(function(response) {
-      if (response.authResponse) {
-        // ইউজার লগইন করেছে
-        FB.api('/me', {fields: 'name,email'}, function(userInfo) {
-          console.log('Welcome, ' + userInfo.name);
-          console.log('Email: ' + userInfo.email);
-          // এখানে আপনি ইউজার ইনফো সার্ভারে পাঠাতে পারেন
-        });
-      } else {
-        console.log('User cancelled login or did not fully authorize.');
-      }
-    }, {scope: 'email'});
-  }
-</script>
-
- {% if alert %}
-    <div class="alert" id="site-alert">
-        <div class="alert-content">
-            {{ alert.message }}
-        </div>
-        <button class="close-alert" onclick="dismissAlert()">&times;</button>
-    </div>
-    {% endif %}
-<div class="container mt-5">
-<div class="row">
-    <div class="col-md-4 text-center ">
-         
-        <h2 class="card-title">{{ profile.name }}</h2>
-        <h5>{{ profile.title }}</h5>
-        <p class="text-muted">{{ profile.tagline }}</p>
-
-        {% if profile.resume %}
-            <a href="{{ profile.resume.url }}" class="btn btn-primary btn-sm" target="_blank">View Resume</a>
-        {% endif %}
-
-        <div class="mt-3">
-            {% if profile.email %}<p>Email: {{ profile.email }}</p>{% endif %}
-            {% if profile.phone %}<p>Phone: {{ profile.phone }}</p>{% endif %}
-            {% if profile.location %}<p>Location: {{ profile.location }}</p>{% endif %}
+            <div class="mt-4 text-start">
+                {% if profile.email %}<p><strong>Email:</strong> {{ profile.email }}</p>{% endif %}
+                {% if profile.phone %}<p><strong>Phone:</strong> {{ profile.phone }}</p>{% endif %}
+                {% if profile.location %}<p><strong>Location:</strong> {{ profile.location }}</p>{% endif %}
+            </div>
         </div>
 
-        <div class="mt-3">
-            {% if profile.linkedin %}<a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a> | {% endif %}
-            {% if profile.github %}<a href="{{ profile.github }}" target="_blank">GitHub</a> | {% endif %}
-            {% if profile.twitter %}<a href="{{ profile.twitter }}" target="_blank">Twitter</a>{% endif %}
+        <div class="col-lg-7">
+            <div class="card shadow-lg border-0">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-5 text-center p-4">
+                        {% if profile.photo %}
+                            <img src="{{ profile.photo.url }}" class="img-fluid rounded-circle border border-3 border-primary" alt="{{ profile.name }}">
+                        {% else %}
+                            <div class="placeholder rounded-circle bg-secondary" style="width: 220px; height: 220px;"></div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h3 class="card-title">About Me</h3>
+                            <p class="card-text text-muted">{{ profile.bio }}</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                {% if profile.linkedin %}
+                                    <a href="{{ profile.linkedin }}" class="btn btn-outline-primary btn-sm" target="_blank">LinkedIn</a>
+                                {% endif %}
+                                {% if profile.github %}
+                                    <a href="{{ profile.github }}" class="btn btn-outline-dark btn-sm" target="_blank">GitHub</a>
+                                {% endif %}
+                                {% if profile.twitter %}
+                                    <a href="{{ profile.twitter }}" class="btn btn-outline-info btn-sm" target="_blank">Twitter</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% if alert %}
+                <div class="alert alert-info alert-dismissible fade show mt-4" role="alert">
+                    <strong>News:</strong> {{ alert.message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
         </div>
     </div>
-     <div class="col-md-8">
- <div class="card shadow-lg">
-    <div class="card-body">
-        <h4>About Me</h4>
-        <p>{{ profile.bio }}</p>
-    </div>
-      </div>
 </div>
 {% endblock %}

@@ -20,6 +20,7 @@
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'join_team' %}">Join Our Team</a>
+                    </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item mx-2">
                             <span class="navbar-text text-light">Hi, {{ user.username }}</span>

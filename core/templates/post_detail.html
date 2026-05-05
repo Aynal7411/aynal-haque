@@ -8,5 +8,5 @@
             {{ post.content|linebreaks }}
         </div>
     </article>
-    <a href="{% url 'blog:post_list %}">Back to Blog</a>
+    <a class="btn btn-outline-primary" href="{% url 'post_list' %}">Back to Blog</a>
 {% endblock %}
