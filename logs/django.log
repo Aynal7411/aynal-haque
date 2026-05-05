@@ -891,3 +891,4 @@
 [WARNING] 2025-09-12 07:39:02,320 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
 [INFO] 2025-09-12 07:39:02,335 django.server (213): "GET /static/core/js/main.js HTTP/1.1" 304 0
 [INFO] 2025-09-12 07:39:02,444 django.server (213): "GET / HTTP/1.1" 200 8618
+[INFO] 2026-05-05 20:17:19,243 django.utils.autoreload (681): Watching for file changes with StatReloader
