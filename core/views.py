@@ -16,9 +16,21 @@ def my_page(request):
     if not profile:
         return render(request, 'no_profile.html')
 
+    # Get skills
+    skill_types = Skill.SKILL_TYPES
+    grouped_skills = {
+        label: Skill.objects.filter(skill_type=key).order_by('-percentage')[:3]  # Top 3 per category
+        for key, label in skill_types
+    }
+
+    # Get projects
+    projects = Project.objects.all()[:3]  # Top 3 projects
+
     return render(request, 'home_page.html', {
         'alert': alert,
         'profile': profile,
+        'grouped_skills': grouped_skills,
+        'projects': projects,
         'year': datetime.now().year,
     })
 

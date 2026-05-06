@@ -4,17 +4,115 @@
 {% block title %}{{ profile.name }} - Workplace{% endblock %}
 
 {% block content %}
+<style>
+.hero {
+    background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(255, 193, 7, 0.3);
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.display-4 {
+    color: #ff6f00;
+    font-weight: bold;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.lead {
+    color: #424242;
+    animation: fadeInUp 2s ease-out;
+}
+
+.btn-primary {
+    background-color: #ff6f00;
+    border-color: #ff6f00;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e65100;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 111, 0, 0.4);
+}
+
+.btn-outline-secondary {
+    border-color: #4caf50;
+    color: #4caf50;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #4caf50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.img-fluid {
+    transition: transform 0.3s ease;
+}
+
+.img-fluid:hover {
+    transform: scale(1.05);
+}
+
+.btn-outline-primary, .btn-outline-dark, .btn-outline-info {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2196f3;
+    border-color: #2196f3;
+    transform: scale(1.05);
+}
+
+.btn-outline-dark:hover {
+    background-color: #424242;
+    border-color: #424242;
+    transform: scale(1.05);
+}
+
+.btn-outline-info:hover {
+    background-color: #00bcd4;
+    border-color: #00bcd4;
+    transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 <div class="hero py-5">
     <div class="row align-items-center gy-4">
         <div class="col-lg-5 text-center text-lg-start">
-            <h1 class="display-4 fw-bold">Hi, I'm {{ profile.name }}</h1>
-            <p class="lead text-secondary">{{ profile.title }} — {{ profile.tagline }}</p>
+            <h1 class="display-4 fw-bold" id="typed-name">Hi, I'm {{ profile.name }}</h1>
+            <p class="lead text-secondary">{{ profile.title }} </p>
 
             <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
                 {% if profile.resume %}
                     <a class="btn btn-primary btn-lg" href="{{ profile.resume.url }}" target="_blank">Download Resume</a>
                 {% endif %}
-                <a class="btn btn-outline-secondary btn-lg" href="{% url 'contact' %}">Contact Me</a>
+                <a class="btn btn-outline-secondary btn-lg btn-block " href="{% url 'contact' %}">Contact Me</a>
             </div>
 
             <div class="mt-4 text-start">
@@ -31,7 +129,7 @@
                         {% if profile.photo %}
                             <img src="{{ profile.photo.url }}" class="img-fluid rounded-circle border border-3 border-primary" alt="{{ profile.name }}">
                         {% else %}
-                            <div class="placeholder rounded-circle bg-secondary" style="width: 220px; height: 220px;"></div>
+                            <div class="placeholder rounded-circle bg-secondary " style="width: 220px; height: 220px;"></div>
                         {% endif %}
                     </div>
                     <div class="col-md-7">
@@ -63,4 +161,112 @@
         </div>
     </div>
 </div>
+
+<!-- Skills Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #ff6f00;">My Skills</h2>
+        <div class="row">
+            {% for category, skills in grouped_skills.items %}
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100" style="border-radius: 15px; overflow: hidden;">
+                        <div class="card-header" style="background: linear-gradient(45deg, #ff6f00, #ffeb3b); color: white;">
+                            <h5 class="mb-0">{{ category }}</h5>
+                        </div>
+                        <div class="card-body">
+                            {% for skill in skills %}
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between">
+                                        <span>{{ skill.name }}</span>
+                                        <span>{{ skill.percentage }}%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: {{ skill.percentage }}%;" aria-valuenow="{{ skill.percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'skills' %}" class="btn btn-outline-primary">View All Skills</a>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #4caf50;">My Projects</h2>
+        <div class="row">
+            {% for project in projects %}
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-lg h-100" style="border-radius: 15px; overflow: hidden; transition: transform 0.3s ease;">
+                        {% if project.image %}
+                            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}" style="height: 200px; object-fit: cover;">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <p class="card-text">{{ project.description|truncatewords:15 }}</p>
+                            {% if project.url %}
+                                <a href="{{ project.url }}" target="_blank" class="btn btn-primary">View Project</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'project_list' %}" class="btn btn-outline-success">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Typing effect
+    var typed = new Typed('#typed-name', {
+        strings: ['Hi, I\'m {{ profile.name }}', 'Welcome to my portfolio!'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+    });
+
+    // Scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe sections
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(50px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+    });
+
+    // Card hover effects
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});
+</script>
 {% endblock %}

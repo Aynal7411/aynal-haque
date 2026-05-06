@@ -22,7 +22,7 @@
 <style>
 body {
         font-family: 'Arial', sans-serif;
-        background: linear-gradient(180deg, #edf2fb 0%, #d6e4ff 100%);
+        background: linear-gradient(180deg, #fff8e1 0%, #e3f2fd 100%);
         color: #0d0d0e;
         margin: 0;
         padding: 0;
@@ -34,14 +34,14 @@ body {
 
 .navbar {
             transition: background-color 0.5 ease;
-            background-color: hsl(268, 75%, 49%) !important;
-            
+            background-color: #ff6f00 !important;
+            box-shadow: 0 4px 8px rgba(255, 111, 0, 0.3);
             
         }
 
 .navbar a.nav-link {
-            color: hwb(0 3% 97%) !important;
-            transition: color 0.4s ease, background-color 0.5s ease;
+            color: #ffffff !important;
+            transition: color 0.4s ease, background-color 0.5s ease, transform 0.3s ease;
             border-radius: 20px;
             padding: 8px 12px;
             font-size: larger;
@@ -49,26 +49,28 @@ body {
         }
 
  .navbar a.nav-link:hover {
-            background-color: hsl(350, 95%, 41%);
-            color: #e90b0b !important;
+            background-color: #ffeb3b;
+            color: #ff6f00 !important;
             transform: scale(1.05);
         }
 
  .navbar-brand:hover {
-            color: #121213 !important;
-            text-shadow: 1px 1px 2px #776d6d;
+            color: #ffffff !important;
+            text-shadow: 1px 1px 2px #000;
         }
 
  .navbar-nav .nav-link.active {
-            background-color: #0d6efd;
+            background-color: #4caf50;
             color: white !important;
         }
 
  .alert {
             animation: fadeIn 0.8s ease-in-out;
             border-radius: 20px;
-            box-shadow: 0 4px 8px hsla(120, 66%, 30%, 0.1);
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
             margin-bottom: 20px;
+            background-color: #e8f5e8 !important;
+            border-color: #4caf50 !important;
         }
 
  @keyframes fadeIn {
@@ -97,11 +99,11 @@ body {
         {% endif %}
     </div>
 
-    <div class="container mt-4 mb-5 p-4 bg-light rounded shadow-sm">
+    <div class="container mt-4 mb-5 p-4">
         {% block content %}{% endblock %}
     </div>
 
-    <div class="text-light bg-dark text-center py-3 mt-5">
+    <div class="mt-5">
         {% include "footer.html" %}
     </div>
 <script>

@@ -1,11 +1,11 @@
 
 .footer-custom {
-  background-color: #1e1e1e;
+  color: #ffffff;
   font-size: 15px;
 }
 
 .footer-links a {
-  color: #aaaaaa;
+  color: #ffffff;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   padding: 0 10px;
@@ -13,13 +13,13 @@
 }
 
 .footer-links a:hover {
-  color: #d80599;
+  color: #ffeb3b;
   padding-left: 5px;
   text-decoration: underline;
 }
 
 .footer-custom h5 {
-  color: #fff;
+  color: #ffffff;
   font-weight: bold;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .footer-custom i {
-  color: #0f0;
+  color: #ffeb3b;
   margin-right: 8px;
 }
 
