@@ -20,30 +20,30 @@
 }
 
 .display-4 {
-    color: #ff6f00;
+    color: hwb(266 0% 0%);
     font-weight: bold;
     animation: fadeInUp 1.5s ease-out;
 }
 
 .lead {
-    color: #424242;
+    color: hsl(0, 88%, 42%);
     animation: fadeInUp 2s ease-out;
 }
 
 .btn-primary {
-    background-color: #ff6f00;
-    border-color: #ff6f00;
+    background-color: hsl(118, 100%, 50%);
+    border-color: hsl(20, 5%, 12%);
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #e65100;
+    background-color: hsl(21, 100%, 45%);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 111, 0, 0.4);
 }
 
 .btn-outline-secondary {
-    border-color: #4caf50;
+    border-color: hsl(122, 40%, 40%);
     color: #4caf50;
     transition: all 0.3s ease;
 }
@@ -124,30 +124,47 @@
 
         <div class="col-lg-7">
             <div class="card shadow-lg border-0">
-                <div class="row g-0 align-items-center">
-                    <div class="col-md-5 text-center p-4">
-                        {% if profile.photo %}
-                            <img src="{{ profile.photo.url }}" class="img-fluid rounded-circle border border-3 border-primary" alt="{{ profile.name }}">
-                        {% else %}
-                            <div class="placeholder rounded-circle bg-secondary " style="width: 220px; height: 220px;"></div>
-                        {% endif %}
-                    </div>
-                    <div class="col-md-7">
-                        <div class="card-body">
-                            <h3 class="card-title">About Me</h3>
-                            <p class="card-text text-muted">{{ profile.bio }}</p>
-                            <div class="d-flex flex-wrap gap-2 mt-3">
-                                {% if profile.linkedin %}
-                                    <a href="{{ profile.linkedin }}" class="btn btn-outline-primary btn-sm" target="_blank">LinkedIn</a>
-                                {% endif %}
-                                {% if profile.github %}
-                                    <a href="{{ profile.github }}" class="btn btn-outline-dark btn-sm" target="_blank">GitHub</a>
-                                {% endif %}
-                                {% if profile.twitter %}
-                                    <a href="{{ profile.twitter }}" class="btn btn-outline-info btn-sm" target="_blank">Twitter</a>
-                                {% endif %}
+                <div class="card-body p-5">
+                    <h3 class="card-title">About Me</h3>
+                    <p class="card-text text-muted">{{ profile.bio }}</p>
+
+                    <div class="row g-3 mt-4">
+                        <div class="col-sm-6">
+                            <div class="p-4 rounded-4" style="background: rgba(255, 111, 0, 0.08);">
+                                <h6 class="mb-2">Fast & Responsive</h6>
+                                <p class="mb-0 text-muted">Mobile-friendly web apps with polished interaction.</p>
                             </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="p-4 rounded-4" style="background: rgba(76, 175, 80, 0.08);">
+                                <h6 class="mb-2">Modern Design</h6>
+                                <p class="mb-0 text-muted">Bright, stylish UI with smooth animations.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-4 rounded-4" style="background: rgba(33, 150, 243, 0.08);">
+                                <h6 class="mb-2">Clean Code</h6>
+                                <p class="mb-0 text-muted">Well-structured Django applications for real projects.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-4 rounded-4" style="background: rgba(255, 235, 59, 0.08);">
+                                <h6 class="mb-2">Always Growing</h6>
+                                <p class="mb-0 text-muted">Continuous improvement with new features and polish.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-2 mt-4">
+                        {% if profile.linkedin %}
+                            <a href="{{ profile.linkedin }}" class="btn btn-outline-primary btn-sm" target="_blank">LinkedIn</a>
+                        {% endif %}
+                        {% if profile.github %}
+                            <a href="{{ profile.github }}" class="btn btn-outline-dark btn-sm" target="_blank">GitHub</a>
+                        {% endif %}
+                        {% if profile.twitter %}
+                            <a href="{{ profile.twitter }}" class="btn btn-outline-info btn-sm" target="_blank">Twitter</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

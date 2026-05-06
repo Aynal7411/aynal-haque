@@ -111,10 +111,10 @@ INSTALLED_APPS = [
     "pwa",
 ]
 
-PWA_APP_NAME = 'aynal_portfolio'
-PWA_APP_DESCRIPTION = "Aynal's Portfolio"
-PWA_APP_THEME_COLOR = "#4bcf0d"
-PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_NAME = 'Aynal Haque'
+PWA_APP_DESCRIPTION = "Aynal Haque Portfolio - Modern web apps, portfolio, blog, and contact"
+PWA_APP_THEME_COLOR = "#ff6f00"
+PWA_APP_BACKGROUND_COLOR = '#fff8e1'
 PWA_APP_ICONS = [
     {
         'src': '/static/core/icons/icon-192x192.png',
@@ -126,6 +126,7 @@ PWA_APP_ICONS = [
     }
 ]
 PWA_APP_START_URL = '/'
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
