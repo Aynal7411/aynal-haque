@@ -2,88 +2,42 @@
 {% load static %}
 
 {% block content %}
-<style>
-    .contact-card {
-        max-width: 600px;
-        margin: auto;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        padding: 30px;
-        background: #fff;
-        transition: 0.3s;
-    }
+<section class="py-5">
+    <div class="container">
+        <div class="contact-card">
+            <h2 class="contact-title">📩 Send a Message</h2>
+            <p class="text-muted mb-4">I'm available for new collaborations, freelance work, and full-stack projects. Share your idea and I’ll get back to you soon.</p>
 
-    .contact-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    }
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success alert-wrapper" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
 
-    .contact-title {
-        font-weight: 700;
-        color: #198754;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .btn-custom {
-        width: 100%;
-        padding: 10px;
-        font-weight: 600;
-        border-radius: 10px;
-        transition: 0.3s;
-    }
-
-    .btn-custom:hover {
-        background-color: #157347;
-        transform: scale(1.02);
-    }
-
-    .form-control {
-        border-radius: 10px;
-        padding: 10px;
-    }
-
-    .alert {
-        border-radius: 10px;
-        text-align: center;
-    }
-</style>
-
-<div class="container mt-5">
-    <div class="contact-card">
-        <h2 class="contact-title">📩 Contact with Aynal Haque</h2>
-
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-success">
-                    {{ message }}
+            <form method="post">
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="id_name" class="form-label">Name</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="col-md-6">
+                        <label for="id_email" class="form-label">Email</label>
+                        {{ form.email }}
+                    </div>
+                    <div class="col-12">
+                        <label for="id_message" class="form-label">Message</label>
+                        {{ form.message }}
+                    </div>
                 </div>
-            {% endfor %}
-        {% endif %}
 
-        <form method="post">
-            {% csrf_token %}
-
-            <div class="mb-3">
-                {{ form.name.label_tag }}
-                {{ form.name }}
-            </div>
-
-            <div class="mb-3">
-                {{ form.email.label_tag }}
-                {{ form.email }}
-            </div>
-
-            <div class="mb-3">
-                {{ form.message.label_tag }}
-                {{ form.message }}
-            </div>
-
-            <button type="submit" class="btn btn-success btn-custom">
-                🚀 Send Message
-            </button>
-        </form>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-gradient btn-lg btn-custom w-100">🚀 Send Message</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
+</section>
 {% endblock %}

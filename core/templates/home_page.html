@@ -4,285 +4,163 @@
 {% block title %}{{ profile.name }} - Workplace{% endblock %}
 
 {% block content %}
-<style>
-.hero {
-    background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%);
-    border-radius: 20px;
-    padding: 40px;
-    margin: 20px 0;
-    box-shadow: 0 8px 32px rgba(255, 193, 7, 0.3);
-    animation: slideIn 1s ease-out;
-}
-
-@keyframes slideIn {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.display-4 {
-    color: hwb(266 0% 0%);
-    font-weight: bold;
-    animation: fadeInUp 1.5s ease-out;
-}
-
-.lead {
-    color: hsl(0, 88%, 42%);
-    animation: fadeInUp 2s ease-out;
-}
-
-.btn-primary {
-    background-color: hsl(118, 100%, 50%);
-    border-color: hsl(20, 5%, 12%);
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: hsl(21, 100%, 45%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 111, 0, 0.4);
-}
-
-.btn-outline-secondary {
-    border-color: hsl(122, 40%, 40%);
-    color: #4caf50;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-secondary:hover {
-    background-color: #4caf50;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
-}
-
-.card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-}
-
-.img-fluid {
-    transition: transform 0.3s ease;
-}
-
-.img-fluid:hover {
-    transform: scale(1.05);
-}
-
-.btn-outline-primary, .btn-outline-dark, .btn-outline-info {
-    transition: all 0.3s ease;
-}
-
-.btn-outline-primary:hover {
-    background-color: #2196f3;
-    border-color: #2196f3;
-    transform: scale(1.05);
-}
-
-.btn-outline-dark:hover {
-    background-color: #424242;
-    border-color: #424242;
-    transform: scale(1.05);
-}
-
-.btn-outline-info:hover {
-    background-color: #00bcd4;
-    border-color: #00bcd4;
-    transform: scale(1.05);
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-</style>
-
-<div class="hero py-5">
-    <div class="row align-items-center gy-4">
-        <div class="col-lg-5 text-center text-lg-start">
-            <h1 class="display-4 fw-bold" id="typed-name">Hi, I'm {{ profile.name }}</h1>
-            <p class="lead text-secondary">{{ profile.title }} </p>
-
-            <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
-                {% if profile.resume %}
-                    <a class="btn btn-primary btn-lg" href="{{ profile.resume.url }}" target="_blank">Download Resume</a>
-                {% endif %}
-                <a class="btn btn-outline-secondary btn-lg btn-block " href="{% url 'contact' %}">Contact Me</a>
-            </div>
-
-            <div class="mt-4 text-start">
-                {% if profile.email %}<p><strong>Email:</strong> {{ profile.email }}</p>{% endif %}
-                {% if profile.phone %}<p><strong>Phone:</strong> {{ profile.phone }}</p>{% endif %}
-                {% if profile.location %}<p><strong>Location:</strong> {{ profile.location }}</p>{% endif %}
-            </div>
-        </div>
-
-        <div class="col-lg-7">
-            <div class="card shadow-lg border-0">
-                <div class="card-body p-5">
-                    <h3 class="card-title">About Me</h3>
-                    <p class="card-text text-muted">{{ profile.bio }}</p>
-
-                    <div class="row g-3 mt-4">
-                        <div class="col-sm-6">
-                            <div class="p-4 rounded-4" style="background: rgba(255, 111, 0, 0.08);">
-                                <h6 class="mb-2">Fast & Responsive</h6>
-                                <p class="mb-0 text-muted">Mobile-friendly web apps with polished interaction.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="p-4 rounded-4" style="background: rgba(76, 175, 80, 0.08);">
-                                <h6 class="mb-2">Modern Design</h6>
-                                <p class="mb-0 text-muted">Bright, stylish UI with smooth animations.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="p-4 rounded-4" style="background: rgba(33, 150, 243, 0.08);">
-                                <h6 class="mb-2">Clean Code</h6>
-                                <p class="mb-0 text-muted">Well-structured Django applications for real projects.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="p-4 rounded-4" style="background: rgba(255, 235, 59, 0.08);">
-                                <h6 class="mb-2">Always Growing</h6>
-                                <p class="mb-0 text-muted">Continuous improvement with new features and polish.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-wrap gap-2 mt-4">
-                        {% if profile.linkedin %}
-                            <a href="{{ profile.linkedin }}" class="btn btn-outline-primary btn-sm" target="_blank">LinkedIn</a>
-                        {% endif %}
-                        {% if profile.github %}
-                            <a href="{{ profile.github }}" class="btn btn-outline-dark btn-sm" target="_blank">GitHub</a>
-                        {% endif %}
-                        {% if profile.twitter %}
-                            <a href="{{ profile.twitter }}" class="btn btn-outline-info btn-sm" target="_blank">Twitter</a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-
-            {% if alert %}
-                <div class="alert alert-info alert-dismissible fade show mt-4" role="alert">
-                    <strong>News:</strong> {{ alert.message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            {% endif %}
-        </div>
-    </div>
-</div>
-
-<!-- Skills Section -->
-<section class="py-5">
+<section class="hero-section">
     <div class="container">
-        <h2 class="text-center mb-4" style="color: #ff6f00;">My Skills</h2>
-        <div class="row">
-            {% for category, skills in grouped_skills.items %}
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100" style="border-radius: 15px; overflow: hidden;">
-                        <div class="card-header" style="background: linear-gradient(45deg, #ff6f00, #ffeb3b); color: white;">
-                            <h5 class="mb-0">{{ category }}</h5>
-                        </div>
-                        <div class="card-body">
-                            {% for skill in skills %}
-                                <div class="mb-3">
-                                    <div class="d-flex justify-content-between">
-                                        <span>{{ skill.name }}</span>
-                                        <span>{{ skill.percentage }}%</span>
-                                    </div>
-                                    <div class="progress" style="height: 8px;">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: {{ skill.percentage }}%;" aria-valuenow="{{ skill.percentage }}" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+        <div class="hero-card p-5">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-5 text-center text-lg-start">
+                    <h1 class="hero-title" id="typed-name">Hi, I'm {{ profile.name }}</h1>
+                    <p class="hero-text">{{ profile.title }} — building polished, user-friendly web experiences with Django and modern frontend design.</p>
+
+                    <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                        {% if profile.resume %}
+                            <a class="btn btn-gradient btn-lg btn-glow" href="{{ profile.resume.url }}" target="_blank" rel="noopener noreferrer">Download Resume</a>
+                        {% endif %}
+                        <a class="btn btn-outline-dark btn-lg w-100 w-sm-auto" href="{% url 'contact' %}">Contact Me</a>
+                    </div>
+
+                    <div class="mt-4 text-start text-muted">
+                        {% if profile.email %}<p><strong>Email:</strong> {{ profile.email }}</p>{% endif %}
+                        {% if profile.phone %}<p><strong>Phone:</strong> {{ profile.phone }}</p>{% endif %}
+                        {% if profile.location %}<p><strong>Location:</strong> {{ profile.location }}</p>{% endif %}
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="glass-card p-5">
+                        <h3 class="mb-4">About Me</h3>
+                        <p class="text-muted">{{ profile.bio }}</p>
+
+                        <div class="row g-3 mt-4">
+                            <div class="col-sm-6">
+                                <div class="feature-box">
+                                    <h6>Fast & Responsive</h6>
+                                    <p class="mb-0 text-muted">Mobile-ready layouts and crisp interaction on every device.</p>
                                 </div>
-                            {% endfor %}
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-box">
+                                    <h6>Modern Design</h6>
+                                    <p class="mb-0 text-muted">Clear typography, soft shadows, and balanced spacing for a premium look.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-box">
+                                    <h6>Clean Code</h6>
+                                    <p class="mb-0 text-muted">Structured Django models and reusable templates for maintainable projects.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="feature-box">
+                                    <h6>Always Growing</h6>
+                                    <p class="mb-0 text-muted">Continuously improving with new features and better user experience.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        <div class="text-center mt-4">
-            <a href="{% url 'skills' %}" class="btn btn-outline-primary">View All Skills</a>
-        </div>
-    </div>
-</section>
 
-<!-- Projects Section -->
-<section class="py-5" style="background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);">
-    <div class="container">
-        <h2 class="text-center mb-4" style="color: #4caf50;">My Projects</h2>
-        <div class="row">
-            {% for project in projects %}
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-lg h-100" style="border-radius: 15px; overflow: hidden; transition: transform 0.3s ease;">
-                        {% if project.image %}
-                            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}" style="height: 200px; object-fit: cover;">
-                        {% endif %}
-                        <div class="card-body">
-                            <h5 class="card-title">{{ project.title }}</h5>
-                            <p class="card-text">{{ project.description|truncatewords:15 }}</p>
-                            {% if project.url %}
-                                <a href="{{ project.url }}" target="_blank" class="btn btn-primary">View Project</a>
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                            {% if profile.linkedin %}
+                                <a href="{{ profile.linkedin }}" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            {% endif %}
+                            {% if profile.github %}
+                                <a href="{{ profile.github }}" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            {% endif %}
+                            {% if profile.twitter %}
+                                <a href="{{ profile.twitter }}" class="btn btn-outline-info btn-sm" target="_blank" rel="noopener noreferrer">Twitter</a>
                             {% endif %}
                         </div>
                     </div>
+
+                    {% if alert %}
+                        <div class="alert alert-info alert-dismissible fade show mt-4 alert-wrapper" role="alert">
+                            <strong>News:</strong> {{ alert.message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
                 </div>
-            {% endfor %}
-        </div>
-        <div class="text-center mt-4">
-            <a href="{% url 'project_list' %}" class="btn btn-outline-success">View All Projects</a>
+            </div>
         </div>
     </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<section class="py-5">
+    <div class="container text-center">
+        <p class="section-subtitle">Capabilities built for the modern web</p>
+        <h2 class="section-title">My Skills</h2>
+        <div class="section-divider mx-auto"></div>
+
+        <div class="row g-4 mt-4">
+            {% for category, skills in grouped_skills.items %}
+                <div class="col-md-4">
+                    <div class="glass-card h-100">
+                        <h4 class="mb-4">{{ category }}</h4>
+                        {% for skill in skills %}
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="skill-badge">{{ skill.name }}</span>
+                                    <span class="text-muted">{{ skill.percentage }}%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-gradient" role="progressbar" data-percent="{{ skill.percentage }}" aria-label="{{ skill.name }} skill progress" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="mt-4">
+            <a href="{% url 'skills' %}" class="btn btn-outline-dark btn-lg">View All Skills</a>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 section--soft">
+    <div class="container text-center">
+        <p class="section-subtitle">Selected works with polished UI and strong user experience</p>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-divider mx-auto"></div>
+
+        <div class="project-grid mt-4">
+            {% for project in projects %}
+                <article class="project-card">
+                    {% if project.image %}
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-card-image">
+                    {% endif %}
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">{{ project.title }}</h3>
+                        <p class="project-card-text">{{ project.description|truncatewords:15 }}</p>
+                        {% if project.url %}
+                            <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-gradient btn-sm">View Project</a>
+                        {% endif %}
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+
+        <div class="mt-5">
+            <a href="{% url 'project_list' %}" class="btn btn-outline-success btn-lg">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Typing effect
     var typed = new Typed('#typed-name', {
-        strings: ['Hi, I\'m {{ profile.name }}', 'I am a Full-Stack Developer!,Expertise in Django ,React,javascript,Nodejs!'],
-        typeSpeed: 50,
-        backSpeed: 30,
+        strings: ['Hi, I\'m {{ profile.name }}', 'I build beautiful Django web apps', 'Modern UI, responsive layouts, and clean code.'],
+        typeSpeed: 60,
+        backSpeed: 35,
         loop: true
     });
 
-    // Scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe sections
-    document.querySelectorAll('section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(50px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
-    });
-
-    // Card hover effects
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
+    document.querySelectorAll('.progress-bar[data-percent]').forEach(function(progressBar) {
+        var percentage = progressBar.getAttribute('data-percent');
+        if (percentage) {
+            progressBar.style.width = percentage + '%';
+            progressBar.setAttribute('aria-valuenow', percentage);
+        }
     });
 });
 </script>

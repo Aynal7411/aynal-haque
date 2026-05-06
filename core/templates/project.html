@@ -1,19 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>My Projects</h2>
-<div class="project-grid">
-    {% for project in projects %}
-        <div class="project-card">
-            <img src="{{ project.image.url }}" alt="{{ project.title }}">
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.description|truncatewords:20 }}</p>
-            {% if project.url %}
-                <a href="{{ project.url }}" target="_blank">View Project</a>
-            {% endif %}
-        </div>
-    {% empty %}
-        <p>No projects added yet.</p>
-    {% endfor %}
-</div>
+<section class="py-5 section--soft">
+    <div class="container text-center">
+        <p class="section-subtitle">A portfolio of polished work and meaningful experiences.</p>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-divider mx-auto"></div>
+
+        {% if projects %}
+            <div class="project-grid mt-4">
+                {% for project in projects %}
+                    <article class="project-card">
+                        {% if project.image %}
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-card-image">
+                        {% endif %}
+                        <div class="project-card-body">
+                            <h3 class="project-card-title">{{ project.title }}</h3>
+                            <p class="project-card-text">{{ project.description|truncatewords:20 }}</p>
+                            {% if project.url %}
+                                <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-gradient btn-sm">View Project</a>
+                            {% endif %}
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-muted mt-4">No projects added yet. Add your best work to make the page shine.</p>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}
