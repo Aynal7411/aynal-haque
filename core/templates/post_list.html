@@ -1,28 +1,339 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
-<div class="container mt-5">
-    <h1 class="mb-4 text-center fw-bold">Latest Blog Posts</h1>
+{% block title %}Blog Posts{% endblock %}
 
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        {% for post in posts %}
-        <div class="col">
-            <div class="card h-100 shadow-sm border-0 hover-shadow">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="{% url 'post_detail' post.pk %}" class="text-decoration-none text-dark">
-                            {{ post.title }}
-                        </a>
-                    </h5>
-                    <h6 class="card-subtitle mb-2 text-muted">
-                        By {{ post.author }} • {{ post.created_at|date:"F j, Y" }}
-                    </h6>
-                    <p class="card-text mt-2">{{ post.content|truncatewords:30 }}</p>
-                </div>
+{% block content %}
+<style>
+.blog-container {
+    background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+    min-height: 100vh;
+    padding: 60px 0;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.blog-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff6f00;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.blog-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6f00, #ffeb3b, #4caf50);
+    border-radius: 2px;
+}
+
+.blog-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.language-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.lang-btn {
+    padding: 10px 20px;
+    border: 2px solid #ff6f00;
+    background: transparent;
+    color: #ff6f00;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+    background: #ff6f00;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 111, 0, 0.3);
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.post-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out both;
+    position: relative;
+}
+
+.post-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 111, 0, 0.2);
+}
+
+.post-card:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.post-card:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.post-header {
+    padding: 2rem 2rem 0 2rem;
+    background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%);
+}
+
+.post-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+    color: #ff6f00;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.post-meta i {
+    color: #ff6f00;
+}
+
+.post-content {
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.post-excerpt {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.post-footer {
+    padding: 0 2rem 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.read-more-btn {
+    background: linear-gradient(45deg, #ff6f00, #ff8f00);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.read-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 111, 0, 0.3);
+    color: white;
+}
+
+.language-badge {
+    background: #4caf50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: #ff6f00;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2.5rem;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .post-card {
+        margin: 0 1rem;
+    }
+}
+</style>
+
+<div class="blog-container">
+    <div class="container">
+        <div class="blog-header">
+            <h1 class="blog-title">Blog Posts</h1>
+            <p class="blog-subtitle">Discover insights, tutorials, and stories from our community</p>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                {% for lang_code, lang_name in language_choices %}
+                    <a href="?lang={{ lang_code }}"
+                       class="lang-btn {% if current_language == lang_code %}active{% endif %}">
+                        {% if lang_code == 'en' %}
+                            🇺🇸 English
+                        {% elif lang_code == 'bn' %}
+                            🇧🇩 বাংলা
+                        {% endif %}
+                    </a>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
+
+        {% if posts %}
+            <div class="posts-grid">
+                {% for post in posts %}
+                <div class="post-card">
+                    <div class="post-header">
+                        <h2 class="post-title">
+                            <a href="{% url 'post_detail' post.pk %}?lang={{ current_language }}">
+                                {{ post.title }}
+                            </a>
+                        </h2>
+                        <div class="post-meta">
+                            <span><i class="bi bi-person-fill"></i> {{ post.author.get_full_name|default:post.author.username }}</span>
+                            <span><i class="bi bi-calendar-event"></i> {{ post.created_at|date:"M j, Y" }}</span>
+                            <span class="language-badge">
+                                {% if post.language == 'en' %}🇺🇸 EN{% else %}🇧🇩 বাংলা{% endif %}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="post-content">
+                        <p class="post-excerpt">{{ post.content|truncatewords:25 }}</p>
+
+                        <div class="post-footer">
+                            <a href="{% url 'post_detail' post.pk %}?lang={{ current_language }}"
+                               class="read-more-btn">
+                                <i class="bi bi-arrow-right"></i>
+                                Read More
+                            </a>
+                            <small class="text-muted">
+                                {% if post.language == 'bn' %}
+                                    {{ post.content|wordcount }} শব্দ
+                                {% else %}
+                                    {{ post.content|wordcount }} words
+                                {% endif %}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <i class="bi bi-journal-x"></i>
+                <h3>No posts found</h3>
+                <p>
+                    {% if current_language == 'bn' %}
+                        এই ভাষায় কোনো পোস্ট পাওয়া যায়নি। অন্য ভাষা চেষ্টা করুন।
+                    {% else %}
+                        No posts found in this language. Try switching to another language.
+                    {% endif %}
+                </p>
+            </div>
+        {% endif %}
     </div>
 </div>
+
+<script>
+// Add some interactive effects
+document.addEventListener('DOMContentLoaded', function() {
+    // Add hover effect for cards
+    const cards = document.querySelectorAll('.post-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Smooth scroll for language switcher
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // Add loading animation
+            this.innerHTML += ' <i class="bi bi-arrow-clockwise spin"></i>';
+        });
+    });
+});
+</script>
 {% endblock %}

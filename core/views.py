@@ -45,13 +45,22 @@ def skills_view(request):
 
 
 def post_list(request):
-    posts = Post.objects.all().order_by('-created_at')
-    return render(request, 'post_list.html', {'posts': posts})
+    language = request.GET.get('lang', 'en')  # Default to English
+    posts = Post.objects.filter(language=language).order_by('-created_at')
+    return render(request, 'post_list.html', {
+        'posts': posts,
+        'current_language': language,
+        'language_choices': Post.LANGUAGE_CHOICES
+    })
 
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'post_detail.html', {'post': post})
+    language = request.GET.get('lang', post.language)  # Use post's language as default
+    return render(request, 'post_detail.html', {
+        'post': post,
+        'current_language': language
+    })
 
 
 def register_view(request):
