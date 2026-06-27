@@ -1,4 +1,4 @@
-Django==5.2.5
+Django==5.2.14
 django-axes==8.0.0
 django-pwa==2.0.1
 gunicorn==23.0.0
