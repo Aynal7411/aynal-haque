@@ -21,3 +21,5 @@ Thumbs.db
 # Editor files
 .vscode/
 .idea/
+
+logs/django.log
