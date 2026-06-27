@@ -1150,3 +1150,22 @@
 [INFO] 2026-06-27 13:21:34,017 django.server (213): "GET / HTTP/1.1" 200 15746
 [INFO] 2026-06-27 13:21:36,211 django.server (213): "GET / HTTP/1.1" 200 15746
 [INFO] 2026-06-27 13:21:40,141 django.server (213): "GET / HTTP/1.1" 200 15746
+[INFO] 2026-06-27 13:23:47,191 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 13:23:52,707 django.server (213): "GET / HTTP/1.1" 200 15746
+[INFO] 2026-06-27 13:23:59,764 django.server (213): "GET / HTTP/1.1" 200 15746
+[ERROR] 2026-06-27 13:29:04,180 django.server (213): "GET / HTTP/1.1" 500 222701
+[INFO] 2026-06-27 13:29:48,776 django.server (213): "GET / HTTP/1.1" 200 15860
+[INFO] 2026-06-27 13:29:48,976 django.server (213): "GET /static/core/images/apple-touch-icon.png HTTP/1.1" 200 1694952
+[INFO] 2026-06-27 13:29:51,732 django.server (213): "GET / HTTP/1.1" 200 15860
+[INFO] 2026-06-27 13:29:59,460 django.server (213): "GET / HTTP/1.1" 200 15860
+[INFO] 2026-06-27 13:32:16,957 django.server (213): "GET / HTTP/1.1" 200 15989
+[INFO] 2026-06-27 13:32:19,149 django.server (213): "GET / HTTP/1.1" 200 15986
+[INFO] 2026-06-27 13:33:06,119 django.server (213): "GET / HTTP/1.1" 200 16014
+[INFO] 2026-06-27 13:33:06,152 django.server (213): "GET /static/core/images/apple-touch-icon.png HTTP/1.1" 304 0
+[INFO] 2026-06-27 13:34:01,327 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 13:34:02,364 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 13:34:03,754 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 13:34:05,018 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 13:34:33,573 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 13:35:08,790 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 13:35:38,961 django.server (213): "GET / HTTP/1.1" 200 15998

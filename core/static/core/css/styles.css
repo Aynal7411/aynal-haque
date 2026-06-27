@@ -51,10 +51,19 @@ select {
 }
 
 .navbar-brand {
-  letter-spacing: 0.08em;
+  letter-spacing: 1px;
   font-weight: 700;
 }
-
+.navbar-brand span{
+    font-weight:700;
+}
+.navbar-brand img{
+    object-fit: cover;
+    transition: all .3s ease;
+}
+.navbar-brand:hover img{
+    transform: rotate(5deg) scale(1.08);
+}
 .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.92) !important;
   border-radius: 18px;
