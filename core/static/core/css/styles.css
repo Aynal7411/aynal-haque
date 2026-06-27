@@ -44,7 +44,7 @@ select {
 }
 
 .navbar {
-  background: #203564eb !important;
+  background: hsla(221, 91%, 55%, 0.922) !important;
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
