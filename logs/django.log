@@ -1271,3 +1271,38 @@
 [INFO] 2026-06-27 15:14:45,072 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
 [INFO] 2026-06-27 15:15:35,972 django.server (81): - Broken pipe from ('127.0.0.1', 40078)
 [INFO] 2026-06-27 15:15:38,378 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:18:49,673 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 15:18:56,138 django.server (81): - Broken pipe from ('127.0.0.1', 41259)
+[INFO] 2026-06-27 15:18:57,660 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:19:00,547 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:19:11,211 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:19:43,937 django.server (213): "GET / HTTP/1.1" 200 16038
+[INFO] 2026-06-27 15:19:46,100 django.server (213): "GET /login/ HTTP/1.1" 200 6110
+[INFO] 2026-06-27 15:19:46,470 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:19:47,767 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:19:52,496 django.server (213): "GET /service/ HTTP/1.1" 200 6704
+[INFO] 2026-06-27 15:19:53,820 django.server (213): "GET /skills/ HTTP/1.1" 200 9194
+[INFO] 2026-06-27 15:19:54,142 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:19:54,749 django.server (213): "GET /post HTTP/1.1" 200 15412
+[INFO] 2026-06-27 15:19:55,443 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:19:56,471 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:19:56,590 django.server (213): "GET /service/ HTTP/1.1" 200 6704
+[INFO] 2026-06-27 15:19:58,289 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:20:18,853 django.server (213): "GET /service/ HTTP/1.1" 200 6648
+[INFO] 2026-06-27 15:20:20,582 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:20:23,293 django.server (213): "GET /service/ HTTP/1.1" 200 6648
+[INFO] 2026-06-27 15:20:24,696 django.server (213): "GET /skills/ HTTP/1.1" 200 9138
+[INFO] 2026-06-27 15:20:24,940 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:20:26,361 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:20:27,636 django.server (213): "GET /post HTTP/1.1" 200 15356
+[INFO] 2026-06-27 15:20:29,397 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:20:30,943 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:20:38,556 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:22:00,413 django.server (213): "GET / HTTP/1.1" 200 15982
+[INFO] 2026-06-27 15:22:02,068 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:24:25,748 django.server (213): "GET / HTTP/1.1" 200 15982
+[INFO] 2026-06-27 15:24:27,440 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:24:56,196 django.server (213): "GET / HTTP/1.1" 200 15982
+[INFO] 2026-06-27 15:24:57,985 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
+[INFO] 2026-06-27 15:27:42,117 django.server (213): "GET / HTTP/1.1" 200 15982
+[INFO] 2026-06-27 15:27:44,025 django.server (213): "GET /serviceworker.js HTTP/1.1" 200 2142
