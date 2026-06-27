@@ -13,6 +13,8 @@ class Service(models.Model):
 
     class Meta:
         ordering = ['order']
+
+        
 class Message(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()

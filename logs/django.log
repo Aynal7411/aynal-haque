@@ -1169,3 +1169,47 @@
 [INFO] 2026-06-27 13:34:33,573 django.server (213): "GET / HTTP/1.1" 200 15998
 [INFO] 2026-06-27 13:35:08,790 django.server (213): "GET / HTTP/1.1" 200 15998
 [INFO] 2026-06-27 13:35:38,961 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 14:33:55,556 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 14:34:31,623 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 14:34:31,713 django.server (213): "GET /static/core/images/apple-touch-icon.png HTTP/1.1" 304 0
+[INFO] 2026-06-27 14:40:48,515 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\aynal_portfolio\urls.py changed, reloading.
+[INFO] 2026-06-27 14:40:50,554 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 14:41:15,044 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\service_my\urls.py changed, reloading.
+[INFO] 2026-06-27 14:41:18,382 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 14:41:41,848 django.server (213): "GET /service/ HTTP/1.1" 200 5610
+[INFO] 2026-06-27 14:41:47,966 django.server (213): "GET /join/ HTTP/1.1" 200 15433
+[INFO] 2026-06-27 14:41:57,124 django.server (213): "POST /join/ HTTP/1.1" 302 0
+[INFO] 2026-06-27 14:41:57,192 django.server (213): "GET /thank-you/ HTTP/1.1" 200 5819
+[INFO] 2026-06-27 14:42:15,687 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 14:43:45,845 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\service_my\models.py changed, reloading.
+[INFO] 2026-06-27 14:43:50,191 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 14:45:02,694 django.server (213): "GET / HTTP/1.1" 200 15998
+[INFO] 2026-06-27 14:45:02,728 django.server (213): "GET /static/core/images/apple-touch-icon.png HTTP/1.1" 304 0
+[INFO] 2026-06-27 14:45:04,244 django.server (213): "GET /service/ HTTP/1.1" 200 5623
+[INFO] 2026-06-27 14:47:17,910 django.server (213): "GET /service/ HTTP/1.1" 200 5619
+[INFO] 2026-06-27 14:47:22,200 django.server (213): "GET /service/ HTTP/1.1" 200 5619
+[INFO] 2026-06-27 14:49:03,519 django.server (213): "GET /service/ HTTP/1.1" 200 5601
+[INFO] 2026-06-27 14:50:23,514 django.server (213): "GET /service/ HTTP/1.1" 200 5633
+[INFO] 2026-06-27 14:51:39,770 django.server (213): "GET /service/ HTTP/1.1" 200 5646
+[INFO] 2026-06-27 14:52:10,986 django.server (213): "GET /service/ HTTP/1.1" 200 5652
+[INFO] 2026-06-27 14:53:22,677 django.server (213): "GET /service/ HTTP/1.1" 200 5659
+[INFO] 2026-06-27 14:54:54,597 django.server (213): "GET /service/ HTTP/1.1" 200 5659
+[INFO] 2026-06-27 14:56:51,972 django.server (213): "GET /service/ HTTP/1.1" 200 5667
+[INFO] 2026-06-27 14:56:52,000 django.server (213): "GET /static/core/images/apple-touch-icon.png HTTP/1.1" 304 0
+[INFO] 2026-06-27 14:56:52,982 django.server (213): "GET /service/ HTTP/1.1" 200 5667
+[INFO] 2026-06-27 14:56:53,700 django.server (213): "GET /service/ HTTP/1.1" 200 5667
+[INFO] 2026-06-27 14:57:22,634 django.server (213): "GET /service/ HTTP/1.1" 200 5662
+[INFO] 2026-06-27 14:58:16,407 django.server (213): "GET /service/ HTTP/1.1" 200 5913
+[INFO] 2026-06-27 14:58:52,341 django.server (213): "GET /service/ HTTP/1.1" 200 5845
+[INFO] 2026-06-27 14:59:19,064 django.server (213): "GET /service/ HTTP/1.1" 200 5848
+[INFO] 2026-06-27 14:59:19,827 django.server (213): "GET /service/ HTTP/1.1" 200 5848
+[INFO] 2026-06-27 14:59:20,751 django.server (213): "GET /service/ HTTP/1.1" 200 5853
+[INFO] 2026-06-27 14:59:46,888 django.server (213): "GET /service/ HTTP/1.1" 200 5866
+[INFO] 2026-06-27 14:59:47,951 django.server (213): "GET /service/ HTTP/1.1" 200 5866
+[INFO] 2026-06-27 14:59:48,622 django.server (213): "GET /service/ HTTP/1.1" 200 5866
+[INFO] 2026-06-27 14:59:49,556 django.server (213): "GET /service/ HTTP/1.1" 200 5866
+[INFO] 2026-06-27 14:59:59,709 django.server (213): "GET /service/ HTTP/1.1" 200 5856
+[INFO] 2026-06-27 15:00:21,169 django.server (213): "GET /service/ HTTP/1.1" 200 5860
+[INFO] 2026-06-27 15:00:21,829 django.server (213): "GET /service/ HTTP/1.1" 200 5860
+[INFO] 2026-06-27 15:02:59,120 django.server (213): "GET /service/ HTTP/1.1" 200 6664
+[INFO] 2026-06-27 15:03:48,969 django.server (213): "GET /service/contact/ HTTP/1.1" 200 6506
