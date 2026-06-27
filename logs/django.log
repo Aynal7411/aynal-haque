@@ -1128,3 +1128,13 @@
 [INFO] 2026-06-27 12:46:49,016 django.utils.autoreload (667): Watching for file changes with StatReloader
 [INFO] 2026-06-27 12:47:16,607 django.server (213): "GET /register/ HTTP/1.1" 200 7340
 [INFO] 2026-06-27 12:47:27,072 django.server (213): "GET /register/ HTTP/1.1" 200 7340
+[INFO] 2026-06-27 12:50:05,061 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:50:09,218 django.server (213): "GET /register/ HTTP/1.1" 200 7340
+[INFO] 2026-06-27 12:50:12,399 django.server (213): "GET /register/ HTTP/1.1" 200 7340
+[INFO] 2026-06-27 12:50:19,025 django.server (213): "GET /login/ HTTP/1.1" 200 5675
+[INFO] 2026-06-27 12:50:21,725 django.server (213): "GET /service/ HTTP/1.1" 200 5215
+[INFO] 2026-06-27 12:50:23,424 django.server (213): "GET / HTTP/1.1" 200 15603
+[INFO] 2026-06-27 13:06:48,767 django.server (213): "GET / HTTP/1.1" 200 15704
+[INFO] 2026-06-27 13:06:50,080 django.server (213): "GET / HTTP/1.1" 200 15704
+[INFO] 2026-06-27 13:07:52,662 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 13:07:55,875 django.server (213): "GET / HTTP/1.1" 200 15704
