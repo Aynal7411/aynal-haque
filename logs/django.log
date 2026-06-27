@@ -1034,3 +1034,62 @@
 [INFO] 2026-06-27 11:44:37,804 django.server (213): "GET /join/ HTTP/1.1" 200 15038
 [WARNING] 2026-06-27 11:44:51,361 django.server (213): "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8856
 [INFO] 2026-06-27 11:45:45,281 django.server (213): "GET /join/ HTTP/1.1" 200 15038
+[INFO] 2026-06-27 11:47:05,219 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 11:47:18,416 django.server (213): "GET /join/ HTTP/1.1" 200 15038
+[INFO] 2026-06-27 11:47:20,296 django.server (213): "GET / HTTP/1.1" 200 15603
+[INFO] 2026-06-27 11:47:26,090 django.server (213): "GET /join/ HTTP/1.1" 200 15038
+[INFO] 2026-06-27 12:09:02,516 django.server (213): "GET /join/ HTTP/1.1" 200 15038
+[INFO] 2026-06-27 12:09:05,013 django.server (213): "GET /service/ HTTP/1.1" 200 5215
+[INFO] 2026-06-27 12:09:06,498 django.server (213): "GET / HTTP/1.1" 200 15603
+[INFO] 2026-06-27 12:09:11,235 django.server (213): "GET / HTTP/1.1" 200 15603
+[INFO] 2026-06-27 12:10:38,079 django.server (213): "GET /login/ HTTP/1.1" 200 5675
+[INFO] 2026-06-27 12:10:42,208 django.server (213): "POST /login/ HTTP/1.1" 200 6003
+[INFO] 2026-06-27 12:10:44,339 django.server (213): "GET /register/ HTTP/1.1" 200 6923
+[INFO] 2026-06-27 12:10:47,539 django.server (213): "GET /register/ HTTP/1.1" 200 6923
+[INFO] 2026-06-27 12:10:50,289 django.server (213): "GET /register/ HTTP/1.1" 200 6923
+[INFO] 2026-06-27 12:11:32,393 django.server (213): "POST /register/ HTTP/1.1" 200 7504
+[INFO] 2026-06-27 12:11:58,426 django.server (213): "POST /register/ HTTP/1.1" 200 7482
+[ERROR] 2026-06-27 12:12:17,761 django.server (213): "POST /register/ HTTP/1.1" 500 94112
+[INFO] 2026-06-27 12:15:14,371 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\aynal_portfolio\settings.py changed, reloading.
+[INFO] 2026-06-27 12:15:21,604 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:17:04,834 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:17:07,214 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:17:10,709 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:17:14,110 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:17:32,449 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:17:36,154 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:19:17,364 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:19:19,954 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:19:21,956 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:19:26,340 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:19:30,389 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:19:33,652 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:21:50,658 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:21:52,189 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:21:56,786 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:21:59,601 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:22:17,911 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:22:20,703 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:23:02,713 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:23:05,943 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:23:18,288 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:23:21,205 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:23:31,956 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:23:33,078 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:23:41,460 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:23:44,990 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:23:57,390 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:24:00,740 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:25:06,623 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
+[INFO] 2026-06-27 12:25:09,417 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:25:15,849 django.server (213): "POST /register/ HTTP/1.1" 200 7966
+[INFO] 2026-06-27 12:25:22,008 django.server (213): "GET /register/ HTTP/1.1" 200 6923
+[INFO] 2026-06-27 12:25:55,333 django.server (213): "POST /register/ HTTP/1.1" 302 0
+[INFO] 2026-06-27 12:25:55,375 django.server (213): "GET /profile/ HTTP/1.1" 200 8740
+[INFO] 2026-06-27 12:26:17,437 django.server (213): "GET /profile/ HTTP/1.1" 200 8411
+[INFO] 2026-06-27 12:26:19,429 django.server (213): "GET /profile/edit/ HTTP/1.1" 200 10363
+[INFO] 2026-06-27 12:26:43,871 django.server (213): "POST /profile/edit/ HTTP/1.1" 302 0
+[INFO] 2026-06-27 12:26:43,884 django.server (213): "GET /profile/ HTTP/1.1" 200 8702
+[INFO] 2026-06-27 12:26:44,027 django.server (213): "GET /media/user_profiles/ChatGPT_Image_Jun_12_2026_01_09_35_PM.png HTTP/1.1" 200 1838267
+[INFO] 2026-06-27 12:26:52,555 django.server (213): "GET /service/ HTTP/1.1" 200 5962
+[INFO] 2026-06-27 12:26:54,112 django.server (213): "GET / HTTP/1.1" 200 16350
