@@ -289,3 +289,60 @@ textarea.form-control {
 }
 
 
+.services-section{
+    background:#f8f9fa;
+}
+
+.service-card{
+    border-radius:20px;
+    transition:all .35s ease;
+    overflow:hidden;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15)!important;
+}
+
+.service-icon{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:#fff3cd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.35s;
+}
+
+.service-icon i{
+    font-size:40px;
+    color:#ff9800;
+}
+
+.service-card:hover .service-icon{
+    background:#ff9800;
+}
+
+.service-card:hover .service-icon i{
+    color:#fff;
+}
+
+.service-card h4{
+    color:#212529;
+}
+
+.service-card p{
+    line-height:1.7;
+    min-height:80px;
+}
+
+.service-card .btn{
+    transition:.3s;
+}
+
+.service-card .btn:hover{
+    transform:scale(1.05);
+}
+
