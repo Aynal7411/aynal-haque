@@ -764,3 +764,63 @@ Traceback (most recent call last):
     raise TemplateDoesNotExist(template_name, chain=chain)
 django.template.exceptions.TemplateDoesNotExist: thank_you.html
 [ERROR] 2026-05-05 19:55:15,667 django.server (213): "GET /thank-you/ HTTP/1.1" 500 90045
+[ERROR] 2026-06-27 09:34:57,781 django.request (253): Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: core_sitealert.title
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Deployed-projects\aynal-haque\core\views.py", line 14, in my_page
+    alert = SiteAlert.objects.filter(is_active=True).order_by('-created_on').first()
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\models\query.py", line 1104, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Deployed-projects\aynal-haque\milon\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: core_sitealert.title
+[ERROR] 2026-06-27 09:34:57,800 django.server (213): "GET / HTTP/1.1" 500 145963

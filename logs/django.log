@@ -893,3 +893,56 @@
 [INFO] 2025-09-12 07:39:02,444 django.server (213): "GET / HTTP/1.1" 200 8618
 [INFO] 2026-05-05 20:17:19,243 django.utils.autoreload (681): Watching for file changes with StatReloader
 [INFO] 2026-05-05 20:39:20,698 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:07:23,289 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:07:53,022 django.server (213): "GET / HTTP/1.1" 200 15538
+[INFO] 2026-06-27 09:07:53,225 django.server (213): "GET /static/css/styles.css HTTP/1.1" 200 5378
+[INFO] 2026-06-27 09:07:53,283 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 200 506
+[INFO] 2026-06-27 09:07:53,820 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 200 1158
+[INFO] 2026-06-27 09:07:53,884 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 200 6980
+[WARNING] 2026-06-27 09:07:53,911 django.server (213): "GET /static/favicon-16x16.png HTTP/1.1" 404 1865
+[WARNING] 2026-06-27 09:07:54,124 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2026-06-27 09:07:54,148 django.server (81): - Broken pipe from ('127.0.0.1', 2096)
+[INFO] 2026-06-27 09:07:54,151 django.server (81): - Broken pipe from ('127.0.0.1', 2104)
+[INFO] 2026-06-27 09:07:55,893 django.server (213): "GET / HTTP/1.1" 200 15538
+[INFO] 2026-06-27 09:07:56,042 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2026-06-27 09:07:56,162 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2026-06-27 09:07:56,162 django.server (213): "GET /static/core/js/main.js HTTP/1.1" 200 488
+[INFO] 2026-06-27 09:07:56,257 django.server (81): - Broken pipe from ('127.0.0.1', 2108)
+[INFO] 2026-06-27 09:08:01,621 django.server (213): "GET / HTTP/1.1" 200 15538
+[INFO] 2026-06-27 09:08:01,720 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2026-06-27 09:08:01,787 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2026-06-27 09:08:01,809 django.server (81): - Broken pipe from ('127.0.0.1', 2109)
+[INFO] 2026-06-27 09:08:01,912 django.server (81): - Broken pipe from ('127.0.0.1', 2110)
+[INFO] 2026-06-27 09:22:41,042 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:22:45,385 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:22:47,244 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:22:49,224 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:22:59,713 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:23:03,485 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:24:23,484 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:24:26,888 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:24:31,084 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:24:33,117 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:24:43,406 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:24:47,394 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:24:50,524 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:24:54,292 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:24:59,935 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:25:03,101 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:25:04,554 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:25:07,145 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:25:09,746 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\models.py changed, reloading.
+[INFO] 2026-06-27 09:25:12,433 django.utils.autoreload (667): Watching for file changes with StatReloader
+[ERROR] 2026-06-27 09:34:57,800 django.server (213): "GET / HTTP/1.1" 500 145963
+[WARNING] 2026-06-27 09:34:58,314 django.server (213): "GET /favicon.ico HTTP/1.1" 404 8745
+[INFO] 2026-06-27 09:40:25,072 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 09:40:29,179 django.server (213): "GET / HTTP/1.1" 200 15598
+[INFO] 2026-06-27 09:40:29,373 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2026-06-27 09:40:29,484 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2026-06-27 09:40:29,502 django.server (81): - Broken pipe from ('127.0.0.1', 2883)
+[INFO] 2026-06-27 09:40:29,660 django.server (81): - Broken pipe from ('127.0.0.1', 2884)
+[INFO] 2026-06-27 09:40:36,505 django.server (213): "GET / HTTP/1.1" 200 15598
+[INFO] 2026-06-27 09:40:36,593 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 304 0
+[WARNING] 2026-06-27 09:40:36,655 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 404 1871
+[INFO] 2026-06-27 09:40:36,671 django.server (81): - Broken pipe from ('127.0.0.1', 2888)
+[INFO] 2026-06-27 09:40:36,676 django.server (81): - Broken pipe from ('127.0.0.1', 2886)
