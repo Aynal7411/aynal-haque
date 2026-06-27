@@ -3,9 +3,16 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="card shadow-lg rounded-4">
+      <div class="card register-card border-0 shadow-lg">
         <div class="card-body p-4">
-          <h2 class="text-center mb-4">Create Your Account</h2>
+          <div class="text-center mb-4">
+    <div class="register-icon">
+        <i class="fas fa-user-plus"></i>
+    </div>
+
+    <h2 class="fw-bold mt-3">
+        Create Your Account
+    </h2>
           
           {% if form.non_field_errors %}
             {% for error in form.non_field_errors %}

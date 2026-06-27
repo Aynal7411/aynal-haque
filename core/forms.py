@@ -10,46 +10,98 @@ class TeamMemberForm(forms.ModelForm):
         fields = ['name', 'mobile', 'email']
 
 
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+
 class UserRegistrationForm(UserCreationForm):
-    """Enhanced user registration form with email validation"""
     email = forms.EmailField(
         required=True,
-        help_text='Required. Enter a valid email address.',
-        widget=forms.EmailInput(attrs={'class': 'form-control'})
+        label="Email Address",
+        help_text="Enter a valid email address.",
+        widget=forms.EmailInput(
+            attrs={
+                "class": "form-control form-control-lg",
+                "placeholder": "Enter your email",
+                "autocomplete": "email",
+            }
+        ),
     )
+
     username = forms.CharField(
         max_length=150,
-        help_text='Required. Letters, digits and @/./+/-/_ only.',
-        widget=forms.TextInput(attrs={'class': 'form-control'})
+        label="Username",
+        help_text="Letters, digits and @/./+/-/_ only.",
+        widget=forms.TextInput(
+            attrs={
+                "class": "form-control form-control-lg",
+                "placeholder": "Choose a username",
+                "autocomplete": "username",
+            }
+        ),
     )
+
     password1 = forms.CharField(
-        label='Password',
-        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
-        help_text='Must be at least 8 characters with letters and numbers.'
+        label="Password",
+        help_text="Minimum 8 characters with letters and numbers.",
+        widget=forms.PasswordInput(
+            attrs={
+                "class": "form-control form-control-lg",
+                "placeholder": "Create a strong password",
+                "autocomplete": "new-password",
+            }
+        ),
     )
+
     password2 = forms.CharField(
-        label='Confirm Password',
-        widget=forms.PasswordInput(attrs={'class': 'form-control'})
+        label="Confirm Password",
+        widget=forms.PasswordInput(
+            attrs={
+                "class": "form-control form-control-lg",
+                "placeholder": "Confirm your password",
+                "autocomplete": "new-password",
+            }
+        ),
     )
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2')
+        fields = [
+            "username",
+            "email",
+            "password1",
+            "password2",
+        ]
 
     def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if User.objects.filter(email=email).exists():
-            raise forms.ValidationError('This email is already registered.')
+        email = self.cleaned_data["email"]
+
+        if User.objects.filter(email__iexact=email).exists():
+            raise forms.ValidationError(
+                "This email address is already registered."
+            )
+
         return email
 
     def clean_password1(self):
-        password = self.cleaned_data.get('password1')
+        password = self.cleaned_data["password1"]
+
         if len(password) < 8:
-            raise forms.ValidationError('Password must be at least 8 characters long.')
-        if not any(char.isdigit() for char in password):
-            raise forms.ValidationError('Password must contain at least one number.')
-        if not any(char.isalpha() for char in password):
-            raise forms.ValidationError('Password must contain at least one letter.')
+            raise forms.ValidationError(
+                "Password must be at least 8 characters long."
+            )
+
+        if not any(c.isalpha() for c in password):
+            raise forms.ValidationError(
+                "Password must contain at least one letter."
+            )
+
+        if not any(c.isdigit() for c in password):
+            raise forms.ValidationError(
+                "Password must contain at least one number."
+            )
+
         return password
 
 

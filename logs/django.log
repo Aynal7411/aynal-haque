@@ -1093,3 +1093,38 @@
 [INFO] 2026-06-27 12:26:44,027 django.server (213): "GET /media/user_profiles/ChatGPT_Image_Jun_12_2026_01_09_35_PM.png HTTP/1.1" 200 1838267
 [INFO] 2026-06-27 12:26:52,555 django.server (213): "GET /service/ HTTP/1.1" 200 5962
 [INFO] 2026-06-27 12:26:54,112 django.server (213): "GET / HTTP/1.1" 200 16350
+[INFO] 2026-06-27 12:28:16,236 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:28:42,359 django.server (213): "GET /profile/ HTTP/1.1" 200 8376
+[INFO] 2026-06-27 12:28:42,375 django.server (213): "GET /media/user_profiles/ChatGPT_Image_Jun_12_2026_01_09_35_PM.png HTTP/1.1" 304 0
+[INFO] 2026-06-27 12:28:56,454 django.server (213): "GET /profile/edit/ HTTP/1.1" 200 10670
+[INFO] 2026-06-27 12:28:56,471 django.server (213): "GET /media/user_profiles/ChatGPT_Image_Jun_12_2026_01_09_35_PM.png HTTP/1.1" 304 0
+[INFO] 2026-06-27 12:29:32,784 django.server (213): "POST /profile/edit/ HTTP/1.1" 302 0
+[INFO] 2026-06-27 12:29:32,797 django.server (213): "GET /profile/ HTTP/1.1" 200 8874
+[INFO] 2026-06-27 12:29:32,933 django.server (213): "GET /media/user_profiles/monirdr.png HTTP/1.1" 200 1066369
+[INFO] 2026-06-27 12:29:43,315 django.server (213): "GET / HTTP/1.1" 200 16350
+[INFO] 2026-06-27 12:29:58,716 django.server (213): "GET /profile/ HTTP/1.1" 200 8548
+[INFO] 2026-06-27 12:29:58,754 django.server (213): "GET /media/user_profiles/monirdr.png HTTP/1.1" 304 0
+[INFO] 2026-06-27 12:30:10,818 django.server (213): "GET /post HTTP/1.1" 200 15724
+[INFO] 2026-06-27 12:30:12,259 django.server (213): "GET /service/ HTTP/1.1" 200 5962
+[INFO] 2026-06-27 12:37:33,386 django.server (213): "GET /logout/ HTTP/1.1" 302 0
+[INFO] 2026-06-27 12:37:33,427 django.server (213): "GET / HTTP/1.1" 200 15921
+[INFO] 2026-06-27 12:37:34,939 django.server (213): "GET /register/ HTTP/1.1" 200 7053
+[INFO] 2026-06-27 12:37:37,056 django.server (213): "GET /register/ HTTP/1.1" 200 7053
+[INFO] 2026-06-27 12:38:42,365 django.server (213): "GET /register/ HTTP/1.1" 200 7066
+[INFO] 2026-06-27 12:38:48,221 django.server (213): "GET /register/ HTTP/1.1" 200 7066
+[INFO] 2026-06-27 12:39:55,057 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\forms.py changed, reloading.
+[INFO] 2026-06-27 12:39:58,870 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:40:08,345 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\forms.py changed, reloading.
+[INFO] 2026-06-27 12:40:11,256 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:40:29,852 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\forms.py changed, reloading.
+[INFO] 2026-06-27 12:40:32,981 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:40:50,886 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\forms.py changed, reloading.
+[INFO] 2026-06-27 12:40:54,106 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:40:57,751 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\forms.py changed, reloading.
+[INFO] 2026-06-27 12:40:59,998 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:41:00,941 django.server (213): "GET /register/ HTTP/1.1" 200 7066
+[INFO] 2026-06-27 12:41:09,410 django.server (213): "GET /register/ HTTP/1.1" 200 7066
+[INFO] 2026-06-27 12:46:47,166 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\forms.py changed, reloading.
+[INFO] 2026-06-27 12:46:49,016 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-06-27 12:47:16,607 django.server (213): "GET /register/ HTTP/1.1" 200 7340
+[INFO] 2026-06-27 12:47:27,072 django.server (213): "GET /register/ HTTP/1.1" 200 7340
