@@ -1,0 +1,500 @@
+2026-07-15T07:46:19.069028962Z     raise ValueError(
+2026-07-15T07:46:19.069035892Z ValueError: Missing staticfiles manifest entry for 'core/icons/favicon-16x16.png'
+2026-07-15T07:46:53.510429206Z [ERROR] Internal Server Error: /
+2026-07-15T07:46:53.510456237Z Traceback (most recent call last):
+2026-07-15T07:46:53.510462127Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:46:53.510466547Z     return self.cursor.execute(sql, params)
+2026-07-15T07:46:53.510470587Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.510475617Z psycopg2.errors.UndefinedTable: relation "core_profile" does not exist
+2026-07-15T07:46:53.510479757Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:46:53.510484758Z                                                              ^
+2026-07-15T07:46:53.510488958Z 
+2026-07-15T07:46:53.510492798Z 
+2026-07-15T07:46:53.510496998Z The above exception was the direct cause of the following exception:
+2026-07-15T07:46:53.510500978Z 
+2026-07-15T07:46:53.510504928Z Traceback (most recent call last):
+2026-07-15T07:46:53.510512568Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+2026-07-15T07:46:53.510516978Z     response = get_response(request)
+2026-07-15T07:46:53.510521098Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.510525199Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+2026-07-15T07:46:53.510529379Z     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+2026-07-15T07:46:53.510533479Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.510537629Z   File "/opt/render/project/src/core/views.py", line 16, in my_page
+2026-07-15T07:46:53.510541799Z     context = build_home_page_context()
+2026-07-15T07:46:53.510545859Z               ^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.510550779Z   File "/opt/render/project/src/core/services/home_page_service.py", line 13, in build_home_page_context
+2026-07-15T07:46:53.510554919Z     "profile": get_primary_profile(),
+2026-07-15T07:46:53.510559079Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.51056335Z   File "/opt/render/project/src/core/selectors/profile_selector.py", line 8, in get_primary_profile
+2026-07-15T07:46:53.51056781Z     return Profile.objects.order_by("id").first()
+2026-07-15T07:46:53.5105722Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.51057636Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1106, in first
+2026-07-15T07:46:53.51058049Z     for obj in queryset[:1]:
+2026-07-15T07:46:53.51058477Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 386, in __iter__
+2026-07-15T07:46:53.51058954Z     self._fetch_all()
+2026-07-15T07:46:53.51059368Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+2026-07-15T07:46:53.510597871Z     self._result_cache = list(self._iterable_class(self))
+2026-07-15T07:46:53.510613761Z                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.510616681Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 93, in __iter__
+2026-07-15T07:46:53.510619231Z     results = compiler.execute_sql(
+2026-07-15T07:46:53.510621871Z               ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.510624471Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+2026-07-15T07:46:53.510626961Z     cursor.execute(sql, params)
+2026-07-15T07:46:53.510629531Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+2026-07-15T07:46:53.510632411Z     return self._execute_with_wrappers(
+2026-07-15T07:46:53.510634941Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.510638252Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+2026-07-15T07:46:53.510640941Z     return executor(sql, params, many, context)
+2026-07-15T07:46:53.510643632Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.510646242Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+2026-07-15T07:46:53.510648802Z     with self.db.wrap_database_errors:
+2026-07-15T07:46:53.510651332Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+2026-07-15T07:46:53.510653952Z     raise dj_exc_value.with_traceback(traceback) from exc_value
+2026-07-15T07:46:53.510656472Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:46:53.510658962Z     return self.cursor.execute(sql, params)
+2026-07-15T07:46:53.510661602Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:53.510664162Z django.db.utils.ProgrammingError: relation "core_profile" does not exist
+2026-07-15T07:46:53.510669312Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:46:53.510672132Z                                                              ^
+2026-07-15T07:46:53.510674472Z 
+2026-07-15T07:46:53.510939589Z 127.0.0.1 - - [15/Jul/2026:07:46:53 +0000] "GET / HTTP/1.1" 500 145 "https://aynal-haque.onrender.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0"
+2026-07-15T07:46:56.349071295Z [ERROR] Internal Server Error: /
+2026-07-15T07:46:56.349096235Z Traceback (most recent call last):
+2026-07-15T07:46:56.349100695Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:46:56.349104296Z     return self.cursor.execute(sql, params)
+2026-07-15T07:46:56.349107236Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349111016Z psycopg2.errors.UndefinedTable: relation "core_profile" does not exist
+2026-07-15T07:46:56.349114086Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:46:56.349117676Z                                                              ^
+2026-07-15T07:46:56.349120576Z 
+2026-07-15T07:46:56.349123216Z 
+2026-07-15T07:46:56.349126246Z The above exception was the direct cause of the following exception:
+2026-07-15T07:46:56.349129116Z 
+2026-07-15T07:46:56.349131326Z Traceback (most recent call last):
+2026-07-15T07:46:56.349133406Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+2026-07-15T07:46:56.349146486Z     response = get_response(request)
+2026-07-15T07:46:56.349148537Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349150617Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+2026-07-15T07:46:56.349152677Z     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+2026-07-15T07:46:56.349154697Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349156697Z   File "/opt/render/project/src/core/views.py", line 16, in my_page
+2026-07-15T07:46:56.349158627Z     context = build_home_page_context()
+2026-07-15T07:46:56.349160617Z               ^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349163277Z   File "/opt/render/project/src/core/services/home_page_service.py", line 13, in build_home_page_context
+2026-07-15T07:46:56.349165417Z     "profile": get_primary_profile(),
+2026-07-15T07:46:56.349167367Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349169297Z   File "/opt/render/project/src/core/selectors/profile_selector.py", line 8, in get_primary_profile
+2026-07-15T07:46:56.349171217Z     return Profile.objects.order_by("id").first()
+2026-07-15T07:46:56.349173117Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349175097Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1106, in first
+2026-07-15T07:46:56.349177087Z     for obj in queryset[:1]:
+2026-07-15T07:46:56.349179067Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 386, in __iter__
+2026-07-15T07:46:56.349181617Z     self._fetch_all()
+2026-07-15T07:46:56.349183597Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+2026-07-15T07:46:56.349185598Z     self._result_cache = list(self._iterable_class(self))
+2026-07-15T07:46:56.349187487Z                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349189418Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 93, in __iter__
+2026-07-15T07:46:56.349191358Z     results = compiler.execute_sql(
+2026-07-15T07:46:56.349193338Z               ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349195278Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+2026-07-15T07:46:56.349197208Z     cursor.execute(sql, params)
+2026-07-15T07:46:56.349199128Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+2026-07-15T07:46:56.349201408Z     return self._execute_with_wrappers(
+2026-07-15T07:46:56.349203388Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349205888Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+2026-07-15T07:46:56.349207808Z     return executor(sql, params, many, context)
+2026-07-15T07:46:56.349209688Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349211588Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+2026-07-15T07:46:56.349213498Z     with self.db.wrap_database_errors:
+2026-07-15T07:46:56.349215448Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+2026-07-15T07:46:56.349217458Z     raise dj_exc_value.with_traceback(traceback) from exc_value
+2026-07-15T07:46:56.349219378Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:46:56.349224659Z     return self.cursor.execute(sql, params)
+2026-07-15T07:46:56.349226708Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:46:56.349228628Z django.db.utils.ProgrammingError: relation "core_profile" does not exist
+2026-07-15T07:46:56.349230668Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:46:56.349232589Z                                                              ^
+2026-07-15T07:46:56.349234469Z 
+2026-07-15T07:46:56.349517476Z 127.0.0.1 - - [15/Jul/2026:07:46:56 +0000] "GET / HTTP/1.1" 500 145 "https://aynal-haque.onrender.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0"
+2026-07-15T07:47:06.333418267Z [ERROR] Internal Server Error: /
+2026-07-15T07:47:06.333440458Z Traceback (most recent call last):
+2026-07-15T07:47:06.333446358Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:47:06.333450358Z     return self.cursor.execute(sql, params)
+2026-07-15T07:47:06.333454028Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.333458608Z psycopg2.errors.UndefinedTable: relation "core_profile" does not exist
+2026-07-15T07:47:06.333465659Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:47:06.333473209Z                                                              ^
+2026-07-15T07:47:06.333476649Z 
+2026-07-15T07:47:06.333479019Z 
+2026-07-15T07:47:06.333481589Z The above exception was the direct cause of the following exception:
+2026-07-15T07:47:06.333483909Z 
+2026-07-15T07:47:06.333486379Z Traceback (most recent call last):
+2026-07-15T07:47:06.333488949Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+2026-07-15T07:47:06.333491429Z     response = get_response(request)
+2026-07-15T07:47:06.333493889Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.333496329Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+2026-07-15T07:47:06.33349874Z     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+2026-07-15T07:47:06.3335013Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.33350386Z   File "/opt/render/project/src/core/views.py", line 16, in my_page
+2026-07-15T07:47:06.33350631Z     context = build_home_page_context()
+2026-07-15T07:47:06.33350872Z               ^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.33351177Z   File "/opt/render/project/src/core/services/home_page_service.py", line 13, in build_home_page_context
+2026-07-15T07:47:06.33351417Z     "profile": get_primary_profile(),
+2026-07-15T07:47:06.33351661Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.333519Z   File "/opt/render/project/src/core/selectors/profile_selector.py", line 8, in get_primary_profile
+2026-07-15T07:47:06.33352147Z     return Profile.objects.order_by("id").first()
+2026-07-15T07:47:06.33352384Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.33352623Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1106, in first
+2026-07-15T07:47:06.33352866Z     for obj in queryset[:1]:
+2026-07-15T07:47:06.33353113Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 386, in __iter__
+2026-07-15T07:47:06.33353438Z     self._fetch_all()
+2026-07-15T07:47:06.33353683Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+2026-07-15T07:47:06.333554381Z     self._result_cache = list(self._iterable_class(self))
+2026-07-15T07:47:06.333558341Z                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.333562101Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 93, in __iter__
+2026-07-15T07:47:06.333565891Z     results = compiler.execute_sql(
+2026-07-15T07:47:06.333570171Z               ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.333574061Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+2026-07-15T07:47:06.333577981Z     cursor.execute(sql, params)
+2026-07-15T07:47:06.333581631Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+2026-07-15T07:47:06.333585402Z     return self._execute_with_wrappers(
+2026-07-15T07:47:06.333588842Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.333592942Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+2026-07-15T07:47:06.333596472Z     return executor(sql, params, many, context)
+2026-07-15T07:47:06.333600022Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.333603772Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+2026-07-15T07:47:06.333607382Z     with self.db.wrap_database_errors:
+2026-07-15T07:47:06.333610992Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+2026-07-15T07:47:06.333614932Z     raise dj_exc_value.with_traceback(traceback) from exc_value
+2026-07-15T07:47:06.333621223Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:47:06.333624832Z     return self.cursor.execute(sql, params)
+2026-07-15T07:47:06.333628553Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:47:06.333632013Z django.db.utils.ProgrammingError: relation "core_profile" does not exist
+2026-07-15T07:47:06.333635593Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:47:06.333639113Z                                                              ^
+2026-07-15T07:47:06.333642713Z 
+2026-07-15T07:47:06.333785807Z 127.0.0.1 - - [15/Jul/2026:07:47:06 +0000] "GET / HTTP/1.1" 500 145 "https://aynal-haque.onrender.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0"
+2026-07-15T07:48:08.584380887Z [ERROR] Internal Server Error: /
+2026-07-15T07:48:08.584408697Z Traceback (most recent call last):
+2026-07-15T07:48:08.584414348Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:48:08.584418528Z     return self.cursor.execute(sql, params)
+2026-07-15T07:48:08.584423388Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.584428318Z psycopg2.errors.UndefinedTable: relation "core_profile" does not exist
+2026-07-15T07:48:08.584432418Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:48:08.584437318Z                                                              ^
+2026-07-15T07:48:08.584441268Z 
+2026-07-15T07:48:08.584445078Z 
+2026-07-15T07:48:08.584449118Z The above exception was the direct cause of the following exception:
+2026-07-15T07:48:08.584453109Z 
+2026-07-15T07:48:08.584457329Z Traceback (most recent call last):
+2026-07-15T07:48:08.584461469Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+2026-07-15T07:48:08.58449317Z     response = get_response(request)
+2026-07-15T07:48:08.58449625Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.584499159Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+2026-07-15T07:48:08.5845019Z     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+2026-07-15T07:48:08.58450463Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.58450794Z   File "/opt/render/project/src/core/views.py", line 16, in my_page
+2026-07-15T07:48:08.58451071Z     context = build_home_page_context()
+2026-07-15T07:48:08.58451346Z               ^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.58451698Z   File "/opt/render/project/src/core/services/home_page_service.py", line 13, in build_home_page_context
+2026-07-15T07:48:08.58451968Z     "profile": get_primary_profile(),
+2026-07-15T07:48:08.58452228Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.58452971Z   File "/opt/render/project/src/core/selectors/profile_selector.py", line 8, in get_primary_profile
+2026-07-15T07:48:08.58453254Z     return Profile.objects.order_by("id").first()
+2026-07-15T07:48:08.58453514Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.584537851Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1106, in first
+2026-07-15T07:48:08.584540631Z     for obj in queryset[:1]:
+2026-07-15T07:48:08.584543331Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 386, in __iter__
+2026-07-15T07:48:08.584546571Z     self._fetch_all()
+2026-07-15T07:48:08.584549191Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+2026-07-15T07:48:08.584551961Z     self._result_cache = list(self._iterable_class(self))
+2026-07-15T07:48:08.584554571Z                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.584557301Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 93, in __iter__
+2026-07-15T07:48:08.584559921Z     results = compiler.execute_sql(
+2026-07-15T07:48:08.584562401Z               ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.584565061Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+2026-07-15T07:48:08.584567661Z     cursor.execute(sql, params)
+2026-07-15T07:48:08.584570411Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+2026-07-15T07:48:08.584573171Z     return self._execute_with_wrappers(
+2026-07-15T07:48:08.584575761Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.584579412Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+2026-07-15T07:48:08.584582152Z     return executor(sql, params, many, context)
+2026-07-15T07:48:08.584584892Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.584587622Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+2026-07-15T07:48:08.584590672Z     with self.db.wrap_database_errors:
+2026-07-15T07:48:08.584593572Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+2026-07-15T07:48:08.584596302Z     raise dj_exc_value.with_traceback(traceback) from exc_value
+2026-07-15T07:48:08.584598982Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:48:08.584605912Z     return self.cursor.execute(sql, params)
+2026-07-15T07:48:08.584608772Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:48:08.584611412Z django.db.utils.ProgrammingError: relation "core_profile" does not exist
+2026-07-15T07:48:08.584614062Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:48:08.584616673Z                                                              ^
+2026-07-15T07:48:08.584619142Z 
+2026-07-15T07:48:08.584842918Z 127.0.0.1 - - [15/Jul/2026:07:48:08 +0000] "GET / HTTP/1.1" 500 145 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0"
+2026-07-15T07:48:24.675717101Z ==> Deploying...
+2026-07-15T07:48:52.423512334Z ==> Running 'gunicorn aynal_portfolio.wsgi:application --bind 0.0.0.0:$PORT'
+2026-07-15T07:49:04.938657826Z [2026-07-15 07:49:04 +0000] [57] [INFO] Starting gunicorn 23.0.0
+2026-07-15T07:49:04.938678407Z [2026-07-15 07:49:04 +0000] [57] [INFO] Listening at: http://0.0.0.0:10000 (57)
+2026-07-15T07:49:04.938681657Z [2026-07-15 07:49:04 +0000] [57] [INFO] Using worker: sync
+2026-07-15T07:49:05.025683694Z [2026-07-15 07:49:05 +0000] [58] [INFO] Booting worker with pid: 58
+2026-07-15T07:49:05.213007111Z [2026-07-15 07:49:05 +0000] [57] [INFO] Handling signal: term
+2026-07-15T07:49:05.213656297Z [2026-07-15 07:49:05 +0000] [59] [INFO] Worker exiting (pid: 59)
+2026-07-15T07:49:05.670647018Z 127.0.0.1 - - [15/Jul/2026:07:49:05 +0000] "HEAD / HTTP/1.1" 301 0 "-" "Go-http-client/1.1"
+2026-07-15T07:49:05.725862085Z ==> Your service is live 🎉
+2026-07-15T07:49:05.826221407Z ==> 
+2026-07-15T07:49:05.828300698Z ==> ///////////////////////////////////////////////////////////
+2026-07-15T07:49:05.831216121Z ==> 
+2026-07-15T07:49:05.833802099Z ==> Available at your primary URL https://aynal-haque.onrender.com
+2026-07-15T07:49:05.835829287Z ==> 
+2026-07-15T07:49:05.838043799Z ==> ///////////////////////////////////////////////////////////
+2026-07-15T07:49:06.136084587Z [ERROR] Internal Server Error: /
+2026-07-15T07:49:06.136109159Z Traceback (most recent call last):
+2026-07-15T07:49:06.136114789Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:49:06.13612051Z     return self.cursor.execute(sql, params)
+2026-07-15T07:49:06.13612315Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.13612769Z psycopg2.errors.UndefinedTable: relation "core_profile" does not exist
+2026-07-15T07:49:06.13613007Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:49:06.1361331Z                                                              ^
+2026-07-15T07:49:06.13613552Z 
+2026-07-15T07:49:06.136137571Z 
+2026-07-15T07:49:06.136139771Z The above exception was the direct cause of the following exception:
+2026-07-15T07:49:06.136141931Z 
+2026-07-15T07:49:06.136144271Z Traceback (most recent call last):
+2026-07-15T07:49:06.136146871Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+2026-07-15T07:49:06.136149131Z     response = get_response(request)
+2026-07-15T07:49:06.136151401Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136153702Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+2026-07-15T07:49:06.136155982Z     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+2026-07-15T07:49:06.136158292Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136160432Z   File "/opt/render/project/src/core/views.py", line 16, in my_page
+2026-07-15T07:49:06.136162662Z     context = build_home_page_context()
+2026-07-15T07:49:06.136164912Z               ^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136168293Z   File "/opt/render/project/src/core/services/home_page_service.py", line 13, in build_home_page_context
+2026-07-15T07:49:06.136170553Z     "profile": get_primary_profile(),
+2026-07-15T07:49:06.136172853Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136175143Z   File "/opt/render/project/src/core/selectors/profile_selector.py", line 8, in get_primary_profile
+2026-07-15T07:49:06.136177283Z     return Profile.objects.order_by("id").first()
+2026-07-15T07:49:06.136179503Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136181673Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1106, in first
+2026-07-15T07:49:06.136183914Z     for obj in queryset[:1]:
+2026-07-15T07:49:06.136186134Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 386, in __iter__
+2026-07-15T07:49:06.136188834Z     self._fetch_all()
+2026-07-15T07:49:06.136191214Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+2026-07-15T07:49:06.136193424Z     self._result_cache = list(self._iterable_class(self))
+2026-07-15T07:49:06.136208615Z                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136211215Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 93, in __iter__
+2026-07-15T07:49:06.136213465Z     results = compiler.execute_sql(
+2026-07-15T07:49:06.136215745Z               ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136218036Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+2026-07-15T07:49:06.136220276Z     cursor.execute(sql, params)
+2026-07-15T07:49:06.136222446Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+2026-07-15T07:49:06.136224716Z     return self._execute_with_wrappers(
+2026-07-15T07:49:06.136226866Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136231146Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+2026-07-15T07:49:06.136233457Z     return executor(sql, params, many, context)
+2026-07-15T07:49:06.136235777Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136238027Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+2026-07-15T07:49:06.136240347Z     with self.db.wrap_database_errors:
+2026-07-15T07:49:06.136242627Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+2026-07-15T07:49:06.136244838Z     raise dj_exc_value.with_traceback(traceback) from exc_value
+2026-07-15T07:49:06.136247027Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:49:06.136249258Z     return self.cursor.execute(sql, params)
+2026-07-15T07:49:06.136251558Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:49:06.136253928Z django.db.utils.ProgrammingError: relation "core_profile" does not exist
+2026-07-15T07:49:06.136256338Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:49:06.136258578Z                                                              ^
+2026-07-15T07:49:06.136260608Z 
+2026-07-15T07:49:06.136736609Z 127.0.0.1 - - [15/Jul/2026:07:49:06 +0000] "GET / HTTP/1.1" 500 145 "-" "Go-http-client/2.0"
+2026-07-15T07:49:06.394363719Z [2026-07-15 07:49:06 +0000] [57] [INFO] Shutting down: Master
+2026-07-15T07:50:33.028765478Z 127.0.0.1 - - [15/Jul/2026:07:50:33 +0000] "GET / HTTP/1.1" 500 145 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0"
+2026-07-15T07:50:33.028800301Z [ERROR] Internal Server Error: /
+2026-07-15T07:50:33.028815601Z Traceback (most recent call last):
+2026-07-15T07:50:33.028821852Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:50:33.028862784Z     return self.cursor.execute(sql, params)
+2026-07-15T07:50:33.028867435Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.028871445Z psycopg2.errors.UndefinedTable: relation "core_profile" does not exist
+2026-07-15T07:50:33.028875135Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:50:33.028880976Z                                                              ^
+2026-07-15T07:50:33.028885606Z 
+2026-07-15T07:50:33.028889746Z 
+2026-07-15T07:50:33.028894327Z The above exception was the direct cause of the following exception:
+2026-07-15T07:50:33.028898867Z 
+2026-07-15T07:50:33.028903497Z Traceback (most recent call last):
+2026-07-15T07:50:33.028908678Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+2026-07-15T07:50:33.028925668Z     response = get_response(request)
+2026-07-15T07:50:33.028929249Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.028932419Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+2026-07-15T07:50:33.028935479Z     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+2026-07-15T07:50:33.028938439Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.02894161Z   File "/opt/render/project/src/core/views.py", line 16, in my_page
+2026-07-15T07:50:33.02894483Z     context = build_home_page_context()
+2026-07-15T07:50:33.02894785Z               ^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.02895137Z   File "/opt/render/project/src/core/services/home_page_service.py", line 13, in build_home_page_context
+2026-07-15T07:50:33.028954401Z     "profile": get_primary_profile(),
+2026-07-15T07:50:33.028957621Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.028963451Z   File "/opt/render/project/src/core/selectors/profile_selector.py", line 8, in get_primary_profile
+2026-07-15T07:50:33.028966511Z     return Profile.objects.order_by("id").first()
+2026-07-15T07:50:33.028969691Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.028972882Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1106, in first
+2026-07-15T07:50:33.028975002Z     for obj in queryset[:1]:
+2026-07-15T07:50:33.028976882Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 386, in __iter__
+2026-07-15T07:50:33.028979222Z     self._fetch_all()
+2026-07-15T07:50:33.028981142Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+2026-07-15T07:50:33.028983132Z     self._result_cache = list(self._iterable_class(self))
+2026-07-15T07:50:33.028985082Z                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.028987012Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 93, in __iter__
+2026-07-15T07:50:33.028988973Z     results = compiler.execute_sql(
+2026-07-15T07:50:33.028990853Z               ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.028992793Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+2026-07-15T07:50:33.028994933Z     cursor.execute(sql, params)
+2026-07-15T07:50:33.028996833Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+2026-07-15T07:50:33.028998743Z     return self._execute_with_wrappers(
+2026-07-15T07:50:33.029000643Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.029003224Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+2026-07-15T07:50:33.029005074Z     return executor(sql, params, many, context)
+2026-07-15T07:50:33.029006914Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.029008764Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+2026-07-15T07:50:33.029010644Z     with self.db.wrap_database_errors:
+2026-07-15T07:50:33.029012574Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+2026-07-15T07:50:33.029014464Z     raise dj_exc_value.with_traceback(traceback) from exc_value
+2026-07-15T07:50:33.029016344Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:50:33.029022295Z     return self.cursor.execute(sql, params)
+2026-07-15T07:50:33.029024305Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:50:33.029026255Z django.db.utils.ProgrammingError: relation "core_profile" does not exist
+2026-07-15T07:50:33.029028245Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:50:33.029030165Z                                                              ^
+2026-07-15T07:50:33.029031955Z 
+2026-07-15T07:52:33.860003994Z ==> Deploying...
+2026-07-15T07:52:49.544519206Z ==> Running 'gunicorn aynal_portfolio.wsgi:application --bind 0.0.0.0:$PORT'
+2026-07-15T07:52:58.13321577Z [2026-07-15 07:52:58 +0000] [57] [INFO] Starting gunicorn 23.0.0
+2026-07-15T07:52:58.133599018Z [2026-07-15 07:52:58 +0000] [57] [INFO] Listening at: http://0.0.0.0:10000 (57)
+2026-07-15T07:52:58.133630718Z [2026-07-15 07:52:58 +0000] [57] [INFO] Using worker: sync
+2026-07-15T07:52:58.137739763Z [2026-07-15 07:52:58 +0000] [58] [INFO] Booting worker with pid: 58
+2026-07-15T07:52:59.134637925Z 127.0.0.1 - - [15/Jul/2026:07:52:59 +0000] "HEAD / HTTP/1.1" 301 0 "-" "Go-http-client/1.1"
+2026-07-15T07:53:04.798625754Z [2026-07-15 07:53:04 +0000] [57] [INFO] Handling signal: term
+2026-07-15T07:53:04.798991278Z [2026-07-15 07:53:04 +0000] [58] [INFO] Worker exiting (pid: 58)
+2026-07-15T07:53:05.368354374Z ==> Your service is live 🎉
+2026-07-15T07:53:05.476204797Z ==> 
+2026-07-15T07:53:05.479628214Z ==> ///////////////////////////////////////////////////////////
+2026-07-15T07:53:05.48372515Z ==> 
+2026-07-15T07:53:05.487069405Z ==> Available at your primary URL https://aynal-haque.onrender.com
+2026-07-15T07:53:05.493055404Z ==> 
+2026-07-15T07:53:05.496158251Z ==> ///////////////////////////////////////////////////////////
+2026-07-15T07:53:05.699872952Z [2026-07-15 07:53:05 +0000] [57] [INFO] Shutting down: Master
+2026-07-15T07:53:05.740013239Z [ERROR] Internal Server Error: /
+2026-07-15T07:53:05.740037789Z Traceback (most recent call last):
+2026-07-15T07:53:05.740043139Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:53:05.740048719Z     return self.cursor.execute(sql, params)
+2026-07-15T07:53:05.7400532Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.74005833Z psycopg2.errors.UndefinedTable: relation "core_profile" does not exist
+2026-07-15T07:53:05.74006238Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:53:05.74006754Z                                                              ^
+2026-07-15T07:53:05.74007155Z 
+2026-07-15T07:53:05.74007562Z 
+2026-07-15T07:53:05.74007966Z The above exception was the direct cause of the following exception:
+2026-07-15T07:53:05.74008352Z 
+2026-07-15T07:53:05.74008748Z Traceback (most recent call last):
+2026-07-15T07:53:05.74009156Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+2026-07-15T07:53:05.74009568Z     response = get_response(request)
+2026-07-15T07:53:05.740099691Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740103721Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+2026-07-15T07:53:05.740107611Z     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+2026-07-15T07:53:05.740111581Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740115771Z   File "/opt/render/project/src/core/views.py", line 16, in my_page
+2026-07-15T07:53:05.740119821Z     context = build_home_page_context()
+2026-07-15T07:53:05.740124171Z               ^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740132341Z   File "/opt/render/project/src/core/services/home_page_service.py", line 13, in build_home_page_context
+2026-07-15T07:53:05.740136601Z     "profile": get_primary_profile(),
+2026-07-15T07:53:05.740140821Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740145352Z   File "/opt/render/project/src/core/selectors/profile_selector.py", line 8, in get_primary_profile
+2026-07-15T07:53:05.740149502Z     return Profile.objects.order_by("id").first()
+2026-07-15T07:53:05.740153742Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740157942Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1106, in first
+2026-07-15T07:53:05.740162752Z     for obj in queryset[:1]:
+2026-07-15T07:53:05.740167142Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 386, in __iter__
+2026-07-15T07:53:05.740172252Z     self._fetch_all()
+2026-07-15T07:53:05.740176732Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+2026-07-15T07:53:05.740180972Z     self._result_cache = list(self._iterable_class(self))
+2026-07-15T07:53:05.740196442Z                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740199743Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 93, in __iter__
+2026-07-15T07:53:05.740202563Z     results = compiler.execute_sql(
+2026-07-15T07:53:05.740205333Z               ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740208383Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+2026-07-15T07:53:05.740211133Z     cursor.execute(sql, params)
+2026-07-15T07:53:05.740213933Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+2026-07-15T07:53:05.740216703Z     return self._execute_with_wrappers(
+2026-07-15T07:53:05.740219493Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740223263Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+2026-07-15T07:53:05.740229043Z     return executor(sql, params, many, context)
+2026-07-15T07:53:05.740232443Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740235243Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+2026-07-15T07:53:05.740237783Z     with self.db.wrap_database_errors:
+2026-07-15T07:53:05.740240154Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+2026-07-15T07:53:05.740242423Z     raise dj_exc_value.with_traceback(traceback) from exc_value
+2026-07-15T07:53:05.740244774Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:53:05.740247254Z     return self.cursor.execute(sql, params)
+2026-07-15T07:53:05.740249674Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:05.740252254Z django.db.utils.ProgrammingError: relation "core_profile" does not exist
+2026-07-15T07:53:05.740254774Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:53:05.740257364Z                                                              ^
+2026-07-15T07:53:05.740259664Z 
+2026-07-15T07:53:05.740641882Z 127.0.0.1 - - [15/Jul/2026:07:53:05 +0000] "GET / HTTP/1.1" 500 145 "-" "Go-http-client/2.0"
+2026-07-15T07:53:34.238553822Z [ERROR] Internal Server Error: /
+2026-07-15T07:53:34.238585113Z Traceback (most recent call last):
+2026-07-15T07:53:34.238590383Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:53:34.238594633Z     return self.cursor.execute(sql, params)
+2026-07-15T07:53:34.238598723Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238603154Z psycopg2.errors.UndefinedTable: relation "core_profile" does not exist
+2026-07-15T07:53:34.238607103Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:53:34.238611654Z                                                              ^
+2026-07-15T07:53:34.238615454Z 
+2026-07-15T07:53:34.238619164Z 
+2026-07-15T07:53:34.238623054Z The above exception was the direct cause of the following exception:
+2026-07-15T07:53:34.238626844Z 
+2026-07-15T07:53:34.238630884Z Traceback (most recent call last):
+2026-07-15T07:53:34.238634864Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+2026-07-15T07:53:34.238638804Z     response = get_response(request)
+2026-07-15T07:53:34.238642764Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238646694Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+2026-07-15T07:53:34.238662035Z     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+2026-07-15T07:53:34.238665465Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238668475Z   File "/opt/render/project/src/core/views.py", line 16, in my_page
+2026-07-15T07:53:34.238671505Z     context = build_home_page_context()
+2026-07-15T07:53:34.238674285Z               ^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238677805Z   File "/opt/render/project/src/core/services/home_page_service.py", line 13, in build_home_page_context
+2026-07-15T07:53:34.238680525Z     "profile": get_primary_profile(),
+2026-07-15T07:53:34.238683195Z                ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238686005Z   File "/opt/render/project/src/core/selectors/profile_selector.py", line 8, in get_primary_profile
+2026-07-15T07:53:34.238688565Z     return Profile.objects.order_by("id").first()
+2026-07-15T07:53:34.238691365Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238694355Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1106, in first
+2026-07-15T07:53:34.238697045Z     for obj in queryset[:1]:
+2026-07-15T07:53:34.238699665Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 386, in __iter__
+2026-07-15T07:53:34.238702336Z     self._fetch_all()
+2026-07-15T07:53:34.238707706Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 1954, in _fetch_all
+2026-07-15T07:53:34.238710446Z     self._result_cache = list(self._iterable_class(self))
+2026-07-15T07:53:34.238712986Z                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238715596Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/query.py", line 93, in __iter__
+2026-07-15T07:53:34.238718166Z     results = compiler.execute_sql(
+2026-07-15T07:53:34.238720996Z               ^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238723546Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+2026-07-15T07:53:34.238726106Z     cursor.execute(sql, params)
+2026-07-15T07:53:34.238729106Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+2026-07-15T07:53:34.238732066Z     return self._execute_with_wrappers(
+2026-07-15T07:53:34.238734646Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238738126Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+2026-07-15T07:53:34.238740656Z     return executor(sql, params, many, context)
+2026-07-15T07:53:34.238743316Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238745837Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+2026-07-15T07:53:34.238748346Z     with self.db.wrap_database_errors:
+2026-07-15T07:53:34.238750906Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+2026-07-15T07:53:34.238753457Z     raise dj_exc_value.with_traceback(traceback) from exc_value
+2026-07-15T07:53:34.238755977Z   File "/opt/render/project/src/.venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+2026-07-15T07:53:34.238758527Z     return self.cursor.execute(sql, params)
+2026-07-15T07:53:34.238761327Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-15T07:53:34.238763907Z django.db.utils.ProgrammingError: relation "core_profile" does not exist
+2026-07-15T07:53:34.238771597Z LINE 1: ...e"."created_at", "core_profile"."updated_at" FROM "core_prof...
+2026-07-15T07:53:34.238774537Z                                                              ^
+2026-07-15T07:53:34.238777017Z 
+2026-07-15T07:53:34.238797398Z 127.0.0.1 - - [15/Jul/2026:07:53:34 +0000] "GET / HTTP/1.1" 500 145 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0"

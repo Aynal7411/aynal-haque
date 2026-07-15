@@ -1442,3 +1442,17 @@
 [INFO] 2026-07-15 11:36:00,168 django.utils.autoreload (667): Watching for file changes with StatReloader
 [INFO] 2026-07-15 11:43:28,506 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
 [INFO] 2026-07-15 11:43:33,407 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-07-15 11:45:16,327 django.server (213): "GET / HTTP/1.1" 200 15438
+[INFO] 2026-07-15 11:45:26,204 django.server (213): "GET /service/ HTTP/1.1" 200 5765
+[INFO] 2026-07-15 11:45:27,528 django.server (213): "GET /skills/ HTTP/1.1" 200 9062
+[INFO] 2026-07-15 11:45:28,099 django.server (213): "GET /post HTTP/1.1" 200 15280
+[INFO] 2026-07-15 11:45:29,312 django.server (213): "GET /register/ HTTP/1.1" 200 7643
+[INFO] 2026-07-15 11:45:32,056 django.server (213): "GET / HTTP/1.1" 200 15438
+[INFO] 2026-07-15 12:49:32,638 django.server (213): "GET / HTTP/1.1" 200 25114
+[INFO] 2026-07-15 13:46:36,777 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-07-15 13:46:41,518 django.server (213): "GET / HTTP/1.1" 200 25114
+[INFO] 2026-07-15 13:46:43,376 django.server (213): "GET /service/ HTTP/1.1" 200 5765
+[INFO] 2026-07-15 13:46:44,737 django.server (213): "GET /skills/ HTTP/1.1" 200 9062
+[INFO] 2026-07-15 13:46:45,649 django.server (213): "GET /post HTTP/1.1" 200 15280
+[INFO] 2026-07-15 13:46:46,131 django.server (213): "GET /login/ HTTP/1.1" 200 5978
+[INFO] 2026-07-15 13:46:46,846 django.server (213): "GET /register/ HTTP/1.1" 200 7643
