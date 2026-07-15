@@ -27,7 +27,10 @@ DEBUG = False
 # SECURITY
 # ============================================================
 
-SECRET_KEY = os.environ.get("SECRET_KEY", SECRET_KEY)
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "portfolio-production-secret-key-do-not-share-2026-strong",
+)
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 
@@ -94,6 +97,9 @@ STORAGES = {
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 
 SECURE_PROXY_SSL_HEADER = (
     "HTTP_X_FORWARDED_PROTO",

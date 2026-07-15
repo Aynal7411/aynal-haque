@@ -1,11 +1,11 @@
 {
-  "name": "Your App Name",
-  "short_name": "AppName",
+  "name": "Aynal Haque",
+  "short_name": "AH",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0d47a1",
-  "description": "A description of your app",
+  "background_color": "#fff8e1",
+  "theme_color": "#ff6f00",
+  "description": "Aynal Haque Portfolio - stylish PWA portfolio and blog.",
   "icons": [
     {
       "src": "/static/core/icons/icon-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     },
     {
-      "src": "/static/core/icons/icon-192x192.png",
+      "src": "/static/core/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

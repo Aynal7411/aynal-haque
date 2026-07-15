@@ -1,68 +1,61 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="{% url 'home-page' %}">
-                <img src="{% static 'core/images/apple-touch-icon.png' %}" alt="Logo" class="ms-2" width="30" height="30" class="me-2 rounded-circle">
-                 
-              <span class="fw-bold fs-4">Aynal Haque</span>
-            
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">{% spaceless %}
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'services-page' %}">Services</a>
+<nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-3" href="{% url 'home-page' %}">
+            <span class="brand-mark">
+                <img src="{% static 'core/images/apple-touch-icon.png' %}" alt="Aynal Haque logo" width="36" height="36">
+            </span>
+            <span class="d-flex flex-column">
+                <span class="brand-name">Aynal Haque</span>
+                <span class="brand-subtitle">Crafting modern experiences</span>
+            </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">{% spaceless %}
+                <li class="nav-item mx-1">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home-page' %}">Home</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link {% if '/services/' in request.path %}active{% endif %}" href="{% url 'services-page' %}">Services</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link {% if '/skills/' in request.path %}active{% endif %}" href="{% url 'skills' %}">Skills</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link {% if '/project/' in request.path %}active{% endif %}" href="{% url 'project_list' %}">Projects</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link {% if '/post' in request.path %}active{% endif %}" href="{% url 'post_list' %}">Blog</a>
+                </li>
+
+                {% if user.is_authenticated %}
+                    <li class="nav-item dropdown mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            👤 {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="{% url 'profile' %}"><i class="bi bi-person"></i> My Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profile_edit' %}"><i class="bi bi-pencil-square"></i> Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'password_change' %}"><i class="bi bi-shield-lock"></i> Change Password</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'skills' %}">Skills</a>
+                {% else %}
+                    <li class="nav-item mx-1">
+                        <a class="nav-link {% if '/login/' in request.path %}active{% endif %}" href="{% url 'login' %}">Login</a>
                     </li>
-                   
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'post_list' %}">Blog</a>
+                    <li class="nav-item mx-1">
+                        <a class="btn navbar-cta" href="{% url 'register' %}">Join</a>
                     </li>
-                    
-                    {% if user.is_authenticated %}
-                        <li class="nav-item dropdown mx-2">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                👤 {{ user.username }}
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'profile' %}">
-                                        <i class="fas fa-user"></i> My Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'profile_edit' %}">
-                                        <i class="fas fa-edit"></i> Edit Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{% url 'password_change' %}">
-                                        <i class="fas fa-key"></i> Change Password
-                                    </a>
-                                </li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li>
-                                    <a class="dropdown-item text-danger" href="{% url 'logout' %}">
-                                        <i class="fas fa-sign-out-alt"></i> Logout
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    {% else %}
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="{% url 'login' %}">Login</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="{% url 'register' %}">Register</a>
-                        </li>
-                    {% endif %}
-                {% endspaceless %}</ul>
-            </div>
+                {% endif %}
+            {% endspaceless %}</ul>
         </div>
-    </nav>
+    </div>
+</nav>
