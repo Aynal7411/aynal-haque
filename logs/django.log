@@ -1395,3 +1395,7 @@
 [INFO] 2026-07-15 10:53:05,990 django.utils.autoreload (667): Watching for file changes with StatReloader
 [INFO] 2026-07-15 10:54:02,459 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\core\views.py changed, reloading.
 [INFO] 2026-07-15 10:54:04,465 django.utils.autoreload (667): Watching for file changes with StatReloader
+[ERROR] 2026-07-15 10:54:08,930 django.server (213): "GET / HTTP/1.1" 500 195784
+[INFO] 2026-07-15 10:55:01,727 django.server (213): "GET / HTTP/1.1" 200 15438
+[INFO] 2026-07-15 11:08:29,262 django.utils.autoreload (265): D:\Deployed-projects\aynal-haque\manage.py changed, reloading.
+[INFO] 2026-07-15 11:11:01,685 django.utils.autoreload (667): Watching for file changes with StatReloader
