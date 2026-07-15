@@ -1,16 +1,28 @@
 services:
   - type: web
-    plan: free
-    name: aynal_portfolio
+    name: aynal-portfolio
     runtime: python
-    buildCommand: 'bash build.sh'
-    startCommand: 'python -m gunicorn aynal_portfolio.wsgi:application'
+    plan: free
+
+    buildCommand: bash build.sh
+
+    startCommand: gunicorn aynal_portfolio.wsgi:application
+
     envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: aynal_portfolio.settings.production
+
       - key: DATABASE_URL
         fromDatabase:
           name: mysitedb
           property: connectionString
+
       - key: SECRET_KEY
         generateValue: true
+
       - key: WEB_CONCURRENCY
-        value: 4
+        value: 2
+
+databases:
+  - name: mysitedb
+    plan: free
