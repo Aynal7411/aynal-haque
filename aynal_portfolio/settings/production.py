@@ -3,9 +3,13 @@ import os
 import dj_database_url
 import sys
 from .base import *
-from dotenv import load_dotenv
 
-load_dotenv()
+# Load dotenv only if available (local development)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # dotenv not installed (normal in production)
 
 def main():
     os.environ.setdefault(
