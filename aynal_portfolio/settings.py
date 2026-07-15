@@ -106,7 +106,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core",
-    "service_my",
+    "service",
     "axes",
     "pwa",
 ]

@@ -6,12 +6,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect, render
 
-from .forms import TeamMemberForm, UserRegistrationForm, UserProfileForm, UserPasswordChangeForm
-from .models import Post, Profile, Project, SiteAlert, Skill, UserProfile
+from .forms import  UserRegistrationForm, UserProfileForm, UserPasswordChangeForm
+from .models import Post, Profile, Project, Skill, UserProfile
 
 
 def my_page(request):
-    alert = SiteAlert.objects.filter(is_active=True).order_by('-created_on').first()
+   
     profile = Profile.objects.first()
     if not profile:
         return render(request, 'no_profile.html')
@@ -27,7 +27,7 @@ def my_page(request):
     projects = Project.objects.all()[:3]  # Top 3 projects
 
     return render(request, 'home_page.html', {
-        'alert': alert,
+    
         'profile': profile,
         'grouped_skills': grouped_skills,
         'projects': projects,
@@ -213,17 +213,6 @@ def privacy_policy(request):
     return render(request, 'privacy_policy.html')
 
 
-def join_team(request):
-    if request.method == 'POST':
-        form = TeamMemberForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Thank you! Your request to join the team has been submitted.')
-            return redirect('thank_you')
-    else:
-        form = TeamMemberForm()
-
-    return render(request, 'join_team.html', {'form': form})
 
 
 def thank_you(request):

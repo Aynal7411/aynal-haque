@@ -97,21 +97,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-class SiteAlert(models.Model):
-    title = models.CharField(max_length=200)
-    message = models.TextField()
-    is_active = models.BooleanField(default=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    
-
-    class Meta:
-       ordering = ["-created_on"]
-       verbose_name = "Site Alert"
-       verbose_name_plural = "Site Alerts"
-
-    def __str__(self):
-        return self.message[:50]  # Show first 50 characters of the message 
             
 class Project(models.Model):
     title = models.CharField(max_length=200)
@@ -125,14 +110,5 @@ class Project(models.Model):
     
 
 
-    #team section
-from django.db import models
 
-class TeamMember(models.Model):
-    name = models.CharField(max_length=100)
-    mobile = models.CharField(max_length=15)
-    email = models.EmailField(unique=True)
-
-    def __str__(self):
-        return self.name
  

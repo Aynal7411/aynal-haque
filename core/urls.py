@@ -19,7 +19,7 @@ urlpatterns = [
     path("project/", views.project_view, name="project_list"),
     path("about/", views.about_us, name="about"),
     path('privacy-policy/', views.privacy_policy, name="privacy_policy"),
-    path('join/', views.join_team, name='join_team'),
+   
     path('thank-you/', views.thank_you, name='thank_you'),
 
     # Password Reset URLs

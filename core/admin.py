@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Post, SiteAlert, Skill, UserProfile, Project
+from .models import Profile, Post, Skill, UserProfile, Project
 
 
 @admin.register(Profile)
@@ -71,13 +71,6 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ('title', 'content', 'author__username')
     readonly_fields = ('created_at', 'updated_at')
 
-
-@admin.register(SiteAlert)
-class SiteAlertAdmin(admin.ModelAdmin):
-    list_display = ('message', 'is_active', 'created_on')
-    list_filter = ('is_active', 'created_on')
-    search_fields = ('message',)
-    readonly_fields = ('created_on',)
 
 
 @admin.register(Project)

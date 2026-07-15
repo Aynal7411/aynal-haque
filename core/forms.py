@@ -1,18 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import TeamMember, UserProfile
+from .models import  UserProfile
 
-
-class TeamMemberForm(forms.ModelForm):
-    class Meta:
-        model = TeamMember
-        fields = ['name', 'mobile', 'email']
-
-
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 
 
 class UserRegistrationForm(UserCreationForm):
