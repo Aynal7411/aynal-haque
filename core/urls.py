@@ -5,6 +5,10 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    # New redesigned homepage
+    path("", views.homepage_redesign, name="homepage_redesign"),
+    
+    # Legacy routes (keeping for backward compatibility)
     path('post', views.post_list, name='post_list'),
     path('<int:pk>/', views.post_detail, name='post_detail'),
     path('register/', views.register_view, name='register'),
@@ -15,7 +19,7 @@ urlpatterns = [
     path('profile/change-password/', views.password_change_view, name='password_change'),
     path('profile/delete/', views.profile_delete_confirm, name='profile_delete'),
     path('skills/', views.skills_view, name='skills'),
-    path("", views.my_page, name="home-page"),
+    path("legacy/", views.my_page, name="home-page"),
     path("project/", views.project_view, name="project_list"),
     path("about/", views.about_us, name="about"),
     path('privacy-policy/', views.privacy_policy, name="privacy_policy"),

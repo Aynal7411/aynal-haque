@@ -12,6 +12,18 @@ from .models import Post, Profile, Project, Skill, UserProfile
 from core.services.home_page_service import build_home_page_context
 
 
+def homepage_redesign(request):
+    """
+    Premium redesigned homepage for Aynal's Solutions
+    Backend Engineering with Python, Django, DRF, and PostgreSQL
+    """
+    context = {
+        'title': "Aynal's Solutions - Backend Engineering with Python & Django",
+        'description': 'Building secure, scalable, and maintainable backend systems using Python, Django, DRF, and PostgreSQL',
+    }
+    return render(request, 'homepage_redesign.html', context)
+
+
 def my_page(request):
     context = build_home_page_context()
 
