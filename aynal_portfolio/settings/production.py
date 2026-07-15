@@ -27,11 +27,11 @@ RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "aynalhaque.onrender.com",
+    "aynal-haque.onrender.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://aynalhaque.onrender.com",
+    "https://aynal-haque.onrender.com",
 ]
 
 
