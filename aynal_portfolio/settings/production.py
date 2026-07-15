@@ -1,7 +1,6 @@
 import os
 
 import dj_database_url
-import sys
 from .base import *
 
 # Load dotenv only if available (local development)
@@ -10,19 +9,6 @@ try:
     load_dotenv()
 except ImportError:
     pass  # dotenv not installed (normal in production)
-
-def main():
-    os.environ.setdefault(
-        "DJANGO_SETTINGS_MODULE",
-        "aynal_portfolio.settings.development",
-    )
-
-    from django.core.management import execute_from_command_line
-    execute_from_command_line(sys.argv)
-
-
-if __name__ == "__main__":
-    main()
 
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
@@ -41,11 +27,11 @@ RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "aynal-haque.onrender.com",
+    "aynalhaque.onrender.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://aynal-haque.onrender.com",
+    "https://aynalhaque.onrender.com",
 ]
 
 
