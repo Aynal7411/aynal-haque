@@ -1456,3 +1456,21 @@
 [INFO] 2026-07-15 13:46:45,649 django.server (213): "GET /post HTTP/1.1" 200 15280
 [INFO] 2026-07-15 13:46:46,131 django.server (213): "GET /login/ HTTP/1.1" 200 5978
 [INFO] 2026-07-15 13:46:46,846 django.server (213): "GET /register/ HTTP/1.1" 200 7643
+[INFO] 2026-07-15 14:41:48,461 django.utils.autoreload (667): Watching for file changes with StatReloader
+[INFO] 2026-07-15 14:41:54,201 django.server (213): "GET / HTTP/1.1" 200 25114
+[INFO] 2026-07-15 14:41:57,057 django.server (213): "GET /service/ HTTP/1.1" 200 5765
+[INFO] 2026-07-15 14:41:58,255 django.server (213): "GET /skills/ HTTP/1.1" 200 9062
+[INFO] 2026-07-15 14:41:59,344 django.server (213): "GET /post HTTP/1.1" 200 15280
+[INFO] 2026-07-15 14:42:00,219 django.server (213): "GET /login/ HTTP/1.1" 200 5978
+[INFO] 2026-07-15 14:42:01,040 django.server (213): "GET /register/ HTTP/1.1" 200 7643
+[INFO] 2026-07-15 14:42:16,479 django.server (213): "GET / HTTP/1.1" 200 25114
+[INFO] 2026-07-15 14:42:16,765 django.server (213): "GET /static/core/css/styles.css HTTP/1.1" 200 6463
+[INFO] 2026-07-15 14:42:17,590 django.server (213): "GET /static/core/images/apple-touch-icon.png HTTP/1.1" 200 1694952
+[INFO] 2026-07-15 14:42:17,592 django.server (213): "GET /static/core/manifest.json HTTP/1.1" 200 506
+[INFO] 2026-07-15 14:42:32,679 django.server (213): "GET /static/core/icons/favicon-16x16.png HTTP/1.1" 200 112
+[INFO] 2026-07-15 14:42:32,685 django.server (213): "GET /static/core/service-worker.js HTTP/1.1" 200 1158
+[INFO] 2026-07-15 14:42:32,722 django.server (213): "GET /static/core/icons/icon-192x192.png HTTP/1.1" 200 6980
+[INFO] 2026-07-15 14:42:32,818 django.server (213): "GET /static/core/js/main.js HTTP/1.1" 200 488
+[INFO] 2026-07-15 14:42:32,840 django.server (213): "GET / HTTP/1.1" 200 25114
+[INFO] 2026-07-15 14:42:32,869 django.server (213): "GET /static/core/icons/icon-512x512.png HTTP/1.1" 200 59542
+[INFO] 2026-07-15 14:42:55,678 django.server (213): "GET / HTTP/1.1" 200 25114
