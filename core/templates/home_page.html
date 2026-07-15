@@ -1,162 +1,525 @@
-<!-- templates/home_page.html -->
-{% extends 'base.html' %}
+
+{% extends "base.html" %}
 {% load static %}
-{% block title %}{{ profile.name }} - Workplace{% endblock %}
+
+{% block title %}
+    {{ profile.name }} | {{ profile.title }}
+{% endblock %}
 
 {% block content %}
-<section class="hero-section">
-    <div class="container">
-        <div class="hero-card p-5">
-            <div class="row align-items-center gy-4">
-                <div class="col-lg-5 text-center text-lg-start">
-                    <h1 class="hero-title" id="typed-name">Hi, I'm {{ profile.name }}</h1>
-                    <p class="hero-text">{{ profile.title }} — building polished, user-friendly web experiences with Django and modern frontend design.</p>
 
-                    <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
-                        {% if profile.resume %}
-                            <a class="btn btn-gradient btn-lg btn-glow" href="{{ profile.resume.url }}" target="_blank" rel="noopener noreferrer">Download Resume</a>
+<main>
+
+    {# ====================================================== #}
+    {# HERO SECTION                                           #}
+    {# ====================================================== #}
+
+    <section class="hero-section" aria-labelledby="hero-heading">
+        <div class="container">
+            <div class="hero-card p-4 p-lg-5">
+
+                <div class="row align-items-center gy-5">
+
+                    <div class="col-lg-5 text-center text-lg-start">
+
+                        <p class="section-subtitle mb-2">
+                            Welcome to my portfolio
+                        </p>
+
+                        <h1
+                            id="hero-heading"
+                            class="hero-title"
+                            data-profile-name="{{ profile.name|escape }}"
+                        >
+                            Hi, I'm {{ profile.name }}
+                        </h1>
+
+                        {% if profile.tagline %}
+                            <p class="hero-text mt-3">
+                                {{ profile.tagline }}
+                            </p>
+                        {% else %}
+                            <p class="hero-text mt-3">
+                                {{ profile.title }} — building reliable,
+                                user-focused web applications with Django
+                                and modern web technologies.
+                            </p>
                         {% endif %}
-                        <a class="btn btn-outline-dark btn-lg w-100 w-sm-auto" href="{% url 'contact' %}">Contact Me</a>
-                    </div>
 
-                    <div class="mt-4 text-start text-muted">
-                        {% if profile.email %}<p><strong>Email:</strong> {{ profile.email }}</p>{% endif %}
-                        {% if profile.phone %}<p><strong>Phone:</strong> {{ profile.phone }}</p>{% endif %}
-                        {% if profile.location %}<p><strong>Location:</strong> {{ profile.location }}</p>{% endif %}
-                    </div>
-                </div>
 
-                <div class="col-lg-7">
-                    <div class="glass-card p-5">
-                        <h3 class="mb-4">About Me</h3>
-                        <p class="text-muted">{{ profile.bio }}</p>
+                        {# Primary actions #}
 
-                        <div class="row g-3 mt-4">
-                            <div class="col-sm-6">
-                                <div class="feature-box">
-                                    <h6>Fast & Responsive</h6>
-                                    <p class="mb-0 text-muted">Mobile-ready layouts and crisp interaction on every device.</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="feature-box">
-                                    <h6>Modern Design</h6>
-                                    <p class="mb-0 text-muted">Clear typography, soft shadows, and balanced spacing for a premium look.</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="feature-box">
-                                    <h6>Clean Code</h6>
-                                    <p class="mb-0 text-muted">Structured Django models and reusable templates for maintainable projects.</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="feature-box">
-                                    <h6>Always Growing</h6>
-                                    <p class="mb-0 text-muted">Continuously improving with new features and better user experience.</p>
-                                </div>
-                            </div>
+                        <div
+                            class="d-flex flex-column flex-sm-row
+                                   justify-content-center justify-content-lg-start
+                                   gap-3 mt-4"
+                        >
+                            {% if profile.resume %}
+                                <a
+                                    href="{{ profile.resume.url }}"
+                                    class="btn btn-gradient btn-lg"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Resume
+                                </a>
+                            {% endif %}
+
+                            <a
+                                href="{% url 'contact' %}"
+                                class="btn btn-outline-dark btn-lg"
+                            >
+                                Contact Me
+                            </a>
                         </div>
 
-                        <div class="d-flex flex-wrap gap-2 mt-4">
-                            {% if profile.linkedin %}
-                                <a href="{{ profile.linkedin }}" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                            {% endif %}
-                            {% if profile.github %}
-                                <a href="{{ profile.github }}" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener noreferrer">GitHub</a>
-                            {% endif %}
-                            {% if profile.twitter %}
-                                <a href="{{ profile.twitter }}" class="btn btn-outline-info btn-sm" target="_blank" rel="noopener noreferrer">Twitter</a>
-                            {% endif %}
-                        </div>
+
+                        {# Contact information #}
+
+                        {% if profile.email or profile.phone or profile.location %}
+                            <address class="profile-contact mt-4 mb-0">
+
+                                {% if profile.email %}
+                                    <p class="mb-2">
+                                        <strong>Email:</strong>
+                                        <a href="mailto:{{ profile.email }}">
+                                            {{ profile.email }}
+                                        </a>
+                                    </p>
+                                {% endif %}
+
+                                {% if profile.phone %}
+                                    <p class="mb-2">
+                                        <strong>Phone:</strong>
+                                        <a href="tel:{{ profile.phone }}">
+                                            {{ profile.phone }}
+                                        </a>
+                                    </p>
+                                {% endif %}
+
+                                {% if profile.location %}
+                                    <p class="mb-0">
+                                        <strong>Location:</strong>
+                                        {{ profile.location }}
+                                    </p>
+                                {% endif %}
+
+                            </address>
+                        {% endif %}
+
                     </div>
 
-                  
+
+                    {# About panel #}
+
+                    <div class="col-lg-7">
+
+                        <div class="glass-card p-4 p-lg-5">
+
+                            <p class="section-subtitle mb-2">
+                                About
+                            </p>
+
+                            <h2 class="mb-4">
+                                Building useful digital products
+                            </h2>
+
+                            <div class="text-muted profile-bio">
+                                {{ profile.bio|linebreaks }}
+                            </div>
+
+
+                            {# Capabilities #}
+
+                            <div class="row g-3 mt-3">
+
+                                <div class="col-sm-6">
+                                    <div class="feature-box h-100">
+                                        <h3 class="h6">
+                                            Responsive Experiences
+                                        </h3>
+                                        <p class="mb-0 text-muted">
+                                            Interfaces designed to work smoothly
+                                            across mobile, tablet, and desktop.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="feature-box h-100">
+                                        <h3 class="h6">
+                                            Modern Architecture
+                                        </h3>
+                                        <p class="mb-0 text-muted">
+                                            Maintainable applications built with
+                                            clear boundaries and scalable patterns.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="feature-box h-100">
+                                        <h3 class="h6">
+                                            Clean Engineering
+                                        </h3>
+                                        <p class="mb-0 text-muted">
+                                            Readable, testable, and maintainable
+                                            code designed for long-term evolution.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="feature-box h-100">
+                                        <h3 class="h6">
+                                            Continuous Improvement
+                                        </h3>
+                                        <p class="mb-0 text-muted">
+                                            Iterative development focused on
+                                            performance, security, and user experience.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            {# Social links #}
+
+                            {% if profile.linkedin or profile.github or profile.twitter or profile.website %}
+                                <nav
+                                    class="d-flex flex-wrap gap-2 mt-4"
+                                    aria-label="Social profiles"
+                                >
+
+                                    {% if profile.linkedin %}
+                                        <a
+                                            href="{{ profile.linkedin }}"
+                                            class="btn btn-outline-primary btn-sm"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            LinkedIn
+                                        </a>
+                                    {% endif %}
+
+                                    {% if profile.github %}
+                                        <a
+                                            href="{{ profile.github }}"
+                                            class="btn btn-outline-dark btn-sm"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            GitHub
+                                        </a>
+                                    {% endif %}
+
+                                    {% if profile.twitter %}
+                                        <a
+                                            href="{{ profile.twitter }}"
+                                            class="btn btn-outline-info btn-sm"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Twitter
+                                        </a>
+                                    {% endif %}
+
+                                    {% if profile.website %}
+                                        <a
+                                            href="{{ profile.website }}"
+                                            class="btn btn-outline-secondary btn-sm"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Website
+                                        </a>
+                                    {% endif %}
+
+                                </nav>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="py-5">
-    <div class="container text-center">
-        <p class="section-subtitle">Capabilities built for the modern web</p>
-        <h2 class="section-title">My Skills</h2>
-        <div class="section-divider mx-auto"></div>
 
-        <div class="row g-4 mt-4">
-            {% for category, skills in grouped_skills.items %}
-                <div class="col-md-4">
-                    <div class="glass-card h-100">
-                        <h4 class="mb-4">{{ category }}</h4>
-                        {% for skill in skills %}
-                            <div class="mb-4">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <span class="skill-badge">{{ skill.name }}</span>
-                                    <span class="text-muted">{{ skill.percentage }}%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-gradient" role="progressbar" data-percent="{{ skill.percentage }}" aria-label="{{ skill.name }} skill progress" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
+
+    {# ====================================================== #}
+    {# SKILLS                                                 #}
+    {# ====================================================== #}
+
+    <section class="py-5" aria-labelledby="skills-heading">
+
+        <div class="container">
+
+            <header class="text-center">
+                <p class="section-subtitle">
+                    Technologies and capabilities
+                </p>
+
+                <h2 id="skills-heading" class="section-title">
+                    My Skills
+                </h2>
+
+                <div
+                    class="section-divider mx-auto"
+                    aria-hidden="true"
+                ></div>
+            </header>
+
+
+            {% if grouped_skills %}
+
+                <div class="row g-4 mt-4">
+
+                    {% for category, skills in grouped_skills.items %}
+
+                        <div class="col-md-6 col-lg-4">
+
+                            <article class="glass-card h-100 p-4">
+
+                                <h3 class="h4 mb-4">
+                                    {{ category }}
+                                </h3>
+
+                                {% for skill in skills %}
+
+                                    <div class="skill-item mb-4">
+
+                                        <div
+                                            class="d-flex justify-content-between
+                                                   align-items-center mb-2"
+                                        >
+                                            <span class="skill-badge">
+                                                {{ skill.name }}
+                                            </span>
+
+                                            <span class="text-muted">
+                                                {{ skill.percentage }}%
+                                            </span>
+                                        </div>
+
+                                        <div
+                                            class="progress"
+                                            role="progressbar"
+                                            aria-label="{{ skill.name }}"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                            aria-valuenow="{{ skill.percentage }}"
+                                        >
+                                            <div
+                                                class="progress-bar bg-gradient"
+                                                data-percent="{{ skill.percentage }}"
+                                            ></div>
+                                        </div>
+
+                                    </div>
+
+                                {% empty %}
+
+                                    <p class="text-muted mb-0">
+                                        Skills will be added soon.
+                                    </p>
+
+                                {% endfor %}
+
+                            </article>
+
+                        </div>
+
+                    {% endfor %}
+
                 </div>
-            {% endfor %}
+
+            {% else %}
+
+                <p class="text-center text-muted mt-5">
+                    Skills will be available soon.
+                </p>
+
+            {% endif %}
+
+
+            <div class="text-center mt-5">
+                <a
+                    href="{% url 'skills' %}"
+                    class="btn btn-outline-dark btn-lg"
+                >
+                    Explore All Skills
+                </a>
+            </div>
+
         </div>
 
-        <div class="mt-4">
-            <a href="{% url 'skills' %}" class="btn btn-outline-dark btn-lg">View All Skills</a>
+    </section>
+
+
+
+    {# ====================================================== #}
+    {# PROJECTS                                               #}
+    {# ====================================================== #}
+
+    <section
+        class="py-5 section--soft"
+        aria-labelledby="projects-heading"
+    >
+
+        <div class="container">
+
+            <header class="text-center">
+
+                <p class="section-subtitle">
+                    Selected work and case studies
+                </p>
+
+                <h2 id="projects-heading" class="section-title">
+                    Featured Projects
+                </h2>
+
+                <div
+                    class="section-divider mx-auto"
+                    aria-hidden="true"
+                ></div>
+
+            </header>
+
+
+            {% if projects %}
+
+                <div class="project-grid mt-5">
+
+                    {% for project in projects %}
+
+                        <article class="project-card">
+
+                            {% if project.image %}
+                                <div class="project-card-media">
+                                    <img
+                                        src="{{ project.image.url }}"
+                                        alt="{{ project.title }}"
+                                        class="project-card-image"
+                                        loading="lazy"
+                                        width="640"
+                                        height="360"
+                                    >
+                                </div>
+                            {% endif %}
+
+
+                            <div class="project-card-body">
+
+                                <h3 class="project-card-title">
+                                    {{ project.title }}
+                                </h3>
+
+                                <p class="project-card-text">
+                                    {{ project.description|truncatewords:22 }}
+                                </p>
+
+                                {% if project.url %}
+                                    <a
+                                        href="{{ project.url }}"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="btn btn-gradient btn-sm"
+                                        aria-label="View {{ project.title }} project"
+                                    >
+                                        View Project
+                                    </a>
+                                {% endif %}
+
+                            </div>
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <p class="text-center text-muted mt-5">
+                    New projects are coming soon.
+                </p>
+
+            {% endif %}
+
+
+            <div class="text-center mt-5">
+                <a
+                    href="{% url 'project_list' %}"
+                    class="btn btn-outline-success btn-lg"
+                >
+                    Explore All Projects
+                </a>
+            </div>
+
         </div>
-    </div>
-</section>
 
-<section class="py-5 section--soft">
-    <div class="container text-center">
-        <p class="section-subtitle">Selected works with polished UI and strong user experience</p>
-        <h2 class="section-title">Projects</h2>
-        <div class="section-divider mx-auto"></div>
+    </section>
 
-        <div class="project-grid mt-4">
-            {% for project in projects %}
-                <article class="project-card">
-                    {% if project.image %}
-                        <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-card-image">
-                    {% endif %}
-                    <div class="project-card-body">
-                        <h3 class="project-card-title">{{ project.title }}</h3>
-                        <p class="project-card-text">{{ project.description|truncatewords:15 }}</p>
-                        {% if project.url %}
-                            <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-gradient btn-sm">View Project</a>
-                        {% endif %}
-                    </div>
-                </article>
-            {% endfor %}
-        </div>
+</main>
 
-        <div class="mt-5">
-            <a href="{% url 'project_list' %}" class="btn btn-outline-success btn-lg">View All Projects</a>
-        </div>
-    </div>
-</section>
+{% endblock %}
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+
+{% block extra_js %}
+
+<script
+    src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"
+    defer
+></script>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var typed = new Typed('#typed-name', {
-        strings: ['Hi, I\'m {{ profile.name }}', 'I build beautiful Django web apps', 'Modern UI, responsive layouts, and clean code.'],
-        typeSpeed: 60,
-        backSpeed: 35,
-        loop: true
-    });
+document.addEventListener("DOMContentLoaded", () => {
 
-    document.querySelectorAll('.progress-bar[data-percent]').forEach(function(progressBar) {
-        var percentage = progressBar.getAttribute('data-percent');
-        if (percentage) {
-            progressBar.style.width = percentage + '%';
-            progressBar.setAttribute('aria-valuenow', percentage);
-        }
-    });
+    const heroHeading = document.querySelector("#hero-heading");
+
+    if (
+        heroHeading &&
+        typeof Typed !== "undefined"
+    ) {
+        const profileName = heroHeading.dataset.profileName;
+
+        new Typed("#hero-heading", {
+            strings: [
+                `Hi, I'm ${profileName}`,
+                "I build modern Django applications",
+                "I design scalable web experiences"
+            ],
+            typeSpeed: 55,
+            backSpeed: 30,
+            backDelay: 1800,
+            loop: true
+        });
+    }
+
+
+    document
+        .querySelectorAll(".progress-bar[data-percent]")
+        .forEach((progressBar) => {
+
+            const rawPercentage = Number(
+                progressBar.dataset.percent
+            );
+
+            const percentage = Math.min(
+                100,
+                Math.max(0, rawPercentage || 0)
+            );
+
+            progressBar.style.width = `${percentage}%`;
+        });
+
 });
 </script>
+
 {% endblock %}
+

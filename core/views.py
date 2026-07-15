@@ -9,30 +9,24 @@ from django.shortcuts import get_object_or_404, redirect, render
 from .forms import  UserRegistrationForm, UserProfileForm, UserPasswordChangeForm
 from .models import Post, Profile, Project, Skill, UserProfile
 
+from core.services.home_page_service import build_home_page_context
+
 
 def my_page(request):
-   
-    profile = Profile.objects.first()
-    if not profile:
-        return render(request, 'no_profile.html')
+    context = build_home_page_context()
 
-    # Get skills
-    skill_types = Skill.SKILL_TYPES
-    grouped_skills = {
-        label: Skill.objects.filter(skill_type=key).order_by('-percentage')[:3]  # Top 3 per category
-        for key, label in skill_types
-    }
+    if context["profile"] is None:
+        return render(
+            request,
+            "no_profile.html",
+            status=200,
+        )
 
-    # Get projects
-    projects = Project.objects.all()[:3]  # Top 3 projects
-
-    return render(request, 'home_page.html', {
-    
-        'profile': profile,
-        'grouped_skills': grouped_skills,
-        'projects': projects,
-        'year': datetime.now().year,
-    })
+    return render(
+        request,
+        "home_page.html",
+        context,
+    )
 
 
 def skills_view(request):
