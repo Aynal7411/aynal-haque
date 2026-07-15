@@ -24,7 +24,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 
 # ============================================================
@@ -39,16 +39,30 @@ SECRET_KEY = os.environ.get(
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 
 ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
     "aynal-haque.onrender.com",
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://aynal-haque.onrender.com",
+]
+
 
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://aynal-haque.onrender.com",
-]
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 if RENDER_EXTERNAL_HOSTNAME:
     origin = f"https://{RENDER_EXTERNAL_HOSTNAME}"
