@@ -46,17 +46,17 @@
             
             <!-- Navigation Links -->
             <div class="navbar-menu" id="navbar-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#expertise" class="nav-link">Expertise</a>
-                <a href="#services" class="nav-link">Services</a>
+                <a href="{% url 'homepage_redesign' %}" class="nav-link">Home</a>
+                <a href="{% url 'about' %}" class="nav-link">About</a>
+                <a href="{% url 'expertise' %}" class="nav-link">Expertise</a>
+                <a href="{% url 'services-page' %}" class="nav-link">Services</a>
                 <a href="{% url 'projects_list' %}" class="nav-link">Projects</a>
-                <a href="#process" class="nav-link">Process</a>
+                <a href="{% url 'process' %}" class="nav-link">Process</a>
                 <a href="{% url 'contact' %}" class="nav-link">Contact</a>
             </div>
             
             <!-- Primary CTA -->
-            <a href="#contact" class="btn btn-primary navbar-cta">Let's Build Something</a>
+            <a href="{% url 'contact' %}" class="btn btn-primary navbar-cta">Let's Build Something</a>
             
             <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
@@ -84,10 +84,10 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="{% url 'homepage_redesign' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'projects_list' %}">Projects</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
                     </ul>
                 </div>
                 

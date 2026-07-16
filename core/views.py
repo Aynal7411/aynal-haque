@@ -224,3 +224,7 @@ def privacy_policy(request):
 def thank_you(request):
     return render(request, 'thank_you.html')
 
+def expertise_view(request):
+    return render(request, 'expertise.html')
+
+

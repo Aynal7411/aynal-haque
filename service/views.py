@@ -18,3 +18,7 @@ def contact_view(request):
     else:
         form = MessageForm()
     return render(request, 'contact.html', {'form': form})   
+
+
+def process_view(request):
+    return render(request, 'process.html')

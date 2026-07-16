@@ -23,6 +23,7 @@ urlpatterns = [
     path("about/", views.about_us, name="about"),
     path('privacy-policy/', views.privacy_policy, name="privacy_policy"),
     path('thank-you/', views.thank_you, name='thank_you'),
+    path('expertise/', views.expertise_view, name='expertise'),
     # Password Reset URLs
     path('password-reset/', auth_views.PasswordResetView.as_view(
         template_name='password_reset.html',
