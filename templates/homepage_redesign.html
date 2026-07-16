@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Aynal's Solutions - Backend Engineering with Python & Django{% endblock %}
+{% block title %}Aynal's Solutions - Backend Development with Python & Django{% endblock %}
 
 {% block content %}
 
@@ -10,7 +10,7 @@
     <div class="hero-content">
         <div class="hero-eyebrow">
             <span class="status-indicator"></span>
-            Available for freelance & remote opportunities
+            Available for full-time, freelance, contract & remote opportunities
         </div>
         
         <h1>
@@ -22,8 +22,8 @@
         </p>
         
         <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-secondary">Start a Project</a>
+            <a href="{% url 'projects-list' %}" class="btn btn-primary">View My Work</a>
+            <a href="{% url 'contact' %}" class="btn btn-secondary">Start a Project</a>
         </div>
         
         <!-- Hero Visual - Code Visualization -->
