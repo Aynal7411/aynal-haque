@@ -39,9 +39,10 @@
     <nav class="navbar" id="navbar">
         <div class="container navbar-container">
             <!-- Logo -->
-            <a href="#" class="navbar-logo">
+            <a href="{% url 'homepage_redesign' %}" class="navbar-logo">
+                <img src="{% static 'images/aynal-logo.png' %}" alt="Aynal's Solutions Logo" class="logo-img">
                 <span class="logo-text">Aynal's Solutions</span>
-                <span class="logo-accent">.</span>
+                <span class="logo-accent">...</span>
             </a>
             
             <!-- Navigation Links -->
@@ -73,7 +74,7 @@
     </main>
 
       <!--Footer Section-->
-      
+
     {% include 'footer.html' %}
 
     <!-- Scripts -->

@@ -35,22 +35,32 @@
   color: var(--color-text-primary);
   text-decoration: none;
   transition: all var(--transition-base);
+  white-space: nowrap;
 }
 
 .navbar-logo:hover {
   color: var(--color-accent-primary);
 }
 
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .logo-text {
-  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-tertiary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.01em;
+  display: inline-block;
 }
 
 .logo-accent {
-  color: var(--color-accent-highlight);
+  color: var(--color-accent-primary);
   font-size: var(--font-size-2xl);
+  line-height: 1;
+  margin-left: 2px;
 }
 
 .navbar-menu {
