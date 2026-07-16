@@ -5,14 +5,12 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    # New redesigned homepage
-   # path("", views.homepage_redesign, name="homepage_redesign"),
-    
-    # Legacy routes (keeping for backward compatibility)
+   
+    path("", views.homepage_redesign, name="homepage_redesign"),
     path('post', views.post_list, name='post_list'),
     path('<int:pk>/', views.post_detail, name='post_detail'),
     path('register/', views.register_view, name='register'),
-    path('login/', views.login_view, name='login'),
+    path('login', views.login_view, name='login'),
     path('logout/', views.logout_view, name='logout'),
     path('profile/', views.profile_view, name='profile'),
     path('profile/edit/', views.profile_edit, name='profile_edit'),
@@ -23,9 +21,7 @@ urlpatterns = [
     path("project/", views.project_view, name="project_list"),
     path("about/", views.about_us, name="about"),
     path('privacy-policy/', views.privacy_policy, name="privacy_policy"),
-   
     path('thank-you/', views.thank_you, name='thank_you'),
-
     # Password Reset URLs
     path('password-reset/', auth_views.PasswordResetView.as_view(
         template_name='password_reset.html',
