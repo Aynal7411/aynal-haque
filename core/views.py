@@ -189,10 +189,54 @@ def profile_delete_confirm(request):
     return render(request, 'profile_delete_confirm.html')
 
 
-def project_view(request):
-    projects = Project.objects.all().order_by('-created_at')
-    return render(request, 'project.html', {'projects': projects})
+from django.shortcuts import render, get_object_or_404
 
+from .models import Project
+
+
+def project_list(request):
+
+    projects = (
+        Project.objects
+        .select_related("category")
+        .prefetch_related("technologies")
+        .filter(status="completed")
+        .order_by("order")
+    )
+
+    context = {
+        "projects": projects
+    }
+
+    return render(
+        request,
+        "project_list.html",
+        context,
+    )
+
+
+def project_detail(request, slug):
+
+    project = get_object_or_404(
+        Project.objects
+        .select_related("category")
+        .prefetch_related(
+            "technologies",
+            "images",
+            "features",
+        ),
+        slug=slug,
+    )
+
+    context = {
+        "project": project
+    }
+
+    return render(
+        request,
+        "project_detail.html",
+        context,
+    )
 
 def about_us(request):
     return render(request, 'about.html')

@@ -16,8 +16,19 @@ urlpatterns = [
     path('profile/delete/', views.profile_delete_confirm, name='profile_delete'),
     path('skills/', views.skills_view, name='skills'),
     path("legacy/", views.my_page, name="home-page"),
-    path("project/", views.project_view, name="project_list"),
-    path("projects/", views.project_view, name="projects_list"),
+   
+    path(
+        "projects/",
+        views.project_list,
+        name="project_list",
+    ),
+
+    path(
+        "projects/<slug:slug>/",
+        views.project_detail,
+        name="project_detail",
+    ),
+
     path("about/", views.about_us, name="about"),
     path('privacy-policy/', views.privacy_policy, name="privacy_policy"),
     path('thank-you/', views.thank_you, name='thank_you'),

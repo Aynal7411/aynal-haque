@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile,  Skill, UserProfile, Project
+from .models import Profile,  Skill, UserProfile
 
 
 @admin.register(Profile)
@@ -65,10 +65,63 @@ class SkillAdmin(admin.ModelAdmin):
 
 
 
+from .models import (
+    Technology,
+    ProjectCategory,
+    Project,
+    ProjectImage,
+    ProjectFeature,
+)
+
+
+class ProjectImageInline(admin.TabularInline):
+    model = ProjectImage
+    extra = 1
+
+
+class ProjectFeatureInline(admin.TabularInline):
+    model = ProjectFeature
+    extra = 1
+
+
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('title', 'created_at', 'url')
-    list_filter = ('created_at',)
-    search_fields = ('title', 'description')
-    readonly_fields = ('created_at',)
 
+    list_display = (
+        "title",
+        "category",
+        "status",
+        "featured",
+        "project_type",
+        "created_at",
+    )
+
+    list_filter = (
+        "status",
+        "featured",
+        "project_type",
+        "difficulty",
+        "category",
+    )
+
+    search_fields = (
+        "title",
+        "short_description",
+    )
+
+    prepopulated_fields = {
+        "slug": ("title",)
+    }
+
+    filter_horizontal = (
+        "technologies",
+    )
+
+    inlines = [
+        ProjectFeatureInline,
+        ProjectImageInline,
+    ]
+
+
+admin.site.register(ProjectCategory)
+admin.site.register(Technology)

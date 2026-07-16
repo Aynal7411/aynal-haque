@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ project.title }}
+{% endblock %}
+
+{% block content %}
+
+<section class="project-detail">
+    <div class="container">
+        <div class="project-detail-grid">
+            <div class="project-detail-main">
+                <span class="eyebrow">Project</span>
+                <h1>{{ project.title }}</h1>
+                <p class="project-detail-summary">{{ project.short_description }}</p>
+
+                <div class="project-detail-links">
+                    {% if project.github_url %}
+                    <a class="btn btn-secondary" href="{{ project.github_url }}" target="_blank" rel="noopener">View Code</a>
+                    {% endif %}
+                    {% if project.live_url %}
+                    <a class="btn btn-primary" href="{{ project.live_url }}" target="_blank" rel="noopener">Live Demo</a>
+                    {% endif %}
+                </div>
+
+                <div class="project-detail-meta">
+                    {% if project.category %}
+                    <div class="project-meta-item">
+                        <strong>Category</strong>
+                        <span>{{ project.category.name }}</span>
+                    </div>
+                    {% endif %}
+                    <div class="project-meta-item">
+                        <strong>Status</strong>
+                        <span>{{ project.get_status_display }}</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <strong>Role</strong>
+                        <span>{{ project.get_role_display }}</span>
+                    </div>
+                    <div class="project-meta-item">
+                        <strong>Type</strong>
+                        <span>{{ project.get_project_type_display }}</span>
+                    </div>
+                </div>
+
+                <div class="project-detail-description">
+                    <p>{{ project.description }}</p>
+                </div>
+
+                {% if project.technologies.exists %}
+                <div class="project-detail-section">
+                    <h3>Technologies</h3>
+                    <div class="tech-chip-list">
+                        {% for tech in project.technologies.all %}
+                        <span class="tech-chip">{{ tech.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if project.features.exists %}
+                <div class="project-detail-section">
+                    <h3>Key Features</h3>
+                    <ul class="project-features-list">
+                        {% for feature in project.features.all %}
+                        <li>{{ feature.title }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+            <aside class="project-detail-aside">
+                <div class="project-detail-card">
+                    <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
+                    <div class="project-detail-stats">
+                        <div class="project-stat">
+                            <strong>Difficulty</strong>
+                            <span>{{ project.get_difficulty_display }}</span>
+                        </div>
+                        <div class="project-stat">
+                            <strong>Order</strong>
+                            <span>{{ project.order }}</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
