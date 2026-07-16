@@ -476,6 +476,17 @@
   margin-bottom: 0;
 }
 
+ul li {
+  list-style: none;
+  padding-left: 0;
+}
+#list group-item {
+  background-color: transparent;
+  border: none;
+  padding-left: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
