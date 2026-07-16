@@ -6,7 +6,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     # New redesigned homepage
-    path("", views.homepage_redesign, name="homepage_redesign"),
+   # path("", views.homepage_redesign, name="homepage_redesign"),
     
     # Legacy routes (keeping for backward compatibility)
     path('post', views.post_list, name='post_list'),
