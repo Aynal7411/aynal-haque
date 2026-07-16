@@ -167,21 +167,7 @@ class Skill(models.Model):
     def __str__(self):
         return f"{self.name} - {self.get_skill_type_display()} ({self.percentage}%)"
 
-class Post(models.Model):
-    LANGUAGE_CHOICES = (
-        ('en', 'English'),
-        ('bn', 'বাংলা'),
-    )
 
-    title = models.CharField(max_length=200)
-    content = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    language = models.CharField(max_length=2, choices=LANGUAGE_CHOICES, default='en')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.title
 
             
 class Project(models.Model):

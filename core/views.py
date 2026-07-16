@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import  UserRegistrationForm, UserProfileForm, UserPasswordChangeForm
-from .models import Post, Profile, Project, Skill, UserProfile
+from .models import  Profile, Project, Skill, UserProfile
 
 from core.services.home_page_service import build_home_page_context
 
@@ -50,23 +50,6 @@ def skills_view(request):
     return render(request, 'skills.html', {'grouped_skills': grouped_skills})
 
 
-def post_list(request):
-    language = request.GET.get('lang', 'en')  # Default to English
-    posts = Post.objects.filter(language=language).order_by('-created_at')
-    return render(request, 'post_list.html', {
-        'posts': posts,
-        'current_language': language,
-        'language_choices': Post.LANGUAGE_CHOICES
-    })
-
-
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    language = request.GET.get('lang', post.language)  # Use post's language as default
-    return render(request, 'post_detail.html', {
-        'post': post,
-        'current_language': language
-    })
 
 #User registration system
 

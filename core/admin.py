@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile, Post, Skill, UserProfile, Project
+from .models import Profile,  Skill, UserProfile, Project
 
 
 @admin.register(Profile)
@@ -62,14 +62,6 @@ class SkillAdmin(admin.ModelAdmin):
     list_display = ('name', 'skill_type', 'percentage')
     list_filter = ('skill_type',)
     search_fields = ('name',)
-
-
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'created_at', 'updated_at')
-    list_filter = ('created_at', 'author')
-    search_fields = ('title', 'content', 'author__username')
-    readonly_fields = ('created_at', 'updated_at')
 
 
 
