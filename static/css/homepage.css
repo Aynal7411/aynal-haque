@@ -47,6 +47,7 @@
   height: 40px;
   object-fit: contain;
   flex-shrink: 0;
+  border-radius: 40%;
 }
 
 .logo-text {
