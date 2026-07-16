@@ -86,7 +86,7 @@ TEMPLATES = [
 # ============================================================
 
 AUTHENTICATION_BACKENDS = [
-    "axes.backends.AxesBackend",
+   
     "django.contrib.auth.backends.ModelBackend",
 ]
 
