@@ -28,7 +28,7 @@ LOCAL_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    "axes",
+   # "axes",
     "pwa",
 ]
 
@@ -46,7 +46,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "axes.middleware.AxesMiddleware",
+    #"axes.middleware.AxesMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
