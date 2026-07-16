@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Expertise | Aynal Haque{% endblock %}
+
+{% block content %}
+
+<!-- Core Expertise Section -->
+<section class="section" id="expertise">
+    <div class="container">
+        <div class="section-header">
+            <h2>Core Expertise</h2>
+            <p>What I specialize in and how I can help your project succeed.</p>
+        </div>
+        
+        <div class="expertise-grid">
+            <!-- Python Engineering -->
+            <div class="expertise-card">
+                <div class="expertise-icon">🐍</div>
+                <h3>Python Engineering</h3>
+                <p>
+                    Writing clean, maintainable, and efficient Python code following best practices and PEP 8 standards. 
+                    From automation to data processing, I build robust Python solutions.
+                </p>
+                <ul class="expertise-features">
+                    <li>Clean application logic</li>
+                    <li>Automation & scripting</li>
+                    <li>Data processing</li>
+                    <li>Performance optimization</li>
+                    <li>Testing & debugging</li>
+                </ul>
+            </div>
+            
+            <!-- Django Development -->
+            <div class="expertise-card">
+                <div class="expertise-icon">🚀</div>
+                <h3>Django Development</h3>
+                <p>
+                    Production-ready Django applications with modular architecture, proper permissions, scalable structure, 
+                    and best-practice patterns.
+                </p>
+                <ul class="expertise-features">
+                    <li>Application architecture</li>
+                    <li>Models & migrations</li>
+                    <li>Authentication & permissions</li>
+                    <li>Admin customization</li>
+                    <li>Middleware & signals</li>
+                </ul>
+            </div>
+            
+            <!-- Django REST Framework -->
+            <div class="expertise-card">
+                <div class="expertise-icon">📡</div>
+                <h3>REST API Development</h3>
+                <p>
+                    Building secure, well-documented REST APIs with proper serialization, filtering, pagination, 
+                    versioning, and client integration readiness.
+                </p>
+                <ul class="expertise-features">
+                    <li>Serializers & validation</li>
+                    <li>ViewSets & routers</li>
+                    <li>Authentication & tokens</li>
+                    <li>Permissions & filtering</li>
+                    <li>API documentation</li>
+                </ul>
+            </div>
+            
+            <!-- PostgreSQL -->
+            <div class="expertise-card">
+                <div class="expertise-icon">🗄️</div>
+                <h3>PostgreSQL Databases</h3>
+                <p>
+                    Relational database design, proper data modeling, constraint design, intelligent indexing, 
+                    query optimization, and reliable data persistence.
+                </p>
+                <ul class="expertise-features">
+                    <li>Data modeling</li>
+                    <li>Constraint design</li>
+                    <li>Indexing strategies</li>
+                    <li>Query optimization</li>
+                    <li>Migrations & scaling</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

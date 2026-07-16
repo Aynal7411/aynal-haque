@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Process | Aynal Haque{% endblock %}
+
+{% block content %}
+<!-- Engineering Process Section -->
+<section class="section" id="process">
+    <div class="container">
+        <div class="section-header">
+            <h2>Engineering Process</h2>
+            <p>How I approach building reliable backend systems.</p>
+        </div>
+        
+        <div class="process-timeline">
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-number">01</div>
+                    <h4>Discover</h4>
+                    <p>
+                        Understand requirements, business goals, users, constraints, and risks. 
+                        Define success metrics.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">02</div>
+                    <h4>Architect</h4>
+                    <p>
+                        Design application structure, API contracts, database models, permissions, 
+                        and system boundaries.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">03</div>
+                    <h4>Build</h4>
+                    <p>
+                        Develop clean, modular, testable functionality following best practices 
+                        and code standards.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">04</div>
+                    <h4>Test</h4>
+                    <p>
+                        Validate behavior, security, edge cases, API contracts, and performance. 
+                        Comprehensive test coverage.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">05</div>
+                    <h4>Deploy</h4>
+                    <p>
+                        Prepare for reliable production deployment. Docker, CI/CD, monitoring, 
+                        and logging setup.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number">06</div>
+                    <h4>Improve</h4>
+                    <p>
+                        Monitor, maintain, optimize, and evolve. Handle issues, improve performance, 
+                        and scale as needed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
