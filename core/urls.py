@@ -19,6 +19,7 @@ urlpatterns = [
     path('skills/', views.skills_view, name='skills'),
     path("legacy/", views.my_page, name="home-page"),
     path("project/", views.project_view, name="project_list"),
+    path("projects/", views.project_view, name="projects_list"),
     path("about/", views.about_us, name="about"),
     path('privacy-policy/', views.privacy_policy, name="privacy_policy"),
     path('thank-you/', views.thank_you, name='thank_you'),
