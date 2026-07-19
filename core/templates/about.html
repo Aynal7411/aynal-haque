@@ -1,72 +1,144 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block title %}About Me{% endblock %}
 
 {% block content %}
 
-<section class="container py-5">
+<!-- ===========================
+     Hero Section
+============================ -->
 
-    <!-- Hero Section -->
-    <div class="row align-items-center mb-5">
+<section class="about-hero py-5">
 
-        <div class="col-lg-4 text-center mb-4 mb-lg-0 ">
+    <div class="container">
 
-            {% if profile.profile_image %}
-                <img src="{{ profile.profile_image.url }}"
-                     class="img-fluid rounded-circle shadow-lg"
-                     style="width:280px;height:280px;object-fit:cover;"
-                     alt="{{ profile.full_name }}">
-            {% else %}
-                <img src="{% static 'images/aynal-logo.png' %}"
-                     class="img-fluid rounded-circle shadow-lg"
-                     alt="Profile">
-            {% endif %}
+        <div class="row align-items-center gy-5">
 
-        </div>
+            <!-- Profile Image -->
 
-        <div class="col-lg-8">
+            <div class="col-lg-5 text-center">
 
-            <h1 class="display-4 fw-bold">
-                {{ profile.full_name }}
-            </h1>
-            <h1 class="display-4 fw-bold text-primary">
-                {{ profile.first_name }}
-            </h1>
+                {% if profile.photo %}
 
-            
-            <h4 class="text-primary">
-                {{ profile.job_title }}
-            </h4>
+                    <img src="{{ profile.photo.url }}"
+                         alt="{{ profile.name }}"
+                         class="profile-image img-fluid">
 
-            <p class="lead mt-4">
-                {{ profile.short_bio }}
-            </p>
+                {% else %}
 
-            <div class="mt-4">
+                    <img src="{% static 'images/default-profile.png' %}"
+                         alt="Profile"
+                         class="profile-image img-fluid">
 
-                {% if profile.github %}
-                    <a href="{{ profile.github }}"
-                       class="btn btn-dark me-2"
-                       target="_blank">
-                        GitHub
-                    </a>
                 {% endif %}
 
-                {% if profile.linkedin %}
-                    <a href="{{ profile.linkedin }}"
-                       class="btn btn-primary me-2"
-                       target="_blank">
-                        LinkedIn
-                    </a>
+            </div>
+
+            <!-- Hero Content -->
+
+            <div class="col-lg-7">
+
+                <span class="hero-subtitle">
+
+                    👋 Hello, I'm
+
+                </span>
+
+                <h1 class="hero-title mt-2">
+
+                    {{ profile.name }}
+
+                </h1>
+
+                <h2 class="hero-role">
+
+                    {{ profile.title }}
+
+                </h2>
+
+                {% if profile.tagline %}
+
+                <p class="hero-tagline">
+
+                    {{ profile.tagline }}
+
+                </p>
+
                 {% endif %}
 
-                {% if profile.resume %}
+                <div class="hero-buttons mt-4">
+
+                    {% if profile.resume %}
+
                     <a href="{{ profile.resume.url }}"
-                       class="btn btn-success"
-                       target="_blank">
+                       target="_blank"
+                       class="btn btn-primary btn-lg">
+
                         Download Resume
+
                     </a>
-                {% endif %}
+
+                    {% endif %}
+
+                    <a href="{% url 'contact' %}"
+                       class="btn btn-outline-light btn-lg ms-2">
+
+                        Contact Me
+
+                    </a>
+
+                </div>
+
+                <!-- Social Links -->
+
+                <div class="social-links mt-5">
+
+                    {% if profile.github %}
+
+                    <a href="{{ profile.github }}"
+                       target="_blank">
+
+                        <i class="bi bi-github"></i>
+
+                    </a>
+
+                    {% endif %}
+
+                    {% if profile.linkedin %}
+
+                    <a href="{{ profile.linkedin }}"
+                       target="_blank">
+
+                        <i class="bi bi-linkedin"></i>
+
+                    </a>
+
+                    {% endif %}
+
+                    {% if profile.twitter %}
+
+                    <a href="{{ profile.twitter }}"
+                       target="_blank">
+
+                        <i class="bi bi-twitter-x"></i>
+
+                    </a>
+
+                    {% endif %}
+
+                    {% if profile.website %}
+
+                    <a href="{{ profile.website }}"
+                       target="_blank">
+
+                        <i class="bi bi-globe"></i>
+
+                    </a>
+
+                    {% endif %}
+
+                </div>
 
             </div>
 
@@ -74,111 +146,134 @@
 
     </div>
 
-    <!-- About Me -->
+</section>
 
-    <div class="row mb-5">
+<!-- ===========================
+     About Me
+============================ -->
 
-        <div class="col-lg-12">
+<section class="about-section py-5">
 
-            <h2 class="fw-bold mb-3">
-                About Me
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <div class="about-card">
+
+                    <span class="section-badge">
+
+                        ABOUT ME
+
+                    </span>
+
+                    <h2 class="section-title mt-3">
+
+                        Passionate Python & Django Developer
+
+                    </h2>
+
+                    <p class="section-description">
+
+                        {{ profile.bio|linebreaks }}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================
+     Technical Skills Section
+========================================== -->
+
+<section class="skills-section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-badge">
+                MY SKILLS
+            </span>
+
+            <h2 class="section-title mt-3">
+                Technical Skills
             </h2>
 
-            <p class="text-muted fs-5">
-                {{ profile.long_bio }}
+            <p class="section-description">
+
+                I specialize in building secure, scalable, and modern web
+                applications using Python, Django, REST APIs, PostgreSQL,
+                Docker, and cloud technologies.
+
             </p>
 
         </div>
-
-    </div>
-
-    <!-- Statistics -->
-
-    <div class="row text-center mb-5">
-
-        <div class="col-md-3 mb-3">
-            <div class="card shadow-sm border-0">
-                <div class="card-body">
-                    <h2>{{ profile.years_of_experience }}+</h2>
-                    <p>Years Experience</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <div class="card shadow-sm border-0">
-                <div class="card-body">
-                    <h2>{{ profile.projects_completed }}+</h2>
-                    <p>Projects</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <div class="card shadow-sm border-0">
-                <div class="card-body">
-                    <h2>{{ skills.count }}</h2>
-                    <p>Skills</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 mb-3">
-            <div class="card shadow-sm border-0">
-                <div class="card-body">
-                    <h2>24/7</h2>
-                    <p>Learning</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Skills -->
-
-    <div class="mb-5">
-
-        <h2 class="fw-bold text-center mb-4">
-            Technical Skills
-        </h2>
 
         <div class="row">
 
             {% for skill in skills %}
 
-            <div class="col-md-4 col-lg-3 mb-4">
+            <div class="col-lg-6 mb-4">
 
-                <div class="card border-0 shadow-sm h-100">
+                <div class="skill-card">
 
-                    <div class="card-body text-center">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
 
-                        <h5>{{ skill.name }}</h5>
+                        <h5 class="skill-name mb-0">
 
-                        {% if skill.category %}
-                            <span class="badge bg-primary">
-                                {{ skill.get_category_display }}
-                            </span>
-                        {% endif %}
+                            {{ skill.name }}
+
+                        </h5>
 
                         {% if skill.level %}
+                        <span class="skill-percent">
 
-                        <div class="progress mt-3" style="height:8px;">
-
-                            <div class="progress-bar"
-                                 role="progressbar"
-                                 style="width: {{ skill.level }}%;">
-
-                            </div>
-
-                        </div>
-
-                        <small class="text-muted">
                             {{ skill.level }}%
-                        </small>
 
+                        </span>
                         {% endif %}
 
                     </div>
+
+                    {% if skill.category %}
+
+                    <span class="badge bg-primary mb-3">
+
+                        {{ skill.get_category_display }}
+
+                    </span>
+
+                    {% endif %}
+
+                    {% if skill.level %}
+
+                    <div class="progress skill-progress">
+
+                        <div class="progress-bar"
+
+                             role="progressbar"
+
+                             style="width: {{ skill.level }}%;"
+
+                             aria-valuenow="{{ skill.level }}"
+
+                             aria-valuemin="0"
+
+                             aria-valuemax="100">
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
 
                 </div>
 
@@ -188,83 +283,21 @@
 
             <div class="col-12">
 
-                <div class="alert alert-info">
+                <div class="alert alert-warning text-center">
 
-                    No skills added yet.
+                    <h5>No Skills Added Yet</h5>
+
+                    <p class="mb-0">
+
+                        Please add your technical skills from the Django Admin Panel.
+
+                    </p>
 
                 </div>
 
             </div>
 
             {% endfor %}
-
-        </div>
-
-    </div>
-
-    <!-- Why Hire Me -->
-
-    <div class="mb-5">
-
-        <h2 class="fw-bold text-center mb-4">
-            Why Work With Me?
-        </h2>
-
-        <div class="row">
-
-            <div class="col-md-4 mb-3">
-
-                <div class="card h-100 shadow-sm border-0">
-
-                    <div class="card-body">
-
-                        <h5>⚡ Clean Code</h5>
-
-                        <p class="text-muted">
-                            I write maintainable, scalable, and well-structured code following Django best practices.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4 mb-3">
-
-                <div class="card h-100 shadow-sm border-0">
-
-                    <div class="card-body">
-
-                        <h5>🔒 Secure Applications</h5>
-
-                        <p class="text-muted">
-                            I build secure web applications with authentication, authorization, and industry-standard security practices.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4 mb-3">
-
-                <div class="card h-100 shadow-sm border-0">
-
-                    <div class="card-body">
-
-                        <h5>🚀 API Development</h5>
-
-                        <p class="text-muted">
-                            Experienced in Django REST Framework, API design, PostgreSQL, Docker, and deployment.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
 
         </div>
 
