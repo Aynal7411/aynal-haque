@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from pathlib import Path
 from uuid import uuid4
+from django.utils.html import format_html
 
 def profile_photo_upload_path(instance, filename):
     extension = Path(filename).suffix.lower()
@@ -100,8 +101,17 @@ class Profile(models.Model):
     class Meta:
         ordering = ["-updated_at"]
         verbose_name = "Profile"
-        verbose_name_plural = "Profiles"
+        verbose_name_plural = "Profile"
 
+    def photo_preview(self):
+        if self.photo:
+            return format_html(
+                '<img src="{}" width="80" height="80" style="border-radius:50%; object-fit:cover;" />',
+                self.photo.url,
+            )
+        return "No Image"
+
+    photo_preview.short_description = "Photo"
     def __str__(self):
         return self.name
 
