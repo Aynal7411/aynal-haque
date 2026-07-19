@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile,  Skill, UserProfile
+from .models import Profile,  Skill
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
@@ -16,33 +16,6 @@ class ProfileAdmin(admin.ModelAdmin):
         "updated_at",
     )
 
-
-@admin.register(UserProfile)
-class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'phone', 'location', 'updated_at')
-    list_filter = ('updated_at', 'created_at')
-    search_fields = ('user__username', 'user__email', 'location', 'phone')
-    readonly_fields = ('created_at', 'updated_at')
-
-    fieldsets = (
-        ("User Link", {
-            'fields': ('user',)
-        }),
-        ("Personal Information", {
-            'fields': ('bio', 'profile_picture', 'phone', 'location')
-        }),
-        ("Social & Web Links", {
-            'fields': ('linkedin', 'github', 'twitter', 'portfolio')
-        }),
-        ("Timestamps", {
-            'fields': ('created_at', 'updated_at'),
-            'classes': ('collapse',),
-        }),
-    )
-
-    def has_add_permission(self, request):
-        # Prevent manual creation, only auto-create on user registration
-        return False
 
 
 @admin.register(Skill)
