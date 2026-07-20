@@ -14,9 +14,9 @@
 
 :root {
   /* Colors */
-  --color-bg-primary: #0a0e27;
-  --color-bg-secondary: #0f1536;
-  --color-bg-tertiary: #1a2052;
+  --color-bg-primary: #0a0e27c2;
+  --color-bg-secondary: hsl(230, 85%, 10%);
+  --color-bg-tertiary: hsl(78, 57%, 57%);
   --color-border: #1e293b;
   --color-border-light: #334155;
 
@@ -25,17 +25,17 @@
   --color-text-muted: #64748b;
 
   --color-accent-primary: #2563eb;
-  --color-accent-primary-light: #3b82f6;
+  --color-accent-primary-light: hsl(217, 27%, 41%);
   --color-accent-primary-dark: #1e40af;
 
   --color-accent-secondary: #16a34a;
-  --color-accent-secondary-light: #22c55e;
+  --color-accent-secondary-light: #328b53;
   --color-accent-secondary-dark: #15803d;
 
-  --color-accent-tertiary: #0ea5e9;
-  --color-accent-tertiary-light: #06b6d4;
+  --color-accent-tertiary: #0eacf5;
+  --color-accent-tertiary-light: hsl(189, 41%, 45%);
 
-  --color-accent-highlight: #fbbf24;
+  --color-accent-highlight: #ecad0d;
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -139,7 +139,8 @@ body {
   line-height: var(--line-height-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+   overflow-x: hidden;
+   
 }
 
 /* ============================================================
@@ -253,7 +254,7 @@ pre code {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(45deg, transparent, #420202a4, transparent);
   transform: translateX(-100%);
   transition: transform var(--transition-slow);
   pointer-events: none;
