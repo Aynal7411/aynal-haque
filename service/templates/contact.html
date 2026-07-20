@@ -1,43 +1,380 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
-<section class="py-5">
-    <div class="container">
-        <div class="contact-card">
-            <h2 class="contact-title">📩 Send a Message</h2>
-            <p class="text-muted mb-4">I'm available for new collaborations, freelance work, and full-stack projects. Share your idea and I’ll get back to you soon.</p>
+
+<section class="py-16 bg-gray-50">
+
+    <div class="max-w-4xl mx-auto px-4">
+
+        <div class="
+            bg-white 
+            rounded-2xl 
+            shadow-lg 
+            p-8
+        ">
+
+
+            <!-- Heading -->
+            <h2 class="
+                text-3xl 
+                font-bold 
+                text-gray-800 
+                mb-3
+            ">
+                📩 Send a Message
+            </h2>
+
+
+            <p class="
+                text-gray-600 
+                mb-8
+            ">
+                I'm available for new collaborations,
+                freelance work, and full-stack projects.
+                Share your idea and I’ll get back to you soon.
+            </p>
+
+
+
+            <!-- Success Message -->
 
             {% if messages %}
+
                 {% for message in messages %}
-                    <div class="alert alert-success alert-wrapper" role="alert">
-                        {{ message }}
-                    </div>
+
+                <div class="
+                    mb-6
+                    p-4
+                    rounded-lg
+                    bg-green-100
+                    text-green-700
+                    border
+                    border-green-300
+                ">
+
+                    {{ message }}
+
+                </div>
+
                 {% endfor %}
+
             {% endif %}
 
-            <form method="post">
+
+
+
+
+            <!-- Form -->
+
+            <form method="POST"
+                  action="{% url 'contact' %}"
+                  class="space-y-6">
+
+
                 {% csrf_token %}
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <label for="id_name" class="form-label">Name</label>
-                        {{ form.name }}
-                    </div>
-                    <div class="col-md-6">
-                        <label for="id_email" class="form-label">Email</label>
-                        {{ form.email }}
-                    </div>
-                    <div class="col-12">
-                        <label for="id_message" class="form-label">Message</label>
-                        {{ form.message }}
-                    </div>
+
+
+
+                <!-- Title -->
+
+                <div>
+
+                    <label 
+                    for="{{ form.title.id_for_label }}"
+                    class="
+                    block
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    mb-2
+                    ">
+
+                        Subject
+
+                    </label>
+
+
+                    {{ form.title }}
+
+
+                    {% if form.title.errors %}
+
+                    <p class="
+                    text-red-600
+                    text-sm
+                    mt-1
+                    ">
+
+                        {{ form.title.errors }}
+
+                    </p>
+
+                    {% endif %}
+
                 </div>
 
-                <div class="mt-4">
-                    <button type="submit" class="btn btn-gradient btn-lg btn-custom w-100">🚀 Send Message</button>
+
+
+
+
+                <!-- Name + Email -->
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+
+                    <div>
+
+
+                        <label 
+                        for="{{ form.name.id_for_label }}"
+                        class="
+                        block
+                        text-sm
+                        font-medium
+                        text-gray-700
+                        mb-2
+                        ">
+
+                            Name
+
+                        </label>
+
+
+                        {{ form.name }}
+
+
+                        {% if form.name.errors %}
+
+                        <p class="text-red-600 text-sm mt-1">
+
+                            {{ form.name.errors }}
+
+                        </p>
+
+                        {% endif %}
+
+
+                    </div>
+
+
+
+
+
+                    <div>
+
+
+                        <label 
+                        for="{{ form.email.id_for_label }}"
+                        class="
+                        block
+                        text-sm
+                        font-medium
+                        text-gray-700
+                        mb-2
+                        ">
+
+                            Email
+
+                        </label>
+
+
+                        {{ form.email }}
+
+
+
+                        {% if form.email.errors %}
+
+                        <p class="text-red-600 text-sm mt-1">
+
+                            {{ form.email.errors }}
+
+                        </p>
+
+                        {% endif %}
+
+
+                    </div>
+
+
                 </div>
+
+
+
+
+
+
+                <!-- Phone -->
+
+                <div>
+
+
+                    <label 
+                    for="{{ form.phone.id_for_label }}"
+                    class="
+                    block
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    mb-2
+                    ">
+
+                        Phone
+
+                    </label>
+
+
+                    {{ form.phone }}
+
+
+
+                    {% if form.phone.errors %}
+
+                    <p class="text-red-600 text-sm mt-1">
+
+                        {{ form.phone.errors }}
+
+                    </p>
+
+                    {% endif %}
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- Message -->
+
+
+                <div>
+
+
+                    <label 
+                    for="{{ form.message.id_for_label }}"
+                    class="
+                    block
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    mb-2
+                    ">
+
+                        Message
+
+                    </label>
+
+
+                    {{ form.message }}
+
+
+
+                    {% if form.message.errors %}
+
+                    <p class="text-red-600 text-sm mt-1">
+
+                        {{ form.message.errors }}
+
+                    </p>
+
+                    {% endif %}
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- Urgent Checkbox -->
+
+
+                <div class="flex items-center gap-3">
+
+
+                    {{ form.urgent }}
+
+
+                    <label 
+                    for="{{ form.urgent.id_for_label }}"
+                    class="
+                    text-sm
+                    text-gray-700
+                    ">
+
+                        Mark as urgent
+
+                    </label>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- Non field errors -->
+
+                {% if form.non_field_errors %}
+
+                    <div class="
+                    bg-red-100
+                    text-red-700
+                    p-4
+                    rounded-lg
+                    ">
+
+                        {{ form.non_field_errors }}
+
+                    </div>
+
+                {% endif %}
+
+
+
+
+
+
+                <!-- Submit Button -->
+
+
+                <button 
+                type="submit"
+                class="
+                w-full
+                bg-blue-600
+                hover:bg-blue-700
+                text-white
+                font-semibold
+                py-3
+                px-6
+                rounded-xl
+                transition
+                duration-300
+                ">
+
+                    🚀 Send Message
+
+                </button>
+
+
+
             </form>
+
+
         </div>
+
+
     </div>
+
+
 </section>
+
+
 {% endblock %}

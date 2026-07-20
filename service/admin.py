@@ -8,9 +8,9 @@ class ServiceAdmin(admin.ModelAdmin):
 
 
 from django.contrib import admin
-from .models import Message
+from .models import ClientContact
 
-@admin.register(Message)
+@admin.register(ClientContact)
 class MessageAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'sent_at')
     search_fields = ('name', 'email', 'message')
