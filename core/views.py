@@ -103,15 +103,32 @@ def project_detail(request, slug):
         context,
     )
 
-#About Us Page
 def about_us(request):
-     profile = Profile.objects.first()  # Assuming there's only one profile for the company
-     skills= Skill.objects.order_by('name')  # Fetch all skills
-     context = {
-         'profile': profile,
-         'skills': skills,
-     }
-     return render(request, 'about.html', context)
+    profile = (
+        Profile.objects
+        .only(
+            "name",
+            "title",
+            "tagline",
+            "bio",
+            "photo",
+            "email",
+            "phone",
+            "location",
+            "linkedin",
+            "github",
+            "twitter",
+            "website",
+            "resume",
+        )
+        .first()
+    )
+
+    context = {
+        "profile": profile,
+    }
+
+    return render(request, "about.html", context)
 
 
 def privacy_policy(request):

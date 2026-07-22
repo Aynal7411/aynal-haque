@@ -29,7 +29,7 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
    # "axes",
-    "pwa",
+     "pwa",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
