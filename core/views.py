@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect, render
-
+from.models import ProjectStatus
 
 from .models import  Profile, Project, Skill
 
@@ -58,27 +58,20 @@ from django.shortcuts import render, get_object_or_404
 
 from .models import Project
 
-
 def project_list(request):
-
     projects = (
         Project.objects
         .select_related("category")
         .prefetch_related("technologies")
-        .filter(status="completed")
+        .filter(status=ProjectStatus.COMPLETED)
         .order_by("order")
     )
 
     context = {
-        "projects": projects
+        "projects": projects,
     }
 
-    return render(
-        request,
-        "project_list.html",
-        context,
-    )
-
+    return render(request, "project_list.html", context)
 
 def project_detail(request, slug):
 

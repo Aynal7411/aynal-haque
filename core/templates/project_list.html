@@ -1,50 +1,217 @@
 {% extends "base.html" %}
 
-{% block title %}
-Projects
-{% endblock %}
+{% block title %}Projects{% endblock %}
 
 {% block content %}
 
-<section class="projects projects-list">
+<section class="py-5 bg-light">
     <div class="container">
-        <div class="section-header">
-            <span class="eyebrow">Featured Work</span>
-            <h1>Projects</h1>
-            <p class="section-copy">A curated selection of backend, full-stack, and open-source work built with Django, Python, REST APIs, and PostgreSQL.</p>
+
+        <!-- Header -->
+        <div class="text-center mb-5">
+
+            <span class="badge bg-primary px-3 py-2 rounded-pill">
+                Portfolio
+            </span>
+
+            <h1 class="display-4 fw-bold mt-3">
+                My Projects
+            </h1>
+
+            <p class="lead text-muted mx-auto" style="max-width: 750px;">
+                A collection of professional Django, Python, REST API, AI,
+                Machine Learning and Full Stack projects.
+            </p>
+
         </div>
 
-        <div class="project-grid">
+        {% if projects %}
+
+        <div class="row g-4">
+
             {% for project in projects %}
-            <article class="project-card">
-                <div class="project-card-image">
-                    <img src="{{ project.thumbnail.url }}" alt="{{ project.title }}">
-                </div>
-                <div class="project-card-body">
-                    <div class="project-card-meta">
-                        {% if project.status %}
-                        <span class="project-card-badge">{{ project.get_status_display }}</span>
-                        {% endif %}
-                        {% if project.category %}
-                        <span class="project-card-category">{{ project.category.name }}</span>
-                        {% endif %}
-                    </div>
-                    <h3>{{ project.title }}</h3>
-                    <p>{{ project.short_description }}</p>
-                    {% if project.technologies.exists %}
-                    <div class="project-card-techs">
-                        {% for tech in project.technologies.all|slice:":3" %}
-                        <span class="project-card-tech">{{ tech.name }}</span>
-                        {% endfor %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 border-0 shadow rounded-4 overflow-hidden">
+
+                    <!-- Thumbnail -->
+                    {% if project.thumbnail %}
+                    <img
+                        src="{{ project.thumbnail.url }}"
+                        class="card-img-top"
+                        alt="{{ project.title }}"
+                        style="height:230px; object-fit:cover;">
+                    {% else %}
+                    <div class="bg-secondary-subtle d-flex align-items-center justify-content-center"
+                         style="height:230px;">
+                        <h1 class="display-1">💻</h1>
                     </div>
                     {% endif %}
-                    <div class="project-card-footer">
-                        <a class="btn btn-primary" href="{% url 'project_detail' project.slug %}">View Project</a>
+
+                    <div class="card-body d-flex flex-column">
+
+                        <!-- Category & Status -->
+
+                        <div class="mb-3">
+
+                            {% if project.category %}
+                            <span class="badge bg-primary">
+
+                                {{ project.category.name }}
+
+                            </span>
+                            {% endif %}
+
+                            <span class="badge bg-success">
+
+                                {{ project.get_status_display }}
+
+                            </span>
+
+                            {% if project.featured %}
+                            <span class="badge bg-warning text-dark">
+
+                                Featured
+
+                            </span>
+                            {% endif %}
+
+                        </div>
+
+                        <!-- Title -->
+
+                        <h3 class="fw-bold">
+
+                            {{ project.title }}
+
+                        </h3>
+
+                        <!-- Description -->
+
+                        <p class="text-muted flex-grow-1">
+
+                            {{ project.short_description|truncatewords:20 }}
+
+                        </p>
+
+                        <!-- Technologies -->
+
+                        {% if project.technologies.all %}
+
+                        <div class="mb-3">
+
+                            {% for tech in project.technologies.all|slice:":4" %}
+
+                            <span class="badge bg-light text-dark border me-1 mb-1">
+
+                                {{ tech.name }}
+
+                            </span>
+
+                            {% endfor %}
+
+                        </div>
+
+                        {% endif %}
+
+                        <!-- Footer -->
+
+                        <div class="mt-auto">
+
+                            <div class="d-grid gap-2">
+
+                                <a
+                                    href="{% url 'project_detail' project.slug %}"
+                                    class="btn btn-primary">
+
+                                    View Details
+
+                                </a>
+
+                            </div>
+
+                            <div class="d-flex justify-content-between mt-3">
+
+                                {% if project.github_url %}
+
+                                <a
+                                    href="{{ project.github_url }}"
+                                    target="_blank"
+                                    class="btn btn-outline-dark btn-sm">
+
+                                    GitHub
+
+                                </a>
+
+                                {% endif %}
+
+                                {% if project.live_url %}
+
+                                <a
+                                    href="{{ project.live_url }}"
+                                    target="_blank"
+                                    class="btn btn-outline-success btn-sm">
+
+                                    Live Demo
+
+                                </a>
+
+                                {% endif %}
+
+                                {% if project.documentation_url %}
+
+                                <a
+                                    href="{{ project.documentation_url }}"
+                                    target="_blank"
+                                    class="btn btn-outline-info btn-sm">
+
+                                    Docs
+
+                                </a>
+
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
-            </article>
+
+            </div>
+
             {% endfor %}
+
         </div>
+
+        {% else %}
+
+        <div class="text-center py-5">
+
+            <div class="display-1 mb-3">
+
+                📂
+
+            </div>
+
+            <h2>
+
+                No Projects Available
+
+            </h2>
+
+            <p class="text-muted">
+
+                Projects will appear here once they are published.
+
+            </p>
+
+        </div>
+
+        {% endif %}
+
     </div>
 </section>
 
