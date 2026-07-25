@@ -1,6 +1,8 @@
 # core/models.py
 
 from django.db import models
+import uuid
+from django.core.validators import RegexValidator
 
 class Service(models.Model):
     title = models.CharField(max_length=100)
@@ -14,30 +16,42 @@ class Service(models.Model):
     class Meta:
         ordering = ['order']
 
-        
+
+ 
+class ContactStatus(models.TextChoices):
+    NEW = "new", "New"
+    READ = "read", "Read"
+    REPLIED = "replied", "Replied"
+    CLOSED = "closed", "Closed"     
+
+class ContactSource(models.TextChoices):
+    WEBSITE = "website", "Website"
+    LINKEDIN = "linkedin", "LinkedIn"
+    FACEBOOK = "facebook", "Facebook"
+    OTHER = "other", "Other"    
+
 class ClientContact(models.Model):
-    STATUS_CHOICES = [
-    ("new", "New"),
-    ("read", "Read"),
-    ("replied", "Replied"),
-    ("closed", "Closed"),
-]
-    SOURCE_CHOICES = [
-    ("website", "Website"),
-    ("linkedin", "LinkedIn"),
-    ("facebook", "Facebook"),
-    ("other", "Other"),
-]
-    
+    id = models.UUIDField(
+    primary_key=True,
+    default=uuid.uuid4,
+    editable=False,
+)
     title = models.CharField(max_length=100,db_index=True)
     name = models.CharField(max_length=100)
     email = models.EmailField(db_index=True)
     phone = models.CharField(
     max_length=20,
+    validators=[
+        RegexValidator(
+            regex=r'^\+?[\d\s\-]{7,20}$',
+            message="Enter a valid phone number."
+        )
+    ],
     blank=True,
-    null=True
 )
-    message = models.TextField()
+    message = models.TextField(
+    max_length=3000,
+)
     sent_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(
     auto_now=True
@@ -45,9 +59,10 @@ class ClientContact(models.Model):
     urgent = models.BooleanField(default=False)
     status = models.CharField(
     max_length=20,
-    choices=STATUS_CHOICES,
-    default="new"
-)   
+    choices=ContactStatus.choices,
+    default=ContactStatus.NEW,
+    db_index=True,
+)
     ip_address = models.GenericIPAddressField(
     blank=True,
     null=True
@@ -58,8 +73,8 @@ class ClientContact(models.Model):
 )
     source = models.CharField(
     max_length=20,
-    choices=SOURCE_CHOICES,
-    default="website"
+    choices=ContactSource.choices,
+    default=ContactSource.WEBSITE
 )
     
     class Meta:
