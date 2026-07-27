@@ -4,6 +4,20 @@ from apps.common.models import BaseModel
 
 
 class Profile(BaseModel):
+
+    ROLE_CHOICES = (
+
+        ("admin", "Admin"),
+
+        ("recruiter", "Recruiter"),
+
+        ("client", "Client"),
+
+        ("developer", "Developer"),
+
+        ("student", "Student"),
+
+    )
     """
     User professional profile information.
     """
@@ -13,6 +27,13 @@ class Profile(BaseModel):
         on_delete=models.CASCADE,
         related_name="profile",
     )
+
+    role = models.CharField(
+        max_length=20,
+        choices=ROLE_CHOICES,
+        default="developer"
+    )
+
 
     avatar = models.ImageField(
         upload_to="profiles/avatar/",
