@@ -11,8 +11,8 @@ urlpatterns = [
         "",
         include("apps.website.urls"),
     ),
-    path('', include('pwa.urls')),
-    path("", include("apps.accounts.urls")),
+   
+    path("accounts/", include("apps.accounts.urls")),
     path("api/accounts/",include("apps.accounts.api_urls")),
   
               
