@@ -1,0 +1,27 @@
+{
+  "name": "aynal-haque",
+  "version": "1.0.0",
+  "description": "Django portfolio website for Aynal Haque.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aynal7411/aynal-haque.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aynal7411/aynal-haque/issues"
+  },
+  "homepage": "https://github.com/Aynal7411/aynal-haque#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

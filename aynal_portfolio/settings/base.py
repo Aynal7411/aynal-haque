@@ -23,7 +23,7 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
-    
+     "apps.website",
     "apps.accounts",
     "apps.contact",
     "apps.common",

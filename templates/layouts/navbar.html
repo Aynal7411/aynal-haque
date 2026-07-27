@@ -1,33 +1,199 @@
-{% load static %} 
- <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
-        <div class="container navbar-container">
-            <!-- Logo -->
-            <a href="{#}" class="navbar-logo">
-                <img src="{% static 'images/aynal-logo.png' %}" alt="Aynal's Solutions Logo" class="logo-img">
-                <span class="logo-text">Aynal's Solutions</span>
-                <span class="logo-accent"></span>
-            </a>
-            
-            <!-- Navigation Links -->
-            <div class="navbar-menu" id="navbar-menu">
-              
-                <a href="{% url 'accounts:register' %}" class="nav-link">Register</a>
-                <a href="{% url 'accounts:login' %}" class="nav-link">Login</a>
-                <a href="{% url 'accounts:logout' %}" class="nav-link">Logout</a>
-                <a href="{% url 'accounts:profile' %}" class="nav-link">profile</a>
+{% load static %}
 
-              
+<nav class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+
+            <a href="{% url 'website:home' %}"
+               class="flex items-center gap-3">
+
+                <img
+                    src="{% static 'images/aynal-logo.png' %}"
+                    alt="Aynal's Solutions Logo"
+                    class="h-12 w-12 rounded-full object-cover">
+
+                <div>
+
+                    <h1 class="text-xl font-bold text-white">
+                        Aynal Solutions
+                    </h1>
+
+                    <p class="text-xs text-slate-400">
+                        Python • Django • AI 
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!-- Desktop Menu -->
+
+            <div class="hidden lg:flex items-center gap-8">
+
+                <a href="{% url 'website:home' %}"
+                   class="text-slate-300 hover:text-blue-400 transition">
+                    Home
+                </a>
+
+                <a href="{% url 'website:about' %}"
+                   class="text-slate-300 hover:text-blue-400 transition">
+                    About
+                </a>
+
+                <a href="{% url 'website:projects' %}"
+                   class="text-slate-300 hover:text-blue-400 transition">
+                    Projects
+                </a>
+
+                <a href="{% url 'website:expertise' %}"
+                   class="text-slate-300 hover:text-blue-400 transition">
+                    Expertise
+                </a>
+
             </div>
-            
-            <!-- Primary CTA -->
-           
-            
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <!-- Authentication -->
+
+            <div class="hidden lg:flex items-center gap-3">
+
+                {% if user.is_authenticated %}
+
+                    <a href="{% url 'accounts:profile' %}"
+                       class="text-slate-300 hover:text-white">
+
+                        Profile
+
+                    </a>
+
+                    <a href="{% url 'accounts:logout' %}"
+                       class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white transition">
+
+                        Logout
+
+                    </a>
+
+                {% else %}
+
+                    <a href="{% url 'accounts:login' %}"
+                       class="text-slate-300 hover:text-white">
+
+                        Login
+
+                    </a>
+
+                    <a href="{% url 'accounts:register' %}"
+                       class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition">
+
+                        Get Started
+
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+            <!-- Mobile Button -->
+
+            <button
+                id="mobile-menu-button"
+                class="lg:hidden text-white">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="h-7 w-7"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"/>
+
+                </svg>
+
             </button>
+
         </div>
-    </nav>
+
+    </div>
+
+    <!-- Mobile Menu -->
+
+    <div id="mobile-menu"
+         class="hidden lg:hidden bg-slate-900 border-t border-slate-800">
+
+        <div class="flex flex-col px-6 py-5 space-y-4">
+
+            <a href="/"
+               class="text-slate-300 hover:text-white">
+                Home
+            </a>
+
+            <a href="/about/"
+               class="text-slate-300 hover:text-white">
+                About
+            </a>
+
+            <a href="/projects/"
+               class="text-slate-300 hover:text-white">
+                Projects
+            </a>
+
+            <a href="/expertise/"
+               class="text-slate-300 hover:text-white">
+                Expertise
+            </a>
+
+            <hr class="border-slate-700">
+
+            {% if user.is_authenticated %}
+
+                <a href="{% url 'accounts:profile' %}"
+                   class="text-slate-300">
+                    Profile
+                </a>
+
+                <a href="{% url 'accounts:logout' %}"
+                   class="text-red-400">
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'accounts:login' %}"
+                   class="text-slate-300">
+                    Login
+                </a>
+
+                <a href="{% url 'accounts:register' %}"
+                   class="bg-blue-600 text-white text-center rounded-lg py-3">
+
+                    Create Account
+
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</nav>
+
+<script>
+
+const button = document.getElementById("mobile-menu-button");
+
+const menu = document.getElementById("mobile-menu");
+
+button.addEventListener("click", () => {
+
+    menu.classList.toggle("hidden");
+
+});
+
+</script>

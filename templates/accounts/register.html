@@ -1,128 +1,178 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Create Account | Aynal Haque{% endblock %}
+{% block title %}Create Account | Aynal's Solutions{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-    <div class="row justify-content-center">
+<section class="py-5">
+    <div class="container">
 
-        <div class="col-lg-5 col-md-7">
+        <div class="row justify-content-center align-items-center">
 
-            <div class="card shadow-lg border-0 rounded-4">
+            <div class="col-lg-5 col-md-7">
 
-                <div class="card-body p-5">
+                <div class="card border-0 shadow-lg rounded-4">
 
-                    <div class="text-center mb-4">
+                    <div class="card-body p-5">
 
-                        <h2 class="fw-bold">
-                            Create Account
-                        </h2>
+                        <div class="text-center mb-4">
 
-                        <p class="text-muted">
-                            Create your account to access your portfolio dashboard.
-                        </p>
-
-                    </div>
-
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-{{ message.tags }}">
-                                {{ message }}
+                            <div class="mb-3">
+                                <img src="{% static 'images/aynal-logo.png' %}"
+                                     width="70"
+                                     alt="Logo">
                             </div>
-                        {% endfor %}
-                    {% endif %}
 
-                    <form method="post" novalidate>
+                            <h2 class="fw-bold">
+                                Create Your Account
+                            </h2>
 
-                        {% csrf_token %}
+                            <p class="text-muted">
+                                Join Aynal's Solutions and access your personal dashboard.
+                            </p>
 
-                        {% if form.non_field_errors %}
-                            <div class="alert alert-danger">
-                                {{ form.non_field_errors }}
-                            </div>
+                        </div>
+
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
                         {% endif %}
 
-                        <div class="mb-3">
-                            <label class="form-label">
-                                Email Address
-                            </label>
+                        <form method="post">
 
-                            {{ form.email }}
+                            {% csrf_token %}
 
-                            {% if form.email.errors %}
-                                <div class="text-danger small mt-1">
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    {{ form.non_field_errors }}
+                                </div>
+                            {% endif %}
+
+                            <!-- Email -->
+
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Email Address
+                                </label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+                                        <i class="bi bi-envelope"></i>
+                                    </span>
+
+                                    {{ form.email }}
+
+                                </div>
+
+                                <div class="text-danger small">
                                     {{ form.email.errors }}
                                 </div>
-                            {% endif %}
-                        </div>
 
-                        <div class="mb-3">
-
-                            <label class="form-label">
-                                Password
-                            </label>
-
-                            {{ form.password }}
-
-                            {% if form.password.errors %}
-                                <div class="text-danger small mt-1">
-                                    {{ form.password.errors }}
-                                </div>
-                            {% endif %}
-
-                            <div class="form-text">
-                                Use at least 8 characters.
                             </div>
 
-                        </div>
+                            <!-- Password -->
 
-                        <div class="mb-4">
+                            <div class="mb-3">
 
-                            <label class="form-label">
-                                Confirm Password
-                            </label>
+                                <label class="form-label fw-semibold">
+                                    Password
+                                </label>
 
-                            {{ form.confirm_password }}
+                                <div class="input-group">
 
-                            {% if form.confirm_password.errors %}
-                                <div class="text-danger small mt-1">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-lock"></i>
+                                    </span>
+
+                                    {{ form.password }}
+
+                                    <button
+                                        class="btn btn-outline-secondary"
+                                        type="button"
+                                        onclick="togglePassword('id_password',this)">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <div class="text-danger small">
+                                    {{ form.password.errors }}
+                                </div>
+
+                            </div>
+
+                            <!-- Confirm Password -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label fw-semibold">
+                                    Confirm Password
+                                </label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+                                        <i class="bi bi-shield-lock"></i>
+                                    </span>
+
+                                    {{ form.confirm_password }}
+
+                                    <button
+                                        class="btn btn-outline-secondary"
+                                        type="button"
+                                        onclick="togglePassword('id_confirm_password',this)">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <div class="text-danger small">
                                     {{ form.confirm_password.errors }}
                                 </div>
-                            {% endif %}
+
+                            </div>
+
+                            <div class="d-grid">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary btn-lg rounded-3">
+
+                                    <i class="bi bi-person-plus-fill me-2"></i>
+
+                                    Create Account
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                        <div class="text-center mt-4">
+
+                            <small class="text-muted">
+
+                                Already have an account?
+
+                                <a href="{% url 'accounts:login' %}"
+                                   class="fw-bold text-decoration-none">
+
+                                    Sign In
+
+                                </a>
+
+                            </small>
 
                         </div>
-
-                        <div class="d-grid">
-
-                            <button
-                                type="submit"
-                                class="btn btn-primary btn-lg">
-
-                                Create Account
-
-                            </button>
-
-                        </div>
-
-                    </form>
-
-                    <hr class="my-4">
-
-                    <div class="text-center">
-
-                        <p class="mb-0">
-
-                            Already have an account?
-
-                            <a href="{% url 'accounts:login' %}"
-                               class="text-decoration-none fw-semibold">
-
-                                Login
-
-                            </a>
-
-                        </p>
 
                     </div>
 
@@ -133,5 +183,34 @@
         </div>
 
     </div>
-</div>
+</section>
+
+<script>
+function togglePassword(id, btn){
+
+    const input=document.getElementById(id);
+
+    const icon=btn.querySelector("i");
+
+    if(input.type==="password"){
+
+        input.type="text";
+
+        icon.classList.remove("bi-eye");
+
+        icon.classList.add("bi-eye-slash");
+
+    }else{
+
+        input.type="password";
+
+        icon.classList.remove("bi-eye-slash");
+
+        icon.classList.add("bi-eye");
+
+    }
+
+}
+</script>
+
 {% endblock %}
