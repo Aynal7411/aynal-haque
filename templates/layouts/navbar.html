@@ -3,7 +3,7 @@
     <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
         <div class="container navbar-container">
             <!-- Logo -->
-            <a href="{% url 'homepage_redesign' %}" class="navbar-logo">
+            <a href="{#}" class="navbar-logo">
                 <img src="{% static 'images/aynal-logo.png' %}" alt="Aynal's Solutions Logo" class="logo-img">
                 <span class="logo-text">Aynal's Solutions</span>
                 <span class="logo-accent"></span>
@@ -11,12 +11,11 @@
             
             <!-- Navigation Links -->
             <div class="navbar-menu" id="navbar-menu">
-                <a href="{% url 'about' %}" class="nav-link">About</a>
-                <a href="{% url 'expertise' %}" class="nav-link">Expertise</a>
-                <a href="{% url 'project_list' %}" class="nav-link">Projects</a>
+              
                 <a href="{% url 'accounts:register' %}" class="nav-link">Register</a>
                 <a href="{% url 'accounts:login' %}" class="nav-link">Login</a>
                 <a href="{% url 'accounts:logout' %}" class="nav-link">Logout</a>
+                <a href="{% url 'accounts:profile' %}" class="nav-link">profile</a>
 
               
             </div>
