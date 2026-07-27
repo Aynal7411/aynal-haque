@@ -9,12 +9,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("apps.core.urls")),
     path('', include('pwa.urls')),
-    path(
-    "api/accounts/",
-    include("apps.accounts.api_urls")
-),
-    
-   
+    path("accounts/", include("apps.accounts.urls")),
+    path("api/accounts/",include("apps.accounts.urls")),
+  
+              
 ]
 
 # Serve static and media files in development

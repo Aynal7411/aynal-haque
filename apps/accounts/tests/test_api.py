@@ -21,3 +21,28 @@ class RegisterAPITest(APITestCase):
             response.status_code,
             201
         )
+
+from apps.accounts.models import User
+
+
+def test_login_user(self):
+
+    User.objects.create_user(
+        email="login@test.com",
+        password="password123",
+    )
+
+    response = self.client.post(
+        "/api/accounts/login/",
+        {
+            "email": "login@test.com",
+            "password": "password123",
+        },
+        format="json",
+    )
+
+    self.assertEqual(response.status_code, 200)
+
+    self.assertIn("access", response.data)
+
+    self.assertIn("refresh", response.data)       

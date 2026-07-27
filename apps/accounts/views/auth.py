@@ -4,6 +4,13 @@ from apps.accounts.forms.login_form import LoginForm
 from apps.accounts.forms.registration_form import RegistrationForm
 from rest_framework.response import Response
 from rest_framework import status
+
+from rest_framework.permissions import AllowAny
+
+from apps.accounts.serializers import LoginSerializer
+
+from apps.accounts.services.auth_service import generate_tokens
+
 from apps.accounts.services.auth_service import (
     register_user,
     authenticate_user,
@@ -15,6 +22,7 @@ from apps.accounts.serializers import RegisterSerializer
 
 
 class RegisterAPIView(APIView):
+    permission_classes = [AllowAny]
 
     def post(self, request):
 
@@ -36,7 +44,26 @@ class RegisterAPIView(APIView):
             status=status.HTTP_201_CREATED
         )
 
+class LoginAPIView(APIView):
 
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+
+        serializer = LoginSerializer(
+            data=request.data
+        )
+
+        serializer.is_valid(
+            raise_exception=True
+        )
+
+        user = serializer.validated_data["user"]
+
+        tokens = generate_tokens(user)
+
+        return Response(tokens)
+    
 def register_view(request):
 
     if request.method == "POST":
@@ -103,4 +130,4 @@ def logout_view(request):
 
     logout_user(request)
 
-    return redirect("login")
+    return redirect("accounts:login")

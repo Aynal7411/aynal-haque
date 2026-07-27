@@ -1,0 +1,142 @@
+{% load static %}
+{% load pwa %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <title>
+        {% block title %}
+            Aynal's Solutions | Python & Django Backend Engineering
+        {% endblock %}
+    </title>
+
+    <meta name="description"
+          content="{% block meta_description %}Aynal's Solutions - Professional Backend Engineering with Python, Django, Django REST Framework, PostgreSQL, Docker, and Cloud Deployment.{% endblock %}">
+
+    <meta name="keywords"
+          content="{% block meta_keywords %}Python, Django, Django REST Framework, PostgreSQL, Backend Developer, API Development, Software Engineer{% endblock %}">
+
+    <meta name="author"
+          content="Aynal Haque">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <meta name="theme-color"
+          content="#0A0E27">
+
+    <link rel="canonical"
+          href="{{ request.build_absolute_uri }}">
+
+    {% block extra_meta %}{% endblock %}
+
+    <!-- Open Graph -->
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:title"
+          content="{% block og_title %}Aynal's Solutions{% endblock %}">
+
+    <meta property="og:description"
+          content="{% block og_description %}Building secure, scalable and maintainable backend systems.{% endblock %}">
+
+    <meta property="og:image"
+          content="{% static 'images/og-image.png' %}">
+
+    <meta property="og:url"
+          content="{{ request.build_absolute_uri }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="{% block twitter_title %}Aynal's Solutions{% endblock %}">
+
+    <meta name="twitter:description"
+          content="{% block twitter_description %}Python & Django Backend Engineering{% endblock %}">
+
+    <meta name="twitter:image"
+          content="{% static 'images/twitter-image.png' %}">
+
+    <!-- Favicons -->
+    <link rel="icon"
+          type="image/svg+xml"
+          href="{% static 'images/favicon.svg' %}">
+
+    <link rel="apple-touch-icon"
+          href="{% static 'images/icon-192.png' %}">
+
+    <!-- Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{% static 'css/design-system.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/homepage.css' %}">
+
+    {% block extra_css %}{% endblock %}
+
+    <!-- PWA -->
+    {% progressive_web_app_meta %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+<!-- Navbar -->
+{% include "layouts/navbar.html" %}
+
+<!-- Messages -->
+{% if messages %}
+<div class="messages-wrapper">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Main Content -->
+<main id="main-content">
+
+    {% block content %}
+
+    {% endblock %}
+
+</main>
+
+<!-- Footer -->
+{% include "layouts/footer.html" %}
+
+<!-- Toast Container -->
+<div id="toast-container"></div>
+
+<!-- Scripts -->
+<script>
+document.documentElement.classList.remove("no-js");
+</script>
+
+<script defer src="{% static 'js/main.js' %}"></script>
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>
