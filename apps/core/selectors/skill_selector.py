@@ -1,4 +1,4 @@
-from core.models import Skill
+from apps.core.models import Skill
 
 
 def get_grouped_top_skills(limit=3):

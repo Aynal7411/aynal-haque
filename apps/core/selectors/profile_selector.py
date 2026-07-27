@@ -1,4 +1,4 @@
-from core.models import Profile
+from apps.core.models import Profile
 
 
 def get_primary_profile():

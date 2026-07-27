@@ -9,7 +9,7 @@ from.models import ProjectStatus
 
 from .models import  Profile, Project, Skill
 
-from core.services.home_page_service import build_home_page_context
+from apps.core.services.home_page_service import build_home_page_context
 
 
 def homepage_redesign(request):

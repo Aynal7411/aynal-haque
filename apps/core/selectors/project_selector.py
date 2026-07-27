@@ -1,4 +1,4 @@
-from core.models import Project
+from apps.core.models import Project
 
 
 def get_featured_projects(limit=3):

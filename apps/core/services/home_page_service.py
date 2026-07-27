@@ -1,8 +1,8 @@
 from django.utils import timezone
 
-from core.selectors.profile_selector import get_primary_profile
-from core.selectors.project_selector import get_featured_projects
-from core.selectors.skill_selector import get_grouped_top_skills
+from apps.core.selectors.profile_selector import get_primary_profile
+from apps.core.selectors.project_selector import get_featured_projects
+from apps.core.selectors.skill_selector import get_grouped_top_skills
 
 
 def build_home_page_context():
