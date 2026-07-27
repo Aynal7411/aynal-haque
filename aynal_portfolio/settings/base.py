@@ -24,6 +24,9 @@ DJANGO_APPS = [
 
 LOCAL_APPS = [
     "apps.core",
+    "apps.accounts",
+    "apps.contact",
+    "apps.common",
    
 ]
 
