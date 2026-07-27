@@ -1,13 +1,40 @@
 from django.shortcuts import render, redirect
-
+from rest_framework.views import APIView
 from apps.accounts.forms.login_form import LoginForm
 from apps.accounts.forms.registration_form import RegistrationForm
-
+from rest_framework.response import Response
+from rest_framework import status
 from apps.accounts.services.auth_service import (
     register_user,
     authenticate_user,
     logout_user,
 )
+
+
+from apps.accounts.serializers import RegisterSerializer
+
+
+class RegisterAPIView(APIView):
+
+    def post(self, request):
+
+        serializer = RegisterSerializer(
+            data=request.data
+        )
+
+        serializer.is_valid(
+            raise_exception=True
+        )
+
+        user = serializer.save()
+
+        return Response(
+            {
+                "message": "User created successfully",
+                "email": user.email
+            },
+            status=status.HTTP_201_CREATED
+        )
 
 
 def register_view(request):

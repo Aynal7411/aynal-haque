@@ -1,15 +1,19 @@
 from django.urls import path
+
 from apps.accounts.views.auth import (
     register_view,
     login_view,
     logout_view,
+    RegisterAPIView,
 )
 
-app_name = "apps.accounts"
+
+app_name = "accounts"
+
 
 urlpatterns = [
-     
 
+    # Web Views
     path(
         "register/",
         register_view,
