@@ -24,7 +24,7 @@ DJANGO_APPS = [
 
 LOCAL_APPS = [
     "core",
-    "service",
+   
 ]
 
 THIRD_PARTY_APPS = [
