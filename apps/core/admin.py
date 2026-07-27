@@ -1,21 +1,5 @@
 from django.contrib import admin
-from .models import Profile,  Skill
-
-@admin.register(Profile)
-class ProfileAdmin(admin.ModelAdmin):
-    list_display = (
-        "name",
-        "title",
-        "photo_preview",
-        "updated_at",
-    )
-
-    readonly_fields = (
-        "photo_preview",
-        "created_at",
-        "updated_at",
-    )
-
+from .models import Skill
 
 
 @admin.register(Skill)

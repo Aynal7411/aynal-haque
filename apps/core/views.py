@@ -7,9 +7,9 @@ from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect, render
 from.models import ProjectStatus
 
-from .models import  Profile, Project, Skill
+from .models import  Project, Skill
 
-from apps.core.services.home_page_service import build_home_page_context
+
 
 
 def homepage_redesign(request):
@@ -25,19 +25,14 @@ def homepage_redesign(request):
 
 
 def my_page(request):
-    context = build_home_page_context()
+   
 
-    if context["profile"] is None:
-        return render(
-            request,
-            "no_profile.html",
-            status=200,
-        )
+   
 
     return render(
         request,
         "home_page.html",
-        context,
+      
     )
 
 
@@ -97,31 +92,9 @@ def project_detail(request, slug):
     )
 
 def about_us(request):
-    profile = (
-        Profile.objects
-        .only(
-            "name",
-            "title",
-            "tagline",
-            "bio",
-            "photo",
-            "email",
-            "phone",
-            "location",
-            "linkedin",
-            "github",
-            "twitter",
-            "website",
-            "resume",
-        )
-        .first()
-    )
+   
 
-    context = {
-        "profile": profile,
-    }
-
-    return render(request, "about.html", context)
+    return render(request, "about.html")
 
 
 def privacy_policy(request):
