@@ -41,6 +41,7 @@ N8N_WEBHOOK_URL = "https://milonthis.app.n8n.cloud/webhook/contact-form"
 # ============================================================
 # MIDDLEWARE
 # ============================================================
+AUTH_USER_MODEL = "accounts.User"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
