@@ -10,7 +10,7 @@ urlpatterns = [
     path("", include("apps.core.urls")),
     path('', include('pwa.urls')),
     path("accounts/", include("apps.accounts.urls")),
-    path("api/accounts/",include("apps.accounts.urls")),
+    path("api/accounts/",include("apps.accounts.api_urls")),
   
               
 ]

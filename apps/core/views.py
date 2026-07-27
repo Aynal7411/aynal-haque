@@ -21,19 +21,8 @@ def homepage_redesign(request):
         'title': "Aynal's Solutions - Backend Engineering with Python & Django",
         'description': 'Building secure, scalable, and maintainable backend systems using Python, Django, DRF, and PostgreSQL',
     }
-    return render(request, 'homepage_redesign.html', context)
+    return render(request, 'core/homepage_redesign.html', context)
 
-
-def my_page(request):
-   
-
-   
-
-    return render(
-        request,
-        "home_page.html",
-      
-    )
 
 
 def skills_view(request):
