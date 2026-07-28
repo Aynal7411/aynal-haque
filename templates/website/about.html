@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}About | Aynal Haque{% endblock %}
+{% block meta_description %}Learn more about Aynal Haque, a senior Python and Django engineer delivering reliable digital products.{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">About</p>
+            <h1 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Senior engineer with a product mindset.</h1>
+            <p class="mt-6 text-lg leading-8 text-slate-300">
+                I help teams turn complex product ideas into reliable, maintainable software with Python, Django, and thoughtful interface design.
+            </p>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 shadow-xl shadow-slate-950/30">
+            <h2 class="text-2xl font-semibold text-white">What I bring</h2>
+            <ul class="mt-6 space-y-4 text-slate-300">
+                <li class="flex gap-3"><span class="text-blue-400">•</span><span>Clean architecture, reusable services, and pragmatic refactoring.</span></li>
+                <li class="flex gap-3"><span class="text-blue-400">•</span><span>Secure, testable code for startups and modern product teams.</span></li>
+                <li class="flex gap-3"><span class="text-blue-400">•</span><span>Responsive designs that feel polished across desktop and mobile.</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

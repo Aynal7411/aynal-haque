@@ -1,22 +1,20 @@
 #Projects level urls.py file
 
-from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import include, path
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path(
-        "",
-        include("apps.website.urls"),
-    ),
-   
+    path("", include("apps.website.urls")),
     path("accounts/", include("apps.accounts.urls")),
-    path("api/accounts/",include("apps.accounts.api_urls")),
   
-              
+   
 ]
+
+
 
 # Serve static and media files in development
 if settings.DEBUG:

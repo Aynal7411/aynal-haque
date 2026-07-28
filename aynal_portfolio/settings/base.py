@@ -24,22 +24,21 @@ DJANGO_APPS = [
 
 LOCAL_APPS = [
      "apps.website",
-    "apps.accounts",
-    "apps.contact",
-    "apps.common",
+     "apps.accounts",
+     "apps.contact",
+     "apps.common",
    
 ]
 
 THIRD_PARTY_APPS = [
-   # "axes",
-     "pwa",
+   
     "rest_framework",
     "rest_framework_simplejwt.token_blacklist",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
-N8N_WEBHOOK_URL = "https://milonthis.app.n8n.cloud/webhook/contact-form"
+
 # ============================================================
 # MIDDLEWARE
 # ============================================================
@@ -52,7 +51,6 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-    #"axes.middleware.AxesMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
@@ -96,6 +94,7 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
 ]
 
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": (
@@ -124,13 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# ============================================================
-# DJANGO AXES
-# ============================================================
-
-AXES_FAILURE_LIMIT = 5
-AXES_COOLOFF_TIME = 1
-AXES_LOCKOUT_TEMPLATE = "lockout.html"
 
 
 # ============================================================
@@ -182,54 +174,6 @@ REST_FRAMEWORK = {
     ),
 
 }
-
-
-from datetime import timedelta
-
-
-SIMPLE_JWT = {
-
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
-
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
-
-    "ROTATE_REFRESH_TOKENS": True,
-
-    "BLACKLIST_AFTER_ROTATION": True,
-
-    "UPDATE_LAST_LOGIN": True,
-
-    "ALGORITHM": "HS256",
-
-    "AUTH_HEADER_TYPES": ("Bearer",),
-
-}
-# ============================================================
-# PWA
-# ============================================================
-
-PWA_APP_NAME = "Aynal Haque"
-
-PWA_APP_DESCRIPTION = (
-    "Aynal Haque Portfolio - Modern web apps, portfolio, blog, and contact"
-)
-
-PWA_APP_THEME_COLOR = "#ff6f00"
-
-PWA_APP_BACKGROUND_COLOR = "#fff8e1"
-
-PWA_APP_ICONS = [
-    {
-        "src": "/static/core/icons/icon-192x192.png",
-        "sizes": "192x192",
-    },
-    {
-        "src": "/static/core/icons/icon-512x512.png",
-        "sizes": "512x512",
-    },
-]
-
-PWA_APP_START_URL = "/"
 
 
 # ============================================================

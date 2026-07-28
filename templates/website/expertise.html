@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Expertise | Aynal Haque{% endblock %}
+{% block meta_description %}Core expertise in Python, Django, APIs, cloud deployment, and product-focused engineering.{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">Expertise</p>
+        <h1 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Engineering depth across the full product stack.</h1>
+        <p class="mt-6 text-lg leading-8 text-slate-300">I focus on backend reliability, clear APIs, and polished delivery so product teams can move fast without sacrificing quality.</p>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {% for item in "Python Django REST APIs Cloud Deployment UI Systems".split %}
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+            <h2 class="text-xl font-semibold text-white">{{ item }}</h2>
+            <p class="mt-3 text-sm leading-7 text-slate-400">Practical implementation experience with production-ready patterns and a strong focus on maintainability.</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

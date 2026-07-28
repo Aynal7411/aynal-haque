@@ -1,199 +1,70 @@
 {% load static %}
 
-<nav class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-        <div class="flex items-center justify-between h-20">
-
-            <!-- Logo -->
-
-            <a href="{% url 'website:home' %}"
-               class="flex items-center gap-3">
-
-                <img
-                    src="{% static 'images/aynal-logo.png' %}"
-                    alt="Aynal's Solutions Logo"
-                    class="h-12 w-12 rounded-full object-cover">
-
-                <div>
-
-                    <h1 class="text-xl font-bold text-white">
-                        Aynal Solutions
-                    </h1>
-
-                    <p class="text-xs text-slate-400">
-                        Python • Django • AI 
-                    </p>
-
-                </div>
-
-            </a>
-
-            <!-- Desktop Menu -->
-
-            <div class="hidden lg:flex items-center gap-8">
-
-                <a href="{% url 'website:home' %}"
-                   class="text-slate-300 hover:text-blue-400 transition">
-                    Home
-                </a>
-
-                <a href="{% url 'website:about' %}"
-                   class="text-slate-300 hover:text-blue-400 transition">
-                    About
-                </a>
-
-                <a href="{% url 'website:projects' %}"
-                   class="text-slate-300 hover:text-blue-400 transition">
-                    Projects
-                </a>
-
-                <a href="{% url 'website:expertise' %}"
-                   class="text-slate-300 hover:text-blue-400 transition">
-                    Expertise
-                </a>
-
+<nav class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+        <a href="{% url 'website:home' %}" class="flex items-center gap-3" aria-label="Aynal Solutions home">
+            <img src="{% static 'images/aynal-logo.png' %}" alt="Aynal's Solutions logo" class="h-11 w-11 rounded-full object-cover" />
+            <div>
+                <p class="text-base font-semibold text-white">Aynal Solutions</p>
+                <p class="text-xs text-slate-400">Python • Django • AI</p>
             </div>
+        </a>
 
-            <!-- Authentication -->
-
-            <div class="hidden lg:flex items-center gap-3">
-
-                {% if user.is_authenticated %}
-
-                    <a href="{% url 'accounts:profile' %}"
-                       class="text-slate-300 hover:text-white">
-
-                        Profile
-
-                    </a>
-
-                    <a href="{% url 'accounts:logout' %}"
-                       class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white transition">
-
-                        Logout
-
-                    </a>
-
-                {% else %}
-
-                    <a href="{% url 'accounts:login' %}"
-                       class="text-slate-300 hover:text-white">
-
-                        Login
-
-                    </a>
-
-                    <a href="{% url 'accounts:register' %}"
-                       class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition">
-
-                        Get Started
-
-                    </a>
-
-                {% endif %}
-
-            </div>
-
-            <!-- Mobile Button -->
-
-            <button
-                id="mobile-menu-button"
-                class="lg:hidden text-white">
-
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     class="h-7 w-7"
-                     fill="none"
-                     viewBox="0 0 24 24"
-                     stroke="currentColor">
-
-                    <path stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M4 6h16M4 12h16M4 18h16"/>
-
-                </svg>
-
-            </button>
-
+        <div class="hidden items-center gap-8 lg:flex">
+            <a href="{% url 'website:home' %}" class="text-sm font-medium text-slate-300 transition hover:text-white">Home</a>
+            <a href="{% url 'website:about' %}" class="text-sm font-medium text-slate-300 transition hover:text-white">About</a>
+            <a href="{% url 'website:expertise' %}" class="text-sm font-medium text-slate-300 transition hover:text-white">Expertise</a>
+            <a href="{% url 'website:projects' %}" class="text-sm font-medium text-slate-300 transition hover:text-white">Projects</a>
+            <a href="{% url 'website:contact' %}" class="text-sm font-medium text-slate-300 transition hover:text-white">Contact</a>
         </div>
 
-    </div>
-
-    <!-- Mobile Menu -->
-
-    <div id="mobile-menu"
-         class="hidden lg:hidden bg-slate-900 border-t border-slate-800">
-
-        <div class="flex flex-col px-6 py-5 space-y-4">
-
-            <a href="/"
-               class="text-slate-300 hover:text-white">
-                Home
-            </a>
-
-            <a href="/about/"
-               class="text-slate-300 hover:text-white">
-                About
-            </a>
-
-            <a href="/projects/"
-               class="text-slate-300 hover:text-white">
-                Projects
-            </a>
-
-            <a href="/expertise/"
-               class="text-slate-300 hover:text-white">
-                Expertise
-            </a>
-
-            <hr class="border-slate-700">
-
+        <div class="hidden items-center gap-3 lg:flex">
             {% if user.is_authenticated %}
-
-                <a href="{% url 'accounts:profile' %}"
-                   class="text-slate-300">
-                    Profile
-                </a>
-
-                <a href="{% url 'accounts:logout' %}"
-                   class="text-red-400">
-                    Logout
-                </a>
-
+                <a href="{% url 'accounts:profile' %}" class="rounded-full border border-slate-700 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-slate-500 hover:bg-slate-900">Profile</a>
+                <a href="{% url 'accounts:logout' %}" class="rounded-full bg-red-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-500">Logout</a>
             {% else %}
-
-                <a href="{% url 'accounts:login' %}"
-                   class="text-slate-300">
-                    Login
-                </a>
-
-                <a href="{% url 'accounts:register' %}"
-                   class="bg-blue-600 text-white text-center rounded-lg py-3">
-
-                    Create Account
-
-                </a>
-
+                <a href="{% url 'accounts:login' %}" class="text-sm font-medium text-slate-300 transition hover:text-white">Login</a>
+                <a href="{% url 'accounts:register' %}" class="rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500">Get Started</a>
             {% endif %}
-
         </div>
 
+        <button id="mobile-menu-button" class="rounded-full border border-slate-700 p-2 text-white lg:hidden" aria-label="Open navigation menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
     </div>
 
+    <div id="mobile-menu" class="hidden border-t border-slate-800 bg-slate-950/95 lg:hidden">
+        <div class="flex flex-col space-y-4 px-6 py-5">
+            <a href="{% url 'website:home' %}" class="text-sm font-medium text-slate-300">Home</a>
+            <a href="{% url 'website:about' %}" class="text-sm font-medium text-slate-300">About</a>
+            <a href="{% url 'website:expertise' %}" class="text-sm font-medium text-slate-300">Expertise</a>
+            <a href="{% url 'website:projects' %}" class="text-sm font-medium text-slate-300">Projects</a>
+            <a href="{% url 'website:contact' %}" class="text-sm font-medium text-slate-300">Contact</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'accounts:profile' %}" class="text-sm font-medium text-slate-300">Profile</a>
+                <a href="{% url 'accounts:logout' %}" class="text-sm font-medium text-red-400">Logout</a>
+            {% else %}
+                <a href="{% url 'accounts:login' %}" class="text-sm font-medium text-slate-300">Login</a>
+                <a href="{% url 'accounts:register' %}" class="rounded-full bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white">Create account</a>
+            {% endif %}
+        </div>
+    </div>
 </nav>
 
 <script>
+(function () {
+    const button = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+    if (!button || !menu) {
+        return;
+    }
 
-const button = document.getElementById("mobile-menu-button");
-
-const menu = document.getElementById("mobile-menu");
-
-button.addEventListener("click", () => {
-
-    menu.classList.toggle("hidden");
-
-});
-
+    button.addEventListener("click", () => {
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        menu.classList.toggle("hidden");
+    });
+})();
 </script>

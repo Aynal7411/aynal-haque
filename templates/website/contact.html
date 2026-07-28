@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Aynal Haque{% endblock %}
+{% block meta_description %}Contact Aynal Haque for Python, Django, and product engineering support.{% endblock %}
+
+{% block content %}
+<section class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="max-w-xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">Contact</p>
+            <h1 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Let’s talk about your next build.</h1>
+            <p class="mt-6 text-lg leading-8 text-slate-300">Whether you need a reliable backend, a modern portfolio, or help improving an existing Django application, I’d love to hear about it.</p>
+        </div>
+        <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 shadow-xl shadow-slate-950/30">
+            <form method="post" class="space-y-6" novalidate>
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="rounded-2xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <div>
+                    <label for="{{ form.name.id_for_label }}" class="mb-2 block text-sm font-medium text-slate-200">Name</label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                        <p class="mt-2 text-sm text-red-400">{{ form.name.errors|join:", " }}</p>
+                    {% endif %}
+                </div>
+                <div>
+                    <label for="{{ form.email.id_for_label }}" class="mb-2 block text-sm font-medium text-slate-200">Email</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <p class="mt-2 text-sm text-red-400">{{ form.email.errors|join:", " }}</p>
+                    {% endif %}
+                </div>
+                <div>
+                    <label for="{{ form.message.id_for_label }}" class="mb-2 block text-sm font-medium text-slate-200">Message</label>
+                    {{ form.message }}
+                    {% if form.message.errors %}
+                        <p class="mt-2 text-sm text-red-400">{{ form.message.errors|join:", " }}</p>
+                    {% endif %}
+                </div>
+                <button type="submit" class="rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-500">Send message</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
