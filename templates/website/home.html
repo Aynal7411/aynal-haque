@@ -1,17 +1,75 @@
 {% extends "base.html" %}
 
+{% block title %}
+Home | Aynal Solutions
+{% endblock %}
+
+{% block meta_description %}
+Professional Python, Django, Django REST Framework and PostgreSQL Backend Developer Portfolio.
+{% endblock %}
+
 {% block content %}
 
- {% include "includes/hero.html" %} 
+<!-- ==========================================
+Hero Section
+=========================================== -->
+{% include "includes/hero.html" %}
 
+<!-- ==========================================
+Technology Stack
+=========================================== -->
 {% include "includes/tech_stack.html" %}
 
+<!-- ==========================================
+Featured Projects
+=========================================== -->
 {% include "includes/featured_projects.html" %}
 
+<!-- ==========================================
+Services
+=========================================== -->
 {% include "includes/services.html" %}
 
+<!-- ==========================================
+Statistics
+=========================================== -->
 {% include "includes/stats.html" %}
 
+<!-- ==========================================
+Call To Action
+=========================================== -->
 {% include "includes/cta.html" %}
 
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Fade-in Animation
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-y-0");
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    sections.forEach(section => {
+        section.classList.add(
+            "opacity-0",
+            "translate-y-8",
+            "transition-all",
+            "duration-700"
+        );
+
+        observer.observe(section);
+    });
+
+});
+</script>
 {% endblock %}

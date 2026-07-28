@@ -1,143 +1,199 @@
 {% load static %}
 
-<section class="relative overflow-hidden bg-slate-950">
+<section class="relative flex min-h-[90vh] items-center overflow-hidden bg-slate-950">
 
     <!-- Background -->
     <div class="absolute inset-0">
-        <div class="absolute -left-32 top-20 h-80 w-80 rounded-full bg-blue-600/20 blur-3xl"></div>
-        <div class="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl"></div>
+
+        <div class="absolute -left-32 top-20 h-96 w-96 rounded-full bg-blue-600/20 blur-3xl"></div>
+
+        <div class="absolute right-0 top-10 h-[28rem] w-[28rem] rounded-full bg-cyan-500/10 blur-3xl"></div>
+
+        <div class="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-indigo-600/10 blur-3xl"></div>
+
+        <!-- Grid -->
+        <div class="absolute inset-0 opacity-10 bg-[linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] bg-[size:55px_55px]"></div>
+
     </div>
 
-    <div class="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+    <div class="relative mx-auto grid max-w-7xl items-center gap-20 px-6 py-24 lg:grid-cols-2 lg:px-8">
 
-        <div class="grid items-center gap-16 lg:grid-cols-2">
+        <!-- LEFT -->
 
-            <!-- Left Content -->
-            <div>
+        <div>
 
-                <span class="inline-flex items-center rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1 text-sm font-medium text-blue-300">
-                    👋 Welcome to my Portfolio
-                </span>
+            <!-- Badge -->
 
-                <h1 class="mt-6 text-5xl font-extrabold leading-tight text-white lg:text-6xl">
+            <div class="inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2 text-sm font-medium text-green-300">
 
-                    Hi, I'm
+                <span class="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
 
-                    <span class="text-blue-500">
-                        Aynal Haque
-                    </span>
-
-                </h1>
-
-                <h2 class="mt-5 text-2xl font-semibold text-slate-300">
-
-                    Python Backend Engineer
-
-                </h2>
-
-                <p class="mt-6 max-w-xl text-lg leading-8 text-slate-400">
-
-                    I build secure, scalable and high-performance web applications
-                    using Python, Django, Django REST Framework and PostgreSQL.
-
-                    I enjoy designing clean backend architectures, REST APIs,
-                    authentication systems and modern cloud-ready applications.
-
-                </p>
-
-                <!-- Tech Stack -->
-
-                <div class="mt-8 flex flex-wrap gap-3">
-
-                    <span class="rounded-full bg-slate-800 px-4 py-2 text-sm text-slate-300">
-                        Python
-                    </span>
-
-                    <span class="rounded-full bg-slate-800 px-4 py-2 text-sm text-slate-300">
-                        Django
-                    </span>
-
-                    <span class="rounded-full bg-slate-800 px-4 py-2 text-sm text-slate-300">
-                        DRF
-                    </span>
-
-                    <span class="rounded-full bg-slate-800 px-4 py-2 text-sm text-slate-300">
-                        PostgreSQL
-                    </span>
-
-                    <span class="rounded-full bg-slate-800 px-4 py-2 text-sm text-slate-300">
-                        Docker
-                    </span>
-
-                    <span class="rounded-full bg-slate-800 px-4 py-2 text-sm text-slate-300">
-                        REST API
-                    </span>
-
-                </div>
-
-                <!-- Buttons -->
-
-                <div class="mt-10 flex flex-wrap gap-4">
-
-                    <a href="#projects"
-                       class="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-500">
-
-                        View Projects
-
-                    </a>
-
-                    <a href="{% static 'files/Aynal-Haque-CV.pdf' %}"
-                       class="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-blue-500 hover:text-white">
-
-                        Download Resume
-
-                    </a>
-
-                </div>
-
-                <!-- Social -->
-
-                <div class="mt-10 flex items-center gap-6">
-
-                    <a href="https://github.com/Aynal7411"
-                       target="_blank"
-                       class="text-slate-400 transition hover:text-white">
-
-                        <i class="bi bi-github text-3xl"></i>
-
-                    </a>
-
-                    <a href="https://linkedin.com"
-                       target="_blank"
-                       class="text-slate-400 transition hover:text-blue-400">
-
-                        <i class="bi bi-linkedin text-3xl"></i>
-
-                    </a>
-
-                    <a href="mailto:your@email.com"
-                       class="text-slate-400 transition hover:text-red-400">
-
-                        <i class="bi bi-envelope-fill text-3xl"></i>
-
-                    </a>
-
-                </div>
+                Available for Backend Development
 
             </div>
 
-            <!-- Right -->
+            <!-- Heading -->
 
-            <div class="flex justify-center">
+            <h1 class="mt-8 text-5xl font-black leading-tight text-white lg:text-7xl">
 
-                <div class="relative">
+                Building
 
-                    <div class="absolute -inset-4 rounded-full bg-blue-600/20 blur-3xl"></div>
+                <span class="text-blue-500">
 
-                    <img
-                        src="{% static 'images/profile.png' %}"
-                        alt="Aynal Haque"
-                        class="relative h-96 w-96 rounded-full border-4 border-slate-800 object-cover shadow-2xl">
+                    Secure
+
+                </span>
+
+                &
+
+                <span class="text-cyan-400">
+
+                    Scalable
+
+                </span>
+
+                Backend Systems
+
+            </h1>
+
+            <p class="mt-6 text-xl font-semibold text-slate-300">
+
+                Python Backend Engineer
+
+            </p>
+
+            <p class="mt-8 max-w-2xl text-lg leading-8 text-slate-400">
+
+                Hi, I'm <span class="font-semibold text-white">Aynal Haque</span>.
+
+                I design and develop production-ready backend applications using
+                Python, Django, Django REST Framework and PostgreSQL.
+
+                My focus is building secure REST APIs, authentication systems,
+                scalable architectures and cloud-ready web applications.
+
+            </p>
+
+            <!-- Tech -->
+
+            <div class="mt-10 flex flex-wrap gap-3">
+
+                <span class="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium">
+                    🐍 Python
+                </span>
+
+                <span class="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium">
+                    🚀 Django
+                </span>
+
+                <span class="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium">
+                    ⚡ DRF
+                </span>
+
+                <span class="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium">
+                    🐘 PostgreSQL
+                </span>
+
+                <span class="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium">
+                    🐳 Docker
+                </span>
+
+                <span class="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium">
+                    Git
+                </span>
+
+            </div>
+
+            <!-- Buttons -->
+
+            <div class="mt-12 flex flex-wrap gap-5">
+
+                <a href="#projects"
+                   class="rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-blue-500">
+
+                    Explore Projects
+
+                </a>
+
+                <a href="{% static 'files/Aynal-Haque-CV.pdf' %}"
+                   class="rounded-xl border border-slate-700 px-8 py-4 font-semibold transition hover:border-blue-500 hover:bg-slate-900">
+
+                    Download CV
+
+                </a>
+
+            </div>
+
+            <!-- Social -->
+
+            <div class="mt-12 flex gap-5">
+
+                <a href="https://github.com/Aynal7411"
+                   target="_blank"
+                   class="rounded-full border border-slate-700 p-4 transition hover:border-blue-500 hover:bg-slate-900">
+
+                    <i class="bi bi-github text-2xl"></i>
+
+                </a>
+
+                <a href="#"
+                   target="_blank"
+                   class="rounded-full border border-slate-700 p-4 transition hover:border-blue-500 hover:bg-slate-900">
+
+                    <i class="bi bi-linkedin text-2xl"></i>
+
+                </a>
+
+                <a href="mailto:your@email.com"
+                   class="rounded-full border border-slate-700 p-4 transition hover:border-red-500 hover:bg-slate-900">
+
+                    <i class="bi bi-envelope-fill text-2xl"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="relative flex justify-center">
+
+            <!-- Glow -->
+
+            <div class="absolute h-[430px] w-[430px] rounded-full bg-blue-600/20 blur-3xl"></div>
+
+            <!-- Profile -->
+
+            <div class="relative">
+
+                <img src="{% static 'images/profile.png' %}"
+                     alt="Aynal Haque"
+                     class="h-[420px] w-[420px] rounded-full border-4 border-slate-800 object-cover shadow-2xl">
+
+                <!-- Floating Cards -->
+
+                <div class="absolute -left-12 top-10 rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-3 backdrop-blur">
+
+                    REST API
+
+                </div>
+
+                <div class="absolute -right-10 top-28 rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-3 backdrop-blur">
+
+                    JWT Auth
+
+                </div>
+
+                <div class="absolute bottom-16 -left-10 rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-3 backdrop-blur">
+
+                    Docker
+
+                </div>
+
+                <div class="absolute bottom-0 -right-12 rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-3 backdrop-blur">
+
+                    PostgreSQL
 
                 </div>
 
