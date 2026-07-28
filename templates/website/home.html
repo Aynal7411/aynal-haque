@@ -1,29 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}
-Home
-{% endblock %}
-
 {% block content %}
 
-<section class="py-32">
+{% include "includes/hero.html" %}
 
-    <div class="max-w-7xl mx-auto px-6">
+{% include "includes/tech_stack.html" %}
 
-        <h1 class="text-6xl font-bold">
+{% include "includes/featured_projects.html" %}
 
-            Python Backend Engineer
+{% include "includes/services.html" %}
 
-        </h1>
+{% include "includes/stats.html" %}
 
-        <p class="mt-6 text-xl">
-
-            Building scalable Django applications.
-
-        </p>
-
-    </div>
-
-</section>
+{% include "includes/cta.html" %}
 
 {% endblock %}

@@ -52,12 +52,26 @@
     <meta
         property="og:description"
         content="{% block og_description %}Modern Backend Engineering{% endblock %}">
-
+    <meta
+    name="color-scheme"
+    content="dark light">
     <meta
         property="og:image"
         content="{% static 'images/aynal-logo.png' %}">
 
-  
+   <!-- Twitter card -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image">
+
+<meta
+    name="twitter:title"
+    content="{% block twitter_title %}Aynal's Solutions{% endblock %}">
+
+<meta
+    name="twitter:description"
+    content="{% block twitter_description %}Python Django Backend Engineer{% endblock %}">
+
     <!-- Google Font -->
 
     <link
@@ -74,7 +88,10 @@
         rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-
+<link
+rel="preload"
+href="{% static 'css/output.css' %}"
+as="style">
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -92,7 +109,16 @@
 </head>
 
 <body
-    class="bg-slate-950 text-slate-200 min-h-screen flex flex-col font-[Inter]">
+class="
+bg-slate-950
+text-slate-200
+font-[Inter]
+antialiased
+selection:bg-blue-600
+selection:text-white
+min-h-screen
+flex
+flex-col">
 
     <!-- No JS -->
 
@@ -191,7 +217,10 @@
 
     </script>
 
-    <script src="{% static 'js/main.js' %}"></script>
+    <script
+defer
+src="{% static 'js/main.js' %}">
+</script>
 
     {% block extra_js %}{% endblock %}
 
