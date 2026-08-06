@@ -4,22 +4,35 @@
 {% block meta_description %}Learn more about Aynal Haque, a senior Python and Django engineer delivering reliable digital products.{% endblock %}
 
 {% block content %}
-<section class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">About</p>
-            <h1 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Senior engineer with a product mindset.</h1>
-            <p class="mt-6 text-lg leading-8 text-slate-300">
-                I help teams turn complex product ideas into reliable, maintainable software with Python, Django, and thoughtful interface design.
-            </p>
-        </div>
-        <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 shadow-xl shadow-slate-950/30">
-            <h2 class="text-2xl font-semibold text-white">What I bring</h2>
-            <ul class="mt-6 space-y-4 text-slate-300">
-                <li class="flex gap-3"><span class="text-blue-400">•</span><span>Clean architecture, reusable services, and pragmatic refactoring.</span></li>
-                <li class="flex gap-3"><span class="text-blue-400">•</span><span>Secure, testable code for startups and modern product teams.</span></li>
-                <li class="flex gap-3"><span class="text-blue-400">•</span><span>Responsive designs that feel polished across desktop and mobile.</span></li>
+<section class="section reveal">
+    <div class="container about-grid">
+        <div class="section-card">
+            <p class="eyebrow">About</p>
+            <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem);">A pragmatic engineer focused on dependable product delivery.</h1>
+            <p class="section-copy" style="font-size: 1.05rem;">I work across backend systems, APIs, workflows, and product experiences to create tools that are structured, maintainable, and production-ready.</p>
+            <ul class="info-list">
+                <li>Builds scalable Django applications with clear service boundaries.</li>
+                <li>Delivers secure APIs and polished user-facing flows.</li>
+                <li>Combines engineering discipline with thoughtful design and shipping focus.</li>
             </ul>
+        </div>
+        <div class="about-panel">
+            <p class="eyebrow">Engineering profile</p>
+            <h2 style="margin: 8px 0 0; font-size: 1.35rem;">Primary stack</h2>
+            <div class="tag-list" style="margin-top: 16px;">
+                <span class="tag">Python</span>
+                <span class="tag">Django</span>
+                <span class="tag">DRF</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Redis</span>
+                <span class="tag">Celery</span>
+                <span class="tag">Docker</span>
+                <span class="tag">CI/CD</span>
+            </div>
+            <div class="section-card" style="margin-top: 20px;">
+                <h3 style="margin: 0 0 8px;">What I care about</h3>
+                <p class="section-copy" style="margin-top: 0;">Clean architecture, testable code, thoughtful integration, and a product mindset that balances speed with reliability.</p>
+            </div>
         </div>
     </div>
 </section>

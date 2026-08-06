@@ -1,11 +1,10 @@
-<section class="hero">
+{% load static %}
+<section class="hero reveal" aria-labelledby="hero-title">
     <div class="container hero-grid">
         <div>
-            <span class="status-pill"><span class="status-dot"></span>Available for backend, SaaS, and API work</span>
-            <h1>Python / Django backend engineer for scalable product systems.</h1>
-            <p class="hero-lead">
-                Hi, I am Aynal Haque. I build reliable web applications, REST APIs, SaaS foundations, automation systems, and cloud-ready backend platforms with clean architecture and production discipline.
-            </p>
+            <span class="hero-badge"><span class="status-dot"></span>Available for backend, SaaS, and API work</span>
+            <h1 id="hero-title">Python and Django engineering for modern products.</h1>
+            <p class="hero-lead">I build scalable web applications, REST APIs, authentication systems, background jobs, and cloud-ready platforms with a strong focus on clarity, reliability, and delivery.</p>
             <div class="tech-pills" aria-label="Core technologies">
                 <span class="tech-pill">Python</span>
                 <span class="tech-pill">Django</span>
@@ -15,24 +14,29 @@
                 <span class="tech-pill">Celery</span>
                 <span class="tech-pill">Docker</span>
                 <span class="tech-pill">CI/CD</span>
-                <span class="tech-pill">AI/ML</span>
             </div>
             <div class="btn-row">
                 <a class="btn btn-primary" href="#projects"><i class="bi bi-kanban"></i>View Projects</a>
                 <a class="btn btn-secondary" href="{% url 'contact:contact' %}"><i class="bi bi-chat-dots"></i>Contact Me</a>
             </div>
+            <div class="hero-meta-list" aria-label="Engineering focus areas">
+                <span>REST APIs</span>
+                <span>SaaS architecture</span>
+                <span>Background jobs</span>
+                <span>Cloud deployment</span>
+            </div>
         </div>
 
-        <div class="arch-panel" aria-label="Backend architecture visualization">
+        <div class="hero-visual" aria-label="Architecture overview">
             <div class="panel-top">
                 <span>system.pipeline</span>
                 <span>status: healthy</span>
             </div>
-            <div class="traffic">
+            <div class="hero-stack">
                 <div class="flow-card">
                     <div>
-                        <div class="flow-title">REST API Gateway</div>
-                        <div class="flow-meta">JWT auth / throttling / validation</div>
+                        <div class="flow-title">API Gateway</div>
+                        <div class="flow-meta">JWT auth / validation / throttling</div>
                     </div>
                     <span class="status-code">200</span>
                 </div>
@@ -53,7 +57,7 @@
             </div>
             <div class="terminal">
                 <div><span>$</span> deploy --target render --checks enabled</div>
-                <div><span>?</span> migrations clean</div>
+                <div><span>?</span> migrations validated</div>
                 <div><span>?</span> static assets ready</div>
                 <div><span>?</span> api contracts stable</div>
             </div>

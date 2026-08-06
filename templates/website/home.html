@@ -9,67 +9,38 @@ Professional Python, Django, Django REST Framework and PostgreSQL Backend Develo
 {% endblock %}
 
 {% block content %}
-
-<!-- ==========================================
-Hero Section
-=========================================== -->
-{% include "includes/hero.html" %}
-
-<!-- ==========================================
-Technology Stack
-=========================================== -->
+{% include "components/hero.html" %}
 {% include "includes/tech_stack.html" %}
-
-<!-- ==========================================
-Featured Projects
-=========================================== -->
 {% include "includes/featured_projects.html" %}
-
-<!-- ==========================================
-Services
-=========================================== -->
 {% include "includes/services.html" %}
-
-<!-- ==========================================
-Statistics
-=========================================== -->
+<section class="section reveal" aria-labelledby="architecture-title">
+    <div class="container">
+        <p class="eyebrow">System architecture</p>
+        <h2 id="architecture-title" class="section-title">An engineering approach built around clear layers and dependable delivery.</h2>
+        <div class="process-grid" style="margin-top: 28px;">
+            <article class="process-card">
+                <div class="process-step">01</div>
+                <h3>Client experience</h3>
+                <p>Accessible interfaces shaped around product clarity and clean interaction.</p>
+            </article>
+            <article class="process-card">
+                <div class="process-step">02</div>
+                <h3>Django / DRF</h3>
+                <p>Reliable request handling, validation, auth, and service boundaries.</p>
+            </article>
+            <article class="process-card">
+                <div class="process-step">03</div>
+                <h3>PostgreSQL + Redis</h3>
+                <p>Data durability, caching, and support for growing product needs.</p>
+            </article>
+            <article class="process-card">
+                <div class="process-step">04</div>
+                <h3>Celery + CI/CD</h3>
+                <p>Asynchronous work, deployment control, and operational confidence.</p>
+            </article>
+        </div>
+    </div>
+</section>
 {% include "includes/stats.html" %}
-
-<!-- ==========================================
-Call To Action
-=========================================== -->
 {% include "includes/cta.html" %}
-
-{% endblock %}
-
-{% block extra_js %}
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    // Fade-in Animation
-    const sections = document.querySelectorAll("section");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("opacity-100", "translate-y-0");
-            }
-        });
-    }, {
-        threshold: 0.15
-    });
-
-    sections.forEach(section => {
-        section.classList.add(
-            "opacity-0",
-            "translate-y-8",
-            "transition-all",
-            "duration-700"
-        );
-
-        observer.observe(section);
-    });
-
-});
-</script>
 {% endblock %}

@@ -28,6 +28,9 @@
         </div>
 
         <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+                <i class="bi bi-moon"></i>
+            </button>
             {% if user.is_authenticated %}
                 <a class="btn btn-secondary" href="{% url 'accounts:profile' %}"><i class="bi bi-person"></i>Profile</a>
             {% else %}

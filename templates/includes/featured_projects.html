@@ -1,0 +1,20 @@
+<section id="projects" class="section reveal" aria-labelledby="projects-title">
+    <div class="container">
+        <p class="eyebrow">Project showcase</p>
+        <h2 id="projects-title" class="section-title">Selected work shaped around backend reliability and sleek delivery.</h2>
+        <p class="section-copy">These examples reflect the product and engineering patterns that inform the portfolio experience.</p>
+        <div class="project-filters" role="group" aria-label="Project categories">
+            <button class="filter-btn is-active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="django">Django</button>
+            <button class="filter-btn" type="button" data-filter="api">REST API</button>
+            <button class="filter-btn" type="button" data-filter="saas">SaaS</button>
+            <button class="filter-btn" type="button" data-filter="ai">AI/ML</button>
+        </div>
+        <div class="project-grid">
+            {% include "components/project_card.html" with title="APIHub Platform" kicker="SaaS platform" description="Multi-tenant API delivery experience with auth, background jobs, and analytics foundations." tags="Python Django DRF PostgreSQL Redis" category="saas" github="#" demo="#" modal_body="<p><strong>Problem:</strong> The team needed a reliable API product layer with authentication, observability, and background task support.</p><p><strong>Solution:</strong> Built a Django-based SaaS shell with DRF, PostgreSQL, Redis, and Celery to support secure and scalable product operations.</p>" %}
+            {% include "components/project_card.html" with title="Workflow Engine" kicker="Automation" description="Background task orchestration for document processing, notifications, and scheduled workflows." tags="Celery Redis Docker CI/CD" category="django" github="#" demo="#" modal_body="<p><strong>Problem:</strong> Internal workflows needed resilient scheduling and task retries.</p><p><strong>Solution:</strong> Designed a worker-driven architecture with queueing, rate limits, and easy deployment patterns.</p>" %}
+            {% include "components/project_card.html" with title="Insight API" kicker="REST API" description="An authenticated analytics API built for real-time data access and service integration." tags="DRF JWT PostgreSQL OpenAPI" category="api" github="#" demo="#" modal_body="<p><strong>Problem:</strong> A product team needed dependable APIs for mobile and partner integrations.</p><p><strong>Solution:</strong> Implemented DRF endpoints, permission layers, validation, and clear API contracts.</p>" %}
+            {% include "components/project_card.html" with title="Signal Lab" kicker="AI / ML" description="A product prototype that blends automation, classification workflows, and AI-powered insights." tags="Python FastAPI Scikit-learn" category="ai" github="#" demo="#" modal_body="<p><strong>Problem:</strong> The team wanted a prototype that could evolve into a data-driven experience.</p><p><strong>Solution:</strong> Built an experimental pipeline with clear interfaces, modular logic, and an extensible architecture.</p>" %}
+        </div>
+    </div>
+</section>

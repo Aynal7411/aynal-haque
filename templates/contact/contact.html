@@ -9,65 +9,62 @@ Contact Aynal Solutions for Python, Django, DRF, and PostgreSQL backend work.
 {% endblock %}
 
 {% block content %}
-<section class="bg-slate-950 px-5 py-20 text-slate-100">
-    <div class="mx-auto max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-wide text-blue-400">
-            Contact
-        </p>
-        <h2 class="mt-3 text-3xl font-bold text-white">
-            Let us talk
-        </h2>
-        <p class="mt-4 text-slate-300">
-            Send a short note about your project, timeline, and the kind of backend support you need.
-        </p>
+<section class="section reveal">
+    <div class="container">
+        <div class="form-shell">
+            <p class="eyebrow">Contact</p>
+            <h1>Start a conversation.</h1>
+            <p>Share your project goals, timeline, and the kind of product support you need. I will get back to you with a thoughtful response.</p>
 
-        <form method="post" class="mt-10 space-y-6">
-            {% csrf_token %}
+            <form method="post" class="contact-form" novalidate>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
 
-            <div>
-                <label for="{{ form.name.id_for_label }}" class="block text-sm font-medium text-slate-200">
-                    Name
-                </label>
-                <input
-                    type="text"
-                    name="{{ form.name.html_name }}"
-                    id="{{ form.name.id_for_label }}"
-                    value="{{ form.name.value|default_if_none:'' }}"
-                    class="mt-2 w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-blue-500">
-                {{ form.name.errors }}
-            </div>
+                <div class="field">
+                    <label for="{{ form.name.id_for_label }}">Name</label>
+                    {{ form.name }}
+                    {{ form.name.errors }}
+                </div>
 
-            <div>
-                <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-slate-200">
-                    Email
-                </label>
-                <input
-                    type="email"
-                    name="{{ form.email.html_name }}"
-                    id="{{ form.email.id_for_label }}"
-                    value="{{ form.email.value|default_if_none:'' }}"
-                    class="mt-2 w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-blue-500">
-                {{ form.email.errors }}
-            </div>
+                <div class="field">
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
 
-            <div>
-                <label for="{{ form.message.id_for_label }}" class="block text-sm font-medium text-slate-200">
-                    Message
-                </label>
-                <textarea
-                    name="{{ form.message.html_name }}"
-                    id="{{ form.message.id_for_label }}"
-                    rows="6"
-                    class="mt-2 w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-blue-500">{{ form.message.value|default_if_none:'' }}</textarea>
-                {{ form.message.errors }}
-            </div>
+                <div class="field">
+                    <label for="{{ form.subject.id_for_label }}">Subject</label>
+                    {{ form.subject }}
+                    {{ form.subject.errors }}
+                </div>
 
-            <button
-                type="submit"
-                class="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-500">
-                Send message
-            </button>
-        </form>
+                <div class="field">
+                    <label for="{{ form.message.id_for_label }}">Message</label>
+                    {{ form.message }}
+                    {{ form.message.errors }}
+                </div>
+
+                <button type="submit" class="btn btn-primary auth-submit">
+                    <i class="bi bi-send"></i>Send message
+                </button>
+            </form>
+        </div>
     </div>
 </section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+    form.addEventListener('submit', () => {
+        const button = form.querySelector('button[type="submit"]');
+        if (button) {
+            button.disabled = true;
+            button.innerHTML = '<i class="bi bi-arrow-clockwise"></i>Sending…';
+        }
+    });
+});
+</script>
 {% endblock %}

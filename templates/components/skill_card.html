@@ -1,0 +1,10 @@
+<article class="feature-card reveal">
+    <div class="card-icon"><i class="bi {{ icon }}"></i></div>
+    <h3 class="card-title">{{ title }}</h3>
+    <p class="card-copy">{{ description }}</p>
+    <div class="tag-list">
+        {% for tag in tags %}
+            <span class="tag">{{ tag }}</span>
+        {% endfor %}
+    </div>
+</article>

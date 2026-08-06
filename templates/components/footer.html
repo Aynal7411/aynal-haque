@@ -1,0 +1,29 @@
+{% load static %}
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <h2>Aynal Haque</h2>
+            <p>Python / Django engineering for scalable web applications, APIs, SaaS platforms, and cloud-ready delivery.</p>
+        </div>
+        <div>
+            <h3>Navigate</h3>
+            <ul>
+                <li><a href="{% url 'website:home' %}">Home</a></li>
+                <li><a href="{% url 'website:about' %}">About</a></li>
+                <li><a href="{% url 'website:expertise' %}">Expertise</a></li>
+                <li><a href="{% url 'contact:contact' %}">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Connect</h3>
+            <ul>
+                <li><a href="mailto:hello@aynalhaque.com">hello@aynalhaque.com</a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <span>© 2026 Aynal Haque. Built with Django templates and vanilla JavaScript.</span>
+    </div>
+</footer>

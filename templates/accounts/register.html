@@ -1,216 +1,35 @@
 {% extends "base.html" %}
-{% load static %}
-
 {% block title %}Create Account | Aynal's Solutions{% endblock %}
 
 {% block content %}
-<section class="py-5">
+<section class="section reveal">
     <div class="container">
-
-        <div class="row justify-content-center align-items-center">
-
-            <div class="col-lg-5 col-md-7">
-
-                <div class="card border-0 shadow-lg rounded-4">
-
-                    <div class="card-body p-5">
-
-                        <div class="text-center mb-4">
-
-                            <div class="mb-3">
-                                <img src="{% static 'images/aynal-logo.png' %}"
-                                     width="70"
-                                     alt="Logo">
-                            </div>
-
-                            <h2 class="fw-bold">
-                                Create Your Account
-                            </h2>
-
-                            <p class="text-muted">
-                                Join Aynal's Solutions and access your personal dashboard.
-                            </p>
-
-                        </div>
-
-                        {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert alert-{{ message.tags }}">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-
-                        <form method="post">
-
-                            {% csrf_token %}
-
-                            {% if form.non_field_errors %}
-                                <div class="alert alert-danger">
-                                    {{ form.non_field_errors }}
-                                </div>
-                            {% endif %}
-
-                            <!-- Email -->
-
-                            <div class="mb-3">
-
-                                <label class="form-label fw-semibold">
-                                    Email Address
-                                </label>
-
-                                <div class="input-group">
-
-                                    <span class="input-group-text">
-                                        <i class="bi bi-envelope"></i>
-                                    </span>
-
-                                    {{ form.email }}
-
-                                </div>
-
-                                <div class="text-danger small">
-                                    {{ form.email.errors }}
-                                </div>
-
-                            </div>
-
-                            <!-- Password -->
-
-                            <div class="mb-3">
-
-                                <label class="form-label fw-semibold">
-                                    Password
-                                </label>
-
-                                <div class="input-group">
-
-                                    <span class="input-group-text">
-                                        <i class="bi bi-lock"></i>
-                                    </span>
-
-                                    {{ form.password }}
-
-                                    <button
-                                        class="btn btn-outline-secondary"
-                                        type="button"
-                                        onclick="togglePassword('id_password',this)">
-
-                                        <i class="bi bi-eye"></i>
-
-                                    </button>
-
-                                </div>
-
-                                <div class="text-danger small">
-                                    {{ form.password.errors }}
-                                </div>
-
-                            </div>
-
-                            <!-- Confirm Password -->
-
-                            <div class="mb-4">
-
-                                <label class="form-label fw-semibold">
-                                    Confirm Password
-                                </label>
-
-                                <div class="input-group">
-
-                                    <span class="input-group-text">
-                                        <i class="bi bi-shield-lock"></i>
-                                    </span>
-
-                                    {{ form.confirm_password }}
-
-                                    <button
-                                        class="btn btn-outline-secondary"
-                                        type="button"
-                                        onclick="togglePassword('id_confirm_password',this)">
-
-                                        <i class="bi bi-eye"></i>
-
-                                    </button>
-
-                                </div>
-
-                                <div class="text-danger small">
-                                    {{ form.confirm_password.errors }}
-                                </div>
-
-                            </div>
-
-                            <div class="d-grid">
-
-                                <button
-                                    type="submit"
-                                    class="btn btn-primary btn-lg rounded-3">
-
-                                    <i class="bi bi-person-plus-fill me-2"></i>
-
-                                    Create Account
-
-                                </button>
-
-                            </div>
-
-                        </form>
-
-                        <div class="text-center mt-4">
-
-                            <small class="text-muted">
-
-                                Already have an account?
-
-                                <a href="{% url 'accounts:login' %}"
-                                   class="fw-bold text-decoration-none">
-
-                                    Sign In
-
-                                </a>
-
-                            </small>
-
-                        </div>
-
-                    </div>
-
+        <div class="form-shell">
+            <p class="eyebrow">Authentication</p>
+            <h1>Create your account.</h1>
+            <p>Join the platform and start managing your profile and project interests.</p>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="field">
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
                 </div>
-
-            </div>
-
+                <div class="field">
+                    <label for="{{ form.password.id_for_label }}">Password</label>
+                    {{ form.password }}
+                    {{ form.password.errors }}
+                </div>
+                <div class="field">
+                    <label for="{{ form.confirm_password.id_for_label }}">Confirm password</label>
+                    {{ form.confirm_password }}
+                    {{ form.confirm_password.errors }}
+                </div>
+                <button type="submit" class="btn btn-primary auth-submit"><i class="bi bi-person-plus"></i>Create account</button>
+            </form>
+            <p class="form-divider">Already have an account? <a href="{% url 'accounts:login' %}">Sign in</a></p>
         </div>
-
     </div>
 </section>
-
-<script>
-function togglePassword(id, btn){
-
-    const input=document.getElementById(id);
-
-    const icon=btn.querySelector("i");
-
-    if(input.type==="password"){
-
-        input.type="text";
-
-        icon.classList.remove("bi-eye");
-
-        icon.classList.add("bi-eye-slash");
-
-    }else{
-
-        input.type="password";
-
-        icon.classList.remove("bi-eye-slash");
-
-        icon.classList.add("bi-eye");
-
-    }
-
-}
-</script>
-
 {% endblock %}

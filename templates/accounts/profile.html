@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Profile | Aynal Haque{% endblock %}
+
+{% block content %}
+<section class="section reveal">
+    <div class="container">
+        <div class="form-shell">
+            <p class="eyebrow">Profile</p>
+            <h1>Your engineering profile</h1>
+            <p>Keep your profile details polished and ready for collaborators, clients, or recruiters.</p>
+            <div class="section-card profile-card">
+                <div class="tag-list profile-tag-list">
+                    <span class="tag">{{ profile.user.email }}</span>
+                    <span class="tag">{{ profile.role|default:'developer' }}</span>
+                    <span class="tag">{{ profile.location|default:'Remote' }}</span>
+                </div>
+                <p class="section-copy profile-bio">{{ profile.bio|default:'A focused engineer building reliable systems and thoughtful product experiences.' }}</p>
+                <div class="btn-row profile-actions">
+                    <a class="btn btn-primary" href="{% url 'accounts:profile_edit' %}"><i class="bi bi-pencil"></i>Edit profile</a>
+                    <a class="btn btn-secondary" href="{% url 'accounts:change_password' %}"><i class="bi bi-shield-lock"></i>Change password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

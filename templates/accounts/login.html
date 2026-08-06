@@ -1,32 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card shadow-lg rounded-4">
-        <div class="card-body p-4">
-          <h2 class="text-center mb-4">Login</h2>
-          <form method="post">
-            {% csrf_token %}
-            <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control" id="username" name="username" required>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" name="password" required>
-            </div>
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary rounded-pill">Login</button>
-            </div>
-          </form>
-          <p class="text-center mt-3 mb-0">
-            Don't have an account? <a href="{% url 'accounts:register' %}">Register</a>
-          </p>
+<section class="section reveal">
+  <div class="container">
+    <div class="form-shell">
+      <p class="eyebrow">Authentication</p>
+      <h1>Welcome back.</h1>
+      <p>Sign in to continue to your dashboard and manage your profile.</p>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="field">
+          <label for="{{ form.email.id_for_label }}">Email</label>
+          {{ form.email }}
+          {{ form.email.errors }}
         </div>
-      </div>
+        <div class="field">
+          <label for="{{ form.password.id_for_label }}">Password</label>
+          {{ form.password }}
+          {{ form.password.errors }}
+        </div>
+        <button type="submit" class="btn btn-primary auth-submit"><i class="bi bi-box-arrow-in-right"></i>Sign in</button>
+      </form>
+      <p class="form-divider">Don’t have an account? <a href="{% url 'accounts:register' %}">Create one</a></p>
     </div>
   </div>
-</div>
+</section>
 {% endblock %}
 

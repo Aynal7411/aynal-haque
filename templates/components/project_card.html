@@ -1,0 +1,21 @@
+<article class="project-card reveal" data-project-category="{{ category }}">
+    <div>
+        <span class="kicker">{{ kicker }}</span>
+        <h3>{{ title }}</h3>
+        <p>{{ description }}</p>
+        <div class="project-stack">
+            {% for tag in tags %}
+                <span>{{ tag }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="project-actions">
+        {% if github %}
+            <a class="btn btn-secondary" href="{{ github }}" target="_blank" rel="noreferrer"><i class="bi bi-github"></i>GitHub</a>
+        {% endif %}
+        {% if demo %}
+            <a class="btn btn-primary" href="{{ demo }}" target="_blank" rel="noreferrer"><i class="bi bi-box-arrow-up-right"></i>Live Demo</a>
+        {% endif %}
+        <button class="btn btn-ghost" type="button" data-project-modal='{"title":"{{ title }}","body":"{{ modal_body }}"}'>View details</button>
+    </div>
+</article>

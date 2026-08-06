@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Profile | Aynal Haque{% endblock %}
+
+{% block content %}
+<section class="section reveal">
+    <div class="container">
+        <div class="form-shell">
+            <p class="eyebrow">Profile</p>
+            <h1>Edit your profile</h1>
+            <p>Update your bio, location, links, and avatar to reflect your current professional presence.</p>
+            <form method="post" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="field">
+                    <label for="{{ form.bio.id_for_label }}">Bio</label>
+                    {{ form.bio }}
+                    {{ form.bio.errors }}
+                </div>
+                <div class="field">
+                    <label for="{{ form.location.id_for_label }}">Location</label>
+                    {{ form.location }}
+                    {{ form.location.errors }}
+                </div>
+                <div class="field">
+                    <label for="{{ form.website.id_for_label }}">Website</label>
+                    {{ form.website }}
+                    {{ form.website.errors }}
+                </div>
+                <div class="field">
+                    <label for="{{ form.github.id_for_label }}">GitHub</label>
+                    {{ form.github }}
+                    {{ form.github.errors }}
+                </div>
+                <div class="field">
+                    <label for="{{ form.linkedin.id_for_label }}">LinkedIn</label>
+                    {{ form.linkedin }}
+                    {{ form.linkedin.errors }}
+                </div>
+                <div class="field">
+                    <label for="{{ form.avatar.id_for_label }}">Avatar</label>
+                    {{ form.avatar }}
+                    {{ form.avatar.errors }}
+                </div>
+                <button type="submit" class="btn btn-primary auth-submit"><i class="bi bi-check2"></i>Save profile</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

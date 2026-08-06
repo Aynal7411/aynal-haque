@@ -1,0 +1,7 @@
+{% if messages %}
+<section class="message-stack" aria-live="polite">
+    {% for message in messages %}
+        <div class="message {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+</section>
+{% endif %}
