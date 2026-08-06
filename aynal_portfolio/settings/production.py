@@ -17,10 +17,7 @@ DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 # SECURITY
 # ============================================================
 
-SECRET_KEY = os.environ.get(
-    "SECRET_KEY",
-    "portfolio-production-secret-key-do-not-share-2026-strong",
-)
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 

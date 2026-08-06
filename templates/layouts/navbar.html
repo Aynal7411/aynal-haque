@@ -58,7 +58,7 @@
             </li>
 
             <li>
-                <a href="#"
+                <a href="{% url 'website:home' %}#projects"
                    class="text-slate-300 hover:text-white transition font-medium">
 
                     Projects
@@ -67,7 +67,7 @@
             </li>
 
             <li>
-                <a href="#"
+                <a href="{% url 'contact:contact' %}"
                    class="text-slate-300 hover:text-white transition font-medium">
 
                     Contact
@@ -167,11 +167,11 @@
                 Expertise
             </a>
 
-            <a href="{#}" class="block text-slate-300 hover:text-white">
+            <a href="{% url 'website:home' %}#projects" class="block text-slate-300 hover:text-white">
                 Projects
             </a>
 
-            <a href="{#}" class="block text-slate-300 hover:text-white">
+            <a href="{% url 'contact:contact' %}" class="block text-slate-300 hover:text-white">
                 Contact
             </a>
 

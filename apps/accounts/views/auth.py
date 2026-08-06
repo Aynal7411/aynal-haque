@@ -1,10 +1,5 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from rest_framework import status
-from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
-from rest_framework.views import APIView
-
 from apps.accounts.forms.login_form import LoginForm
 from apps.accounts.forms.registration_form import RegistrationForm
 

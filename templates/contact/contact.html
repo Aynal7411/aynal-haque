@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact | Aynal Solutions
+{% endblock %}
+
+{% block meta_description %}
+Contact Aynal Solutions for Python, Django, DRF, and PostgreSQL backend work.
+{% endblock %}
+
+{% block content %}
+<section class="bg-slate-950 px-5 py-20 text-slate-100">
+    <div class="mx-auto max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-wide text-blue-400">
+            Contact
+        </p>
+        <h2 class="mt-3 text-3xl font-bold text-white">
+            Let us talk
+        </h2>
+        <p class="mt-4 text-slate-300">
+            Send a short note about your project, timeline, and the kind of backend support you need.
+        </p>
+
+        <form method="post" class="mt-10 space-y-6">
+            {% csrf_token %}
+
+            <div>
+                <label for="{{ form.name.id_for_label }}" class="block text-sm font-medium text-slate-200">
+                    Name
+                </label>
+                <input
+                    type="text"
+                    name="{{ form.name.html_name }}"
+                    id="{{ form.name.id_for_label }}"
+                    value="{{ form.name.value|default_if_none:'' }}"
+                    class="mt-2 w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-blue-500">
+                {{ form.name.errors }}
+            </div>
+
+            <div>
+                <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-slate-200">
+                    Email
+                </label>
+                <input
+                    type="email"
+                    name="{{ form.email.html_name }}"
+                    id="{{ form.email.id_for_label }}"
+                    value="{{ form.email.value|default_if_none:'' }}"
+                    class="mt-2 w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-blue-500">
+                {{ form.email.errors }}
+            </div>
+
+            <div>
+                <label for="{{ form.message.id_for_label }}" class="block text-sm font-medium text-slate-200">
+                    Message
+                </label>
+                <textarea
+                    name="{{ form.message.html_name }}"
+                    id="{{ form.message.id_for_label }}"
+                    rows="6"
+                    class="mt-2 w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none focus:border-blue-500">{{ form.message.value|default_if_none:'' }}</textarea>
+                {{ form.message.errors }}
+            </div>
+
+            <button
+                type="submit"
+                class="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-500">
+                Send message
+            </button>
+        </form>
+    </div>
+</section>
+{% endblock %}

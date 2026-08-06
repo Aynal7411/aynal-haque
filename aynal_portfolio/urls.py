@@ -9,6 +9,12 @@ urlpatterns = [
     path("accounts/", include("apps.accounts.urls")),
     path("common/", include("apps.common.urls")),
     path("contact/", include("apps.contact.urls")),
+
+      # REST API
+    path(
+        "api/accounts/",
+        include("apps.accounts.api.urls"),
+    ),
 ]
 
 if settings.DEBUG:

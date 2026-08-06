@@ -8,6 +8,10 @@ milon/
 venv/
 .venv/
 
+.env
+.env.*
+!.env.example
+node_modules/
 # Django files
 db.sqlite3
 media/

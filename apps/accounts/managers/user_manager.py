@@ -1,4 +1,5 @@
 from django.contrib.auth.base_user import BaseUserManager
+from django.utils.text import slugify
 
 
 class UserManager(BaseUserManager):
@@ -17,6 +18,7 @@ class UserManager(BaseUserManager):
             raise ValueError("Email address is required.")
 
         email = self.normalize_email(email)
+        extra_fields.setdefault("username", self._generate_username(email))
 
         user = self.model(
             email=email,
@@ -48,3 +50,19 @@ class UserManager(BaseUserManager):
             password,
             **extra_fields,
         )
+
+    def _generate_username(self, email):
+        """
+        Generate a unique username when registration only supplies an email.
+        """
+        base_username = slugify(email.split("@", 1)[0]) or "user"
+        base_username = base_username[:140]
+        username = base_username
+        counter = 1
+
+        while self.model.objects.filter(username=username).exists():
+            suffix = f"-{counter}"
+            username = f"{base_username[:150 - len(suffix)]}{suffix}"
+            counter += 1
+
+        return username
